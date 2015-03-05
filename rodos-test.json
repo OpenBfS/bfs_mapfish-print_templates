@@ -30,7 +30,7 @@
     },
 
     "is_exercise": "true",
-    "title": "Ein Ortsdosisleistungstest mit Bundeswasserstraßen<br/><b>Strahlende Zukunft für KOALA</b>",
+    "title": "Ein Ortsdosisleistungstest mit Bundeswasserstraßen<br/><b>KOALA-Druckdienst</b>",
 
     "legend_title1": "<b>ODL-Tagesmittelwerte</b><br/>Werte in µSv/h",
     "legend_url1": "http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2odl24h&FORMAT=image%2Fgif&SCALE=6933504.262556662",
