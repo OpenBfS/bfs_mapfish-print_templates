@@ -134,7 +134,7 @@
 			</textField>
 			<image>
 				<reportElement x="686" y="403" width="87" height="47" uuid="feb403e0-4ca7-4035-80a3-89fb2c84e823"/>
-				<imageExpression><![CDATA["/home/tom/koala/mapfish-print3/imis_logo.png"]]></imageExpression>
+				<imageExpression><![CDATA["./imis_logo.png"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement x="660" y="450" width="137" height="86" uuid="3c1a087f-4afd-4ea5-be93-83560f0dfd93"/>
