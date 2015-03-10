@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version last-->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="798" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="22" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
-	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
-	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="mapSubReport" class="java.lang.String"/>
 	<parameter name="northArrowSubReport" class="java.lang.String"/>
 	<parameter name="scalebarSubReport" class="java.lang.String"/>
 	<parameter name="map_attribution" class="java.lang.String"/>
 	<parameter name="is_exercise" class="java.lang.String"/>
 	<parameter name="title" class="java.lang.String"/>
-	<parameter name="legend_title1" class="java.lang.String"/>
-	<parameter name="legend_url1" class="java.lang.String"/>
-	<parameter name="legend_footer1" class="java.lang.String"/>
-	<parameter name="legend_title2" class="java.lang.String"/>
-	<parameter name="legend_url2" class="java.lang.String"/>
-	<parameter name="legend_footer2" class="java.lang.String"/>
+	<parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
+	<parameter name="legendSubReport" class="java.lang.String"/>
 	<parameter name="description" class="java.lang.String"/>
 	<parameter name="comment" class="java.lang.String"/>
 	<parameter name="impressum" class="java.lang.String"/>
@@ -63,6 +67,16 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{map_attribution}]]></textFieldExpression>
 			</textField>
+			<subreport runToBottom="false">
+				<reportElement isPrintRepeatedValues="false" x="520" y="110" width="278" height="210" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{legend}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{legendSubReport}]]></subreportExpression>
+			</subreport>
 			<staticText>
 				<reportElement mode="Opaque" x="520" y="0" width="279" height="30" forecolor="#FFFFFF" backcolor="#7F7F7F" uuid="7d7743af-944c-48f1-9ff7-6886393847e6">
 					<printWhenExpression><![CDATA["true".equals($P{is_exercise})]]></printWhenExpression>
@@ -79,44 +93,6 @@
 					<paragraph lineSpacing="Double"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="521" y="110" width="139" height="40" uuid="29962d17-4dbe-4baf-b551-e1848efb23a2"/>
-				<textElement markup="html">
-					<paragraph leftIndent="0" rightIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{legend_title1}]]></textFieldExpression>
-			</textField>
-			<image scaleImage="RetainShape">
-				<reportElement x="520" y="150" width="140" height="150" uuid="6f4242ec-7c54-4b7c-b07d-c23ff668b5bc"/>
-				<imageExpression><![CDATA[$P{legend_url1}]]></imageExpression>
-			</image>
-			<textField>
-				<reportElement x="521" y="300" width="139" height="20" uuid="55f7c531-90a3-4424-9d22-8bd4f55cc711"/>
-				<textElement markup="html">
-					<paragraph leftIndent="0" rightIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{legend_footer1}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="660" y="110" width="139" height="40" uuid="ffda5dca-b72d-4628-a15c-7f6b1436f84f"/>
-				<textElement markup="html">
-					<font size="10"/>
-					<paragraph leftIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{legend_title2}]]></textFieldExpression>
-			</textField>
-			<image scaleImage="RetainShape">
-				<reportElement x="660" y="150" width="139" height="150" uuid="8560dff9-da29-4665-ba13-d1db1b4aa238"/>
-				<imageExpression><![CDATA[$P{legend_url2}]]></imageExpression>
-			</image>
-			<textField>
-				<reportElement x="659" y="300" width="139" height="20" uuid="8459a684-342c-4320-9865-ad88b0fe4f19"/>
-				<textElement markup="none">
-					<font size="10"/>
-					<paragraph leftIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{legend_footer2}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="521" y="320" width="277" height="83" uuid="e678395b-c42e-482a-8d48-9e34d4da62b3"/>
