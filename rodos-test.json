@@ -40,8 +40,6 @@
              }, {
              "name": "<b>Gesamt-Gamma Aktivität an BfG-Stationen</b><br/>Gesamt-Gamma [Bq/l]",
              "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2g11bfg&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
-             }, {
-             "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=true&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=world_boundary&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
              }
          ]
     },
