@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version last-->
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-05-20T14:33:13 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="798" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="22" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
 	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -67,8 +68,8 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{map_attribution}]]></textFieldExpression>
 			</textField>
-			<subreport runToBottom="false">
-				<reportElement isPrintRepeatedValues="false" x="520" y="110" width="278" height="210" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
+			<subreport runToBottom="false" overflowType="NoStretch">
+				<reportElement isPrintRepeatedValues="false" x="520" y="80" width="278" height="240" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
