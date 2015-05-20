@@ -88,7 +88,7 @@
 				<text><![CDATA[Übung/Test]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="520" y="30" width="279" height="80" uuid="9cb29803-818d-49e8-86ec-84f493bbf424"/>
+				<reportElement x="520" y="30" width="279" height="50" uuid="9cb29803-818d-49e8-86ec-84f493bbf424"/>
 				<box topPadding="8" leftPadding="5" rightPadding="5"/>
 				<textElement textAlignment="Center" markup="html">
 					<paragraph lineSpacing="Double"/>
