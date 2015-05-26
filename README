@@ -10,5 +10,5 @@ $ unzip print-cli-3.1.2-zip.zip
 $ cd core-3.1.2
 $ bin/print
   -config config.yaml
-  -spec requestData-rodosTest.json
+  -spec requestData.json
   -output rodos-test.pdf
