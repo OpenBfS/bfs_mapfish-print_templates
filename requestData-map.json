@@ -1,5 +1,5 @@
 {
-  "layout": "map",
+  "layout": "rodosTest_map",
   "outputFormat": "pdf",
   "attributes": {
     "map_attribution": "© Bundesamt für Strahlenschutz",

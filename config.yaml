@@ -1,7 +1,7 @@
 
 templates:
   #===========================================================================
-  map: !template
+  rodosTest_map: !template
   #===========================================================================
     reportTemplate: rodosTest_map.jrxml
     attributes:
@@ -33,7 +33,7 @@ templates:
     - !createScalebar {}
 
   #===========================================================================
-  all: !template
+  rodosTest: !template
   #===========================================================================
     reportTemplate: rodosTest.jrxml
     attributes:
