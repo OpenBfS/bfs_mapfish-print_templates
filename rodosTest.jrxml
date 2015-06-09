@@ -13,14 +13,14 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<parameter name="mapSubReport" class="java.lang.String"/>
-	<parameter name="northArrowSubReport" class="java.lang.String"/>
-	<parameter name="scalebarSubReport" class="java.lang.String"/>
+	<parameter name="mapSubReport" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="northArrowSubReport" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="scalebarSubReport" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="map_attribution" class="java.lang.String"/>
 	<parameter name="is_exercise" class="java.lang.String"/>
 	<parameter name="title" class="java.lang.String"/>
 	<parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
-	<parameter name="legendSubReport" class="java.lang.String"/>
+	<parameter name="legendSubReport" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="description" class="java.lang.String"/>
 	<parameter name="comment" class="java.lang.String"/>
 	<parameter name="impressum" class="java.lang.String"/>
