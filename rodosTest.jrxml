@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
-<!-- 2015-05-20T14:33:13 -->
+<!-- 2015-06-09T15:28:53 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="798" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="22" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
 	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -25,7 +25,8 @@
 	<parameter name="comment" class="java.lang.String"/>
 	<parameter name="impressum" class="java.lang.String"/>
 	<parameter name="doc_creator" class="java.lang.String"/>
-	<detail>
+	<parameter name="map_template" class="java.lang.String"/>
+	<title>
 		<band height="536">
 			<property name="local_mesure_unitheight" value="mm"/>
 			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
@@ -45,29 +46,9 @@
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<subreportExpression><![CDATA[$P{mapSubReport}]]></subreportExpression>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportExpression><![CDATA[$P{map_template}]]></subreportExpression>
 			</subreport>
-			<subreport>
-				<reportElement x="474" y="455" width="45" height="45" uuid="fa145068-76a5-4834-98ed-ce65b1976b3e">
-					<property name="local_mesure_unitwidth" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="local_mesure_unitheight" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<subreportExpression><![CDATA[$P{northArrowSubReport}]]></subreportExpression>
-			</subreport>
-			<subreport>
-				<reportElement x="360" y="500" width="159" height="36" uuid="fa145068-76a5-4834-98ed-ce65b1976b3f"/>
-				<subreportExpression><![CDATA[$P{scalebarSubReport}]]></subreportExpression>
-			</subreport>
-			<textField>
-				<reportElement x="0" y="520" width="178" height="16" uuid="3d78a233-cd57-4c1d-b82c-1a711b6d99c5"/>
-				<textElement verticalAlignment="Bottom" markup="html">
-					<font size="7"/>
-					<paragraph leftIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{map_attribution}]]></textFieldExpression>
-			</textField>
 			<subreport runToBottom="false" overflowType="NoStretch">
 				<reportElement isPrintRepeatedValues="false" x="520" y="80" width="278" height="240" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
 					<property name="local_mesure_unitwidth" value="pixel"/>
@@ -122,7 +103,7 @@
 				<textFieldExpression><![CDATA[$P{impressum}]]></textFieldExpression>
 			</textField>
 		</band>
-	</detail>
+	</title>
 	<pageFooter>
 		<band height="14" splitType="Stretch">
 			<property name="local_mesure_unitheight" value="mm"/>

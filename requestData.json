@@ -1,5 +1,5 @@
 {
-  "layout": "A4 landscape",
+  "layout": "all",
   "outputFormat": "pdf",
   "attributes": {
     "map_attribution": "© Bundesamt für Strahlenschutz",
