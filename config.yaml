@@ -1,8 +1,8 @@
 
 templates:
   #===========================================================================
+  # template for map only
   rodosTest_map: !template
-  #===========================================================================
     reportTemplate: rodosTest_map.jrxml
     attributes:
       map: &map !map
@@ -33,8 +33,31 @@ templates:
     - !createScalebar {}
 
   #===========================================================================
-  rodosTest: !template
+  # template for legend only
+  rodosTest_legend: !template
+    reportTemplate: rodosTest_legend.jrxml
+    attributes:
+      is_exercise: &is_exercise !string
+        default: "false"
+      title: &title !string {}
+
+      legend: &legend !legend {}
+
+      description: &description !string
+        default: ""
+      comment: &comment !string
+        default: ""
+      impressum: &impressum !string {}
+
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !prepareLegend
+      template: legend.jrxml
+
   #===========================================================================
+  # template for document including map and legend
+  rodosTest: !template
     reportTemplate: rodosTest.jrxml
     attributes:
       map_template: !string
@@ -44,17 +67,14 @@ templates:
       scalebar: *scalebar
       map_attribution: *map_attribution
 
-      is_exercise: !string
-        default: "false"
-      title: !string {}
-
-      legend: !legend {}
-
-      description: !string
-        default: ""
-      comment: !string
-        default: ""
-      impressum: !string {}
+      legend_template: !string
+        default: "rodosTest_legend.jasper"
+      is_exercise: *is_exercise
+      title: *title
+      legend: *legend
+      description: *description
+      comment: *comment
+      impressum: *impressum
 
       doc_creator: !string {}
 

@@ -26,6 +26,7 @@
 	<parameter name="impressum" class="java.lang.String"/>
 	<parameter name="doc_creator" class="java.lang.String"/>
 	<parameter name="map_template" class="java.lang.String"/>
+	<parameter name="legend_template" class="java.lang.String"/>
 	<title>
 		<band height="536">
 			<property name="local_mesure_unitheight" value="mm"/>
@@ -49,59 +50,16 @@
 				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
 				<subreportExpression><![CDATA[$P{map_template}]]></subreportExpression>
 			</subreport>
-			<subreport runToBottom="false" overflowType="NoStretch">
-				<reportElement isPrintRepeatedValues="false" x="520" y="80" width="278" height="240" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
+			<subreport>
+				<reportElement x="520" y="0" width="278" height="536" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$P{legend}]]></dataSourceExpression>
-				<subreportExpression><![CDATA[$P{legendSubReport}]]></subreportExpression>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportExpression><![CDATA[$P{legend_template}]]></subreportExpression>
 			</subreport>
-			<staticText>
-				<reportElement mode="Opaque" x="520" y="0" width="279" height="30" forecolor="#FFFFFF" backcolor="#7F7F7F" uuid="7d7743af-944c-48f1-9ff7-6886393847e6">
-					<printWhenExpression><![CDATA["true".equals($P{is_exercise})]]></printWhenExpression>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
-					<font size="20" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Übung/Test]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="520" y="30" width="279" height="50" uuid="9cb29803-818d-49e8-86ec-84f493bbf424"/>
-				<box topPadding="8" leftPadding="5" rightPadding="5"/>
-				<textElement textAlignment="Center" markup="html">
-					<paragraph lineSpacing="Double"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="521" y="320" width="277" height="83" uuid="e678395b-c42e-482a-8d48-9e34d4da62b3"/>
-				<textElement markup="html">
-					<paragraph lineSpacing="Proportional" lineSpacingSize="1.5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="520" y="403" width="140" height="133" uuid="fb9be0a9-ebc9-4271-8917-877bcfc05491"/>
-				<textElement markup="html">
-					<paragraph leftIndent="0" rightIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{comment}]]></textFieldExpression>
-			</textField>
-			<image>
-				<reportElement x="686" y="403" width="87" height="47" uuid="feb403e0-4ca7-4035-80a3-89fb2c84e823"/>
-				<imageExpression><![CDATA["./imis_logo.png"]]></imageExpression>
-			</image>
-			<textField>
-				<reportElement x="660" y="450" width="137" height="86" uuid="3c1a087f-4afd-4ea5-be93-83560f0dfd93"/>
-				<textElement textAlignment="Center" markup="html">
-					<font size="8"/>
-					<paragraph leftIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{impressum}]]></textFieldExpression>
-			</textField>
 		</band>
 	</title>
 	<pageFooter>
