@@ -1,0 +1,25 @@
+{
+  "layout": "rodosTest_legend",
+  "outputFormat": "pdf",
+  "attributes": {
+    "is_exercise": "true",
+    "title": "Ein Ortsdosisleistungstest mit Bundeswasserstraßen<br/><b>KOALA-Druckdienst</b>",
+
+    "legend": {
+         "name": "",
+         "classes": [{
+             "name": "<b>ODL-Tagesmittelwerte</b><br/>Werte in µSv/h",
+             "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2odl24h&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
+             }, {
+             "name": "<b>Gesamt-Gamma Aktivität an BfG-Stationen</b><br/>Gesamt-Gamma [Bq/l]",
+             "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2g11bfg&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
+             }
+         ]
+    },
+
+    "description": "<b>Datenquelle: TEST</b><br/>Freisetzungsort: Neuer Graben 17, Osnabrück<br/>Ereignis: Übungsstrahler im Büro der Intevation GmbH<br/>Datenbasis: willkürlich",
+    "comment": "Hier könnte auch ein sinnvoller, <i>schön</i> formatierter Kommentar stehen.",
+    "impressum": "<b>Bundesamt für Strahlenschutz<br/>(im Auftrag des BMU)</b><br/><br/>RODOS-Zentrale<br/>Rechnung von: 2015-02-25 11:22 MET<br/>Lauf-Kennung: intevation0001<br/>User-ID: test"
+
+  }
+}
