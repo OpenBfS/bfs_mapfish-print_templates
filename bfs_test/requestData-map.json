@@ -1,0 +1,29 @@
+{
+  "layout": "Test_map",
+  "outputFormat": "pdf",
+  "attributes": {
+    "map_attribution": "© Bundesamt für Strahlenschutz",
+    "map": {
+      "projection": "EPSG:25832",
+      "dpi": 72,
+      "rotation": 0,
+      "center": [594471,5669685],
+      "scale": 7500000,
+      "layers": [
+        {
+          "baseURL": "http://www.imis.bfs.de/cgi-public/wms_inspire_kkw",
+          "opacity": 1,
+          "type": "WMS",
+          "layers": [
+            "PF.ProductionFacility"],
+
+          "imageFormat": "image/png",
+
+          "customParams": {
+            "TRANSPARENT": "true"
+          }
+        }
+      ]
+    }
+  }
+}
