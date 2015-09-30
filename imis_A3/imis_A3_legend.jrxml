@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2015-07-31T10:39:51 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imis_A3_legend" pageWidth="381" pageHeight="800" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="371" leftMargin="10" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7b88dcad-3026-423e-bf42-3ddb6c3e38ed">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="title" class="java.lang.String"/>
+        <parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>	
+	<parameter name="description" class="java.lang.String"/>
+	<parameter name="comment" class="java.lang.String"/>
+	<parameter name="impressum" class="java.lang.String"/>
+        <parameter name="legendSubReport" class="java.lang.String" isForPrompting="false"/>
+	<title>
+            <band height="800">
+                        <property name="local_mesure_unitheight" value="mm"/>
+                        <property name="com.jaspersoft.studio.unit.height" value="mm"/>
+			<rectangle>
+				<reportElement x="-10" y="0" width="381" height="800" backcolor="rgba(255, 255, 255, 0.0)" uuid="7548e9c8-3b03-4673-96ad-31bba7354c91"/>
+                                <graphicElement>
+                                        <pen lineWidth="0.1"/>
+                                </graphicElement>
+			</rectangle>
+                        <subreport runToBottom="false" overflowType="NoStretch">
+                           <reportElement isPrintRepeatedValues="false" x="0" y="130" width="371" height="240" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
+                                <property name="local_mesure_unitwidth" value="pixel"/>
+                                <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                                <property name="local_mesure_unitheight" value="pixel"/>
+                                <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                           </reportElement>
+                           <dataSourceExpression><![CDATA[$P{legend}]]></dataSourceExpression>
+                           <subreportExpression><![CDATA[$P{legendSubReport}]]></subreportExpression>
+                        </subreport>
+			<staticText>
+				<reportElement mode="Opaque" x="-9" y="1" width="379" height="39" forecolor="#FFFFFF" backcolor="#808080" uuid="27f509d1-cef1-45b8-9021-9e6306924c79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Übung / Test]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="45" width="371" height="85" uuid="26aa09ae-c951-4057-b2e6-ffc35392c2d9"/>
+				<textElement textAlignment="Center" markup="html">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="400" width="371" height="108" uuid="295e484d-57c4-4578-a7f2-1d0614827e1b"/>
+				<textElement textAlignment="Center" markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="508" width="371" height="100" uuid="19e3b033-7a9c-4860-b234-395884dad442"/>
+				<textElement textAlignment="Center" markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{comment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="690" width="371" height="108" uuid="74627ac6-d47d-42bb-86ef-828e206696f8"/>
+                                <box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>				
+				<textElement textAlignment="Center" markup="html">
+                                        <font size="8"/>
+                                        <paragraph leftIndent="2"/>
+                                </textElement>
+				<textFieldExpression><![CDATA[$P{impressum}]]></textFieldExpression>
+			</textField>
+                        <image>
+                                <reportElement x="110" y="608" width="154" height="158" uuid="fbf932db-01e5-468c-b91f-4dc11939df9d"/>
+                                <imageExpression><![CDATA["./imis_logo.png"]]></imageExpression>
+                        </image>
+		</band>
+	</title>
+</jasperReport>

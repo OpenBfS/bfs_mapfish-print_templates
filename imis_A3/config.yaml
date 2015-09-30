@@ -1,0 +1,88 @@
+
+templates:
+  #===========================================================================
+  # template for map only
+  imis_A3_map: !template
+    reportTemplate: imis_A3_map.jrxml
+    attributes:
+      map: &map !map
+        maxDpi: 400
+        width: 769
+        height: 799
+      northArrow: &northArrow !northArrow
+        size: 45
+        default:
+          graphic: "file://NorthArrow_10.svg"
+          backgroundColor: "rgba(0, 0, 0, 0)"
+      scalebar: &scalebar !scalebar
+        width: 159
+        height: 36
+        default:
+          #backgroundColor: "rgba(200, 200, 200, 100)"
+          align: "right"
+          intervals: 2
+          fontSize: 10
+          renderAsSvg: true
+      map_attribution: &map_attribution !string {}
+
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap {}
+    - !createNorthArrow {}
+    - !createScalebar {}
+
+  #===========================================================================
+  # template for legend only
+  imis_A3_legend: !template
+    reportTemplate: imis_A3_legend.jrxml
+    attributes:
+      is_exercise: &is_exercise !string
+        default: "false"
+      title: &title !string {}
+
+      legend: &legend !legend {}
+
+      description: &description !string
+        default: ""
+      comment: &comment !string
+        default: ""
+      impressum: &impressum !string {}
+
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !prepareLegend
+      template: legend.jrxml
+
+  #===========================================================================
+  # template for document including map and legend
+  imis_A3: !template
+    reportTemplate: imis_A3.jrxml
+    attributes:
+      map_template: !string
+        default: "imis_A3_map.jasper"
+      map: *map
+      northArrow: *northArrow
+      scalebar: *scalebar
+      map_attribution: *map_attribution
+
+      legend_template: !string
+        default: "imis_A3_legend.jasper"
+      is_exercise: *is_exercise
+      title: *title
+      legend: *legend
+      description: *description
+      comment: *comment
+      impressum: *impressum
+
+      doc_creator: !string {}
+
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap {}
+    - !createNorthArrow {}
+    - !createScalebar {}
+    - !prepareLegend
+      template: legend.jrxml

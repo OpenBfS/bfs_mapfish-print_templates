@@ -1,0 +1,53 @@
+{
+  "layout": "imis_A4",
+  "outputFormat": "pdf",
+  "outputFilename": "imis_A4_${yyyyMMdd}",
+  "attributes": {
+    "map_attribution": "© Bundesamt für Strahlenschutz",
+    "map": {
+      "projection": "EPSG:3857",
+      "dpi": 72,
+      "rotation": 0,
+      "center": [1153044,6650612],
+      "scale": 5000000,
+      "layers": [
+        {
+          "baseURL": "http://www.imis.bfs.de/cgi-public/wms_geoportal",
+          "opacity": 1,
+          "type": "WMS",
+          "layers": [
+            "imis.p2odl24h",
+            "imis.p2g11bfg",
+            "bundeslaender"
+          ],
+
+          "imageFormat": "image/png",
+
+          "customParams": {
+            "TRANSPARENT": "true"
+          }
+        }
+      ]
+    },
+
+    "is_exercise": "true",
+    "title": "Ein Ortsdosisleistungstest mit Bundeswasserstraßen<br/><b>KOALA-Druckdienst</b>",
+
+    "legend": {
+         "name": "",
+         "classes": [{
+             "name": "<b>ODL-Tagesmittelwerte</b><br/>Werte in µSv/h",
+             "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2odl24h&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
+             }, {
+             "name": "<b>Gesamt-Gamma Aktivität an BfG-Stationen</b><br/>Gesamt-Gamma [Bq/l]",
+             "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2g11bfg&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
+             }
+         ]
+    },
+    "description": "<b>Deutschland</b><br/><br/>26.09.2015 11:00 (ges. Zeit)<br/><br/>",
+    "comment": "Datenquelle: DWD<br/>§2 - Routinemessprogramm",
+    "impressum": "<b>Bundesamt für Strahlenschutz<br/>(im Auftrag des BMUB)</b><br/><br/>Status: 1/1/1/ Freigabe BMUB<br/>Vorgang: 1616067359, 1616067376<br/>28.09.2015 15:22 (ges. Zeit)",
+    "doc_creator": "automatisch"
+
+  }
+}

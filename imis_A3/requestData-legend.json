@@ -1,0 +1,26 @@
+{
+  "layout": "imis_A3_legend",
+  "outputFormat": "pdf",
+  "outputFilename": "imis_A3_legend_${yyyyMMdd}",
+  "attributes": {
+    "is_exercise": "true",
+    "title": "Ein Ortsdosisleistungstest mit Bundeswasserstraßen<br/><b>KOALA-Druckdienst</b>",
+
+    "legend": {
+         "name": "",
+         "classes": [{
+             "name": "<b>ODL-Tagesmittelwerte</b><br/>Werte in µSv/h",
+             "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2odl24h&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
+             }, {
+             "name": "<b>Gesamt-Gamma Aktivität an BfG-Stationen</b><br/>Gesamt-Gamma [Bq/l]",
+             "icons": ["http://www.imis.bfs.de/cgi-public/wms_geoportal?TRANSPARENT=TRUE&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetLegendGraphic&EXCEPTIONS=application%2Fvnd.ogc.se_xml&LAYER=imis.p2g11bfg&FORMAT=image%2Fgif&SCALE=6933504.262556662"]
+             }
+         ]
+    },
+    "description": "<b>Deutschland</b><br/><br/>26.09.2015 11:00 (ges. Zeit)<br/><br/>",
+    "comment": "Datenquelle: DWD<br/>§2 - Routinemessprogramm",
+    "impressum": "<b>Bundesamt für Strahlenschutz<br/>(im Auftrag des BMUB)</b><br/><br/>Status: 1/1/1/ Freigabe BMUB<br/>Vorgang: 1616067359, 1616067376<br/>28.09.2015 15:22 (ges. Zeit)",
+    "doc_creator": "automatisch"
+
+  }
+}
