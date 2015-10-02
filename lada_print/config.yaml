@@ -1,0 +1,24 @@
+throwErrorOnExtraParameters: true
+templates:
+  A4 landscape: !template
+    reportTemplate: simpleReport.jrxml
+    attributes:
+      displayName: !string {}
+      title: !string {}
+      table: !table {}
+    processors:
+    - !reportBuilder
+      directory: '.'
+    - !prepareTable
+      columns: {}
+      dynamic: true
+      jasperTemplate: table.jrxml
+      firstDetailStyle: column_style_1
+      detailStyle: column_style_2
+      lastDetailStyle: column_style_3
+      firstHeaderStyle: header_style_1
+      headerStyle: header_style_2
+      lastHeaderStyle: header_style_3
+      excludeColumns: ["owner, readonly, id"]
+      inputMapper: {table: table}
+      outputMapper: {table: table}
