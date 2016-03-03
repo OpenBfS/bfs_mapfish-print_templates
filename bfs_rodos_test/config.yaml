@@ -38,7 +38,7 @@ templates:
     reportTemplate: rodosTest_legend.jrxml
     attributes:
       is_exercise: &is_exercise !string
-        default: "false"
+        default: "true"
       title: &title !string {}
 
       legend: &legend !legend {}
