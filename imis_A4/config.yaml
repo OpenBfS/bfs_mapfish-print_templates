@@ -23,7 +23,7 @@ templates:
           intervals: 2
           fontSize: 10
           renderAsSvg: true
-      map_attribution: &map_attribution !string 
+      map_attribution: &map_attribution !string
         default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
 
     processors:
@@ -40,7 +40,7 @@ templates:
     attributes:
       is_exercise: &is_exercise !string
         default: "true"
-      title: &title !string {}
+      title: &title !string
         default: "<div><b>KOALA Druckdienst</b></div>"
 
       legend: &legend !legend {}
@@ -49,7 +49,7 @@ templates:
         default: "<div><b>Datenquelle: RODOS</b><br>Freisetzungsort: &lt;...BITTE EINTRAGEN...&gt;<br>Ereignis: &lt;...BITTE EINTRAGEN...&gt;</div>"
       comment: &comment !string
         default: "<div>&lt;..Kommentar: ...&gt; </div>"
-      impressum: &impressum !string {}
+      impressum: &impressum !string
         default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br><br>RODOS-Zentrale<br>Rechnung vom: &lt;...BITTE EINTRAGEN...&gt;<br>RODOS-Zentrale<br>Lauf Kennung: &lt;...BITTE EINTRAGEN...&gt;<br></div>"
 
     processors:
