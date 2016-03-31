@@ -24,7 +24,7 @@ templates:
           fontSize: 10
           renderAsSvg: true
       map_attribution: &map_attribution !string {}
-         default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
+        default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory
