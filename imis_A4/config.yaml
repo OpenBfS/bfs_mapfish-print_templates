@@ -24,6 +24,7 @@ templates:
           fontSize: 10
           renderAsSvg: true
       map_attribution: &map_attribution !string {}
+         default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory
@@ -38,16 +39,18 @@ templates:
     reportTemplate: imis_A4_legend.jrxml
     attributes:
       is_exercise: &is_exercise !string
-        default: "false"
+        default: "true"
       title: &title !string {}
+        default: "<div><b>KOALA Druckdienst</b></div>"
 
       legend: &legend !legend {}
 
       description: &description !string
-        default: ""
+        default: "<div><b>Datenquelle: RODOS</b><br>Freisetzungsort: &lt;...BITTE EINTRAGEN...&gt;<br>Ereignis: &lt;...BITTE EINTRAGEN...&gt;</div>"
       comment: &comment !string
-        default: ""
+        default: "<div>&lt;..Kommentar: ...&gt; </div>"
       impressum: &impressum !string {}
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br><br>RODOS-Zentrale<br>Rechnung vom: &lt;...BITTE EINTRAGEN...&gt;<br>RODOS-Zentrale<br>Lauf Kennung: &lt;...BITTE EINTRAGEN...&gt;<br></div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory

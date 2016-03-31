@@ -47,6 +47,7 @@
 				<reportElement x="0" y="30" width="277" height="50" uuid="9cb29803-818d-49e8-86ec-84f493bbf424"/>
 				<box topPadding="8" leftPadding="5" rightPadding="5"/>
 				<textElement textAlignment="Center" markup="html">
+                                        <font isBold="true" size="10"/>
 					<paragraph lineSpacing="Double"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
@@ -55,6 +56,7 @@
 				<reportElement x="0" y="320" width="277" height="60" uuid="e678395b-c42e-482a-8d48-9e34d4da62b3"/>
 				<!--<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>-->
 				<textElement textAlignment="Center" markup="html">
+                                        <font size="8"/>
 					<paragraph lineSpacing="Proportional" lineSpacingSize="1.5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
@@ -63,6 +65,7 @@
 				<reportElement x="0" y="380" width="277" height="40" uuid="fb9be0a9-ebc9-4271-8917-877bcfc05491"/>
 				<!--<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>-->
 				<textElement textAlignment="Center" markup="html">
+                                        <font size="8"/>
 					<paragraph leftIndent="0" rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{comment}]]></textFieldExpression>
@@ -75,7 +78,7 @@
 				<reportElement x="0" y="466" width="277" height="70" uuid="3c1a087f-4afd-4ea5-be93-83560f0dfd93"/>
 				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
 				<textElement textAlignment="Center" markup="html">
-					<font size="8"/>
+					<font size="7"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{impressum}]]></textFieldExpression>
