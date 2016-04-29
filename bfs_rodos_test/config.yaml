@@ -2,7 +2,6 @@
 templates:
   #===========================================================================
   # template for map only
-  formats: [pdf,png,gif,tif]
   rodosTest_map: !template
     reportTemplate: rodosTest_map.jrxml
     attributes:
@@ -35,7 +34,6 @@ templates:
 
   #===========================================================================
   # template for legend only
-  formats: [pdf,png,gif,tif]
   rodosTest_legend: !template
     reportTemplate: rodosTest_legend.jrxml
     attributes:
@@ -59,7 +57,6 @@ templates:
 
   #===========================================================================
   # template for document including map and legend
-  formats: [pdf,png,gif,tif]
   rodosTest: !template
     reportTemplate: rodosTest.jrxml
     attributes:
