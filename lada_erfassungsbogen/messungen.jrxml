@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-07-22T11:47:05 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="messungen" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6eb736b-13c1-4cf8-864e-988c1d770fd4">
+	<queryString language="json">
+		<![CDATA[data.messungen]]>
+	</queryString>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="fertig" class="java.lang.String">
+		<fieldDescription><![CDATA[fertig]]></fieldDescription>
+	</field>
+	<field name="geplant" class="java.lang.String">
+		<fieldDescription><![CDATA[geplant]]></fieldDescription>
+	</field>
+	<field name="idAlt" class="java.lang.String">
+		<fieldDescription><![CDATA[idAlt]]></fieldDescription>
+	</field>
+	<field name="letzteAenderung" class="java.lang.String">
+		<fieldDescription><![CDATA[letzteAenderung]]></fieldDescription>
+	</field>
+	<field name="messdauer" class="java.lang.String">
+		<fieldDescription><![CDATA[messdauer]]></fieldDescription>
+	</field>
+	<field name="messzeitpunkt" class="java.lang.Long">
+		<fieldDescription><![CDATA[messzeitpunkt]]></fieldDescription>
+	</field>
+	<field name="mmtId" class="java.lang.String">
+		<fieldDescription><![CDATA[mmtId]]></fieldDescription>
+	</field>
+	<field name="nebenprobenNr" class="java.lang.String">
+		<fieldDescription><![CDATA[nebenprobenNr]]></fieldDescription>
+	</field>
+	<field name="probeId" class="java.lang.String">
+		<fieldDescription><![CDATA[probeId]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<field name="treeModified" class="java.lang.String">
+		<fieldDescription><![CDATA[treeModified]]></fieldDescription>
+	</field>
+	<field name="statusEdit" class="java.lang.String">
+		<fieldDescription><![CDATA[statusEdit]]></fieldDescription>
+	</field>
+	<field name="parentModified" class="java.lang.String">
+		<fieldDescription><![CDATA[parentModified]]></fieldDescription>
+	</field>
+	<field name="owner" class="java.lang.String">
+		<fieldDescription><![CDATA[owner]]></fieldDescription>
+	</field>
+	<field name="readonly" class="java.lang.String">
+		<fieldDescription><![CDATA[readonly]]></fieldDescription>
+	</field>
+	<group name="record" isStartNewPage="true">
+		<groupExpression><![CDATA[$V{REPORT_COUNT}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="30" uuid="1009918f-4b9d-4cf9-b91e-08bd178610fb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
+				<text><![CDATA[Messungen]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="30" width="555" height="1" uuid="3a421f67-bdc2-4c89-aacc-5b0e90e4ab71">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="300" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="380" y="0" width="174" height="20" uuid="d0c9e09d-3421-4bc1-a7d4-e31345389613">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{mmtId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="0" width="80" height="20" uuid="e87f0db6-8fc3-4c52-9e90-7dba5eb81d66">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Messmethode]]></text>
+			</staticText>
+			<textField pattern="dd.MM.yyyy">
+				<reportElement x="80" y="20" width="80" height="20" uuid="092fb94f-ef16-4b23-8497-86093f14a934"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[new Date($F{messzeitpunkt})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="80" height="20" uuid="bc083002-f676-4c23-834b-cb5ee26b4ff6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Messzeitpunkt]]></text>
+			</staticText>
+			<textField pattern="hh:mm">
+				<reportElement x="170" y="20" width="60" height="20" uuid="0b29025d-3889-4cb1-bb1e-6488011f5e9a"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[new Date($F{messzeitpunkt})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="20" width="175" height="20" uuid="ddbd8d51-77c2-4a8c-b946-cb22350d7135">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{messdauer} + " Sek."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="20" width="100" height="20" uuid="006c30eb-26b3-499a-a64f-18c7c3ef745a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Messdauer]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="50" width="595" height="80" uuid="415fdc8d-4067-4766-91d8-35ca74670321">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("messwerte")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["messwerte.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="0" width="130" height="20" uuid="beabc139-7164-4e69-85e9-585fdf3a94af">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nebenprobennummer]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="0" width="145" height="20" uuid="b67e5760-bc01-4c9c-8d74-d7258cebb439">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nebenprobenNr}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="130" width="595" height="80" uuid="30ee0f06-31dd-4500-a1d6-a011278b0bf3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("statusProtokoll")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["statusprotokoll.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="210" width="595" height="80" uuid="471c30da-8320-43d5-bec6-81bb486795d8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("kommentare")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["messungskommentare.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<noData>
+		<band height="54">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="31128f9c-7639-46b8-bbb4-6f6fbe889701"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
+				<text><![CDATA[Messungen]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="30" width="555" height="1" uuid="4e80b7c6-687c-4ab4-acd3-658ade9fd767">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="31" width="555" height="22" uuid="f860c053-825d-4b22-bdd7-427ebc10c7a1"/>
+				<textElement textAlignment="Center">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
+				<text><![CDATA[Keine Messung vorhanden]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>
