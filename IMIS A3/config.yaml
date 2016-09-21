@@ -13,12 +13,12 @@ templates:
         size: 45
         default:
           graphic: "file://NorthArrow_10.svg"
-          backgroundColor: "rgba(0, 0, 0, 0)"
+          backgroundColor: "rgba(255, 255, 255, 200)"
       scalebar: &scalebar !scalebar
         width: 159
         height: 36
         default:
-          #backgroundColor: "rgba(200, 200, 200, 100)"
+          backgroundColor: "rgba(255, 255, 255, 200)"
           align: "right"
           intervals: 2
           fontSize: 10
