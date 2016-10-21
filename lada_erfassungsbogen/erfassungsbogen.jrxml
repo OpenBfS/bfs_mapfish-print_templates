@@ -1,96 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2016-07-22T12:32:42 -->
+<!-- 2016-08-26T08:54:09 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="erfassungsbogen" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="48e3dc13-4280-4df2-bbea-ad5fac75145b">
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json-Testdata"/>
-	<queryString language="json">
-		<![CDATA[data]]>
-	</queryString>
-	<field name="id" class="java.lang.String">
-		<fieldDescription><![CDATA[id]]></fieldDescription>
-	</field>
-	<field name="baId" class="java.lang.String">
-		<fieldDescription><![CDATA[baId]]></fieldDescription>
-	</field>
-	<field name="datenbasisId" class="java.lang.String">
-		<fieldDescription><![CDATA[datenbasisId]]></fieldDescription>
-	</field>
-	<field name="erzeugerId" class="java.lang.String">
-		<fieldDescription><![CDATA[erzeugerId]]></fieldDescription>
-	</field>
-	<field name="hauptprobenNr" class="java.lang.String">
-		<fieldDescription><![CDATA[hauptprobenNr]]></fieldDescription>
-	</field>
-	<field name="idAlt" class="java.lang.String">
-		<fieldDescription><![CDATA[idAlt]]></fieldDescription>
-	</field>
-	<field name="laborMstId" class="java.lang.String">
-		<fieldDescription><![CDATA[laborMstId]]></fieldDescription>
-	</field>
-	<field name="letzteAenderung" class="java.lang.String">
-		<fieldDescription><![CDATA[letzteAenderung]]></fieldDescription>
-	</field>
-	<field name="media" class="java.lang.String">
-		<fieldDescription><![CDATA[media]]></fieldDescription>
-	</field>
-	<field name="mediaDesk" class="java.lang.String">
-		<fieldDescription><![CDATA[mediaDesk]]></fieldDescription>
-	</field>
-	<field name="mittelungsdauer" class="java.lang.String">
-		<fieldDescription><![CDATA[mittelungsdauer]]></fieldDescription>
-	</field>
-	<field name="mplId" class="java.lang.String">
-		<fieldDescription><![CDATA[mplId]]></fieldDescription>
-	</field>
-	<field name="mprId" class="java.lang.String">
-		<fieldDescription><![CDATA[mprId]]></fieldDescription>
-	</field>
-	<field name="mstId" class="java.lang.String">
-		<fieldDescription><![CDATA[mstId]]></fieldDescription>
-	</field>
-	<field name="probeNehmerId" class="java.lang.String">
-		<fieldDescription><![CDATA[probeNehmerId]]></fieldDescription>
-	</field>
-	<field name="probeentnahmeBeginn" class="java.lang.Long">
-		<fieldDescription><![CDATA[probeentnahmeBeginn]]></fieldDescription>
-	</field>
-	<field name="probeentnahmeEnde" class="java.lang.Long">
-		<fieldDescription><![CDATA[probeentnahmeEnde]]></fieldDescription>
-	</field>
-	<field name="probenartId" class="java.lang.String">
-		<fieldDescription><![CDATA[probenartId]]></fieldDescription>
-	</field>
-	<field name="solldatumBeginn" class="java.lang.Long">
-		<fieldDescription><![CDATA[solldatumBeginn]]></fieldDescription>
-	</field>
-	<field name="solldatumEnde" class="java.lang.Long">
-		<fieldDescription><![CDATA[solldatumEnde]]></fieldDescription>
-	</field>
-	<field name="test" class="java.lang.String">
-		<fieldDescription><![CDATA[test]]></fieldDescription>
-	</field>
-	<field name="treeModified" class="java.lang.String">
-		<fieldDescription><![CDATA[treeModified]]></fieldDescription>
-	</field>
-	<field name="umwId" class="java.lang.String">
-		<fieldDescription><![CDATA[umwId]]></fieldDescription>
-	</field>
-	<field name="readonly" class="java.lang.String">
-		<fieldDescription><![CDATA[readonly]]></fieldDescription>
-	</field>
-	<field name="owner" class="java.lang.String">
-		<fieldDescription><![CDATA[owner]]></fieldDescription>
-	</field>
-	<field name="kommentare" class="java.lang.String">
-		<fieldDescription><![CDATA[kommentare]]></fieldDescription>
-	</field>
-	<field name="zusatz-werte" class="java.lang.String">
-		<fieldDescription><![CDATA[zusatz-werte]]></fieldDescription>
-	</field>
-	<field name="messungen" class="java.lang.String">
-		<fieldDescription><![CDATA[messungen]]></fieldDescription>
-	</field>
+        <field name="id" class="java.lang.String" />
+        <field name="baId" class="java.lang.String" />
+        <field name="datenbasisId" class="java.lang.String" />
+        <field name="erzeugerId" class="java.lang.String" />
+        <field name="hauptprobenNr" class="java.lang.String" />
+        <field name="idAlt" class="java.lang.String" />
+        <field name="laborMstId" class="java.lang.String" />
+        <field name="letzteAenderung" class="java.lang.String" />
+        <field name="media" class="java.lang.String" />
+        <field name="mediaDesk" class="java.lang.String" />
+        <field name="mittelungsdauer" class="java.lang.String" />
+        <field name="mplId" class="java.lang.String" />
+        <field name="mprId" class="java.lang.String" />
+        <field name="mstId" class="java.lang.String" />
+        <field name="probeNehmerId" class="java.lang.String" />
+        <field name="probeentnahmeBeginn" class="java.lang.Long" />
+        <field name="probeentnahmeEnde" class="java.lang.Long" />
+        <field name="probenartId" class="java.lang.String" />
+        <field name="solldatumBeginn" class="java.lang.Long" />
+        <field name="solldatumEnde" class="java.lang.Long" />
+        <field name="test" class="java.lang.String" />
+        <field name="treeModified" class="java.lang.String" />
+        <field name="umwId" class="java.lang.String" />
+        <field name="readonly" class="java.lang.String" />
+        <field name="owner" class="java.lang.String" />
+        <field name="kommentare" class="net.sf.jasperreports.engine.JRDataSource" />
+        <field name="zusatz-werte" class="net.sf.jasperreports.engine.JRDataSource" />
+        <field name="messungen" class="net.sf.jasperreports.engine.JRDataSource" />
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -122,6 +62,7 @@
 				</textElement>
 				<text><![CDATA[v 9.0]]></text>
 			</staticText>
+                        <!-- Barcode Does not work in Mapfish...
 			<componentElement>
 				<reportElement key="" mode="Opaque" x="380" y="0" width="173" height="30" isRemoveLineWhenBlank="true" uuid="119576ab-d5f6-4562-b2be-bb6784bf6e6e">
 					<property name="com.jaspersoft.studio.unit.barWidth" value="pixel"/>
@@ -130,6 +71,7 @@
 					<jr:codeExpression><![CDATA[$F{hauptprobenNr}]]></jr:codeExpression>
 				</jr:barbecue>
 			</componentElement>
+                        -->
 		</band>
 	</title>
 	<pageHeader>
@@ -432,7 +374,7 @@
 				<reportElement key="" positionType="Float" x="-20" y="0" width="595" height="80" uuid="bef045f8-62f4-4ca0-bc9d-014b6b61a1ab">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("kommentare")]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{kommentare}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenkommentare.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
@@ -440,10 +382,11 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("zusatz-werte")]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{zusatz-werte}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenzusatzwerte.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
+                                <!-- TODO --> 
 				<reportElement positionType="Float" x="-20" y="160" width="595" height="80" uuid="77a490ea-4a9d-4733-9251-127c6f0fa986">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -455,7 +398,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("messungen")]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{messungen}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messungen.jasper"]]></subreportExpression>
 			</subreport>
 		</band>

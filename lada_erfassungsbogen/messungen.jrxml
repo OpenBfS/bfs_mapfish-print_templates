@@ -1,58 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2016-07-22T11:47:05 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="messungen" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6eb736b-13c1-4cf8-864e-988c1d770fd4">
-	<queryString language="json">
-		<![CDATA[data.messungen]]>
-	</queryString>
-	<field name="id" class="java.lang.String">
-		<fieldDescription><![CDATA[id]]></fieldDescription>
-	</field>
-	<field name="fertig" class="java.lang.String">
-		<fieldDescription><![CDATA[fertig]]></fieldDescription>
-	</field>
-	<field name="geplant" class="java.lang.String">
-		<fieldDescription><![CDATA[geplant]]></fieldDescription>
-	</field>
-	<field name="idAlt" class="java.lang.String">
-		<fieldDescription><![CDATA[idAlt]]></fieldDescription>
-	</field>
-	<field name="letzteAenderung" class="java.lang.String">
-		<fieldDescription><![CDATA[letzteAenderung]]></fieldDescription>
-	</field>
-	<field name="messdauer" class="java.lang.String">
-		<fieldDescription><![CDATA[messdauer]]></fieldDescription>
-	</field>
-	<field name="messzeitpunkt" class="java.lang.Long">
-		<fieldDescription><![CDATA[messzeitpunkt]]></fieldDescription>
-	</field>
-	<field name="mmtId" class="java.lang.String">
-		<fieldDescription><![CDATA[mmtId]]></fieldDescription>
-	</field>
-	<field name="nebenprobenNr" class="java.lang.String">
-		<fieldDescription><![CDATA[nebenprobenNr]]></fieldDescription>
-	</field>
-	<field name="probeId" class="java.lang.String">
-		<fieldDescription><![CDATA[probeId]]></fieldDescription>
-	</field>
-	<field name="status" class="java.lang.String">
-		<fieldDescription><![CDATA[status]]></fieldDescription>
-	</field>
-	<field name="treeModified" class="java.lang.String">
-		<fieldDescription><![CDATA[treeModified]]></fieldDescription>
-	</field>
-	<field name="statusEdit" class="java.lang.String">
-		<fieldDescription><![CDATA[statusEdit]]></fieldDescription>
-	</field>
-	<field name="parentModified" class="java.lang.String">
-		<fieldDescription><![CDATA[parentModified]]></fieldDescription>
-	</field>
-	<field name="owner" class="java.lang.String">
-		<fieldDescription><![CDATA[owner]]></fieldDescription>
-	</field>
-	<field name="readonly" class="java.lang.String">
-		<fieldDescription><![CDATA[readonly]]></fieldDescription>
-	</field>
+<!-- 2016-08-26T08:53:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="messungen" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6eb736b-13c1-4cf8-864e-988c1d770fd4">
+        <field name="id" class="java.lang.String" />
+        <field name="fertig" class="java.lang.String" />
+        <field name="geplant" class="java.lang.String" />
+        <field name="idAlt" class="java.lang.String" />
+        <field name="letzteAenderung" class="java.lang.String" />
+        <field name="messdauer" class="java.lang.String" />
+        <field name="messzeitpunkt" class="java.lang.Long" />
+        <field name="mmtId" class="java.lang.String" />
+        <field name="nebenprobenNr" class="java.lang.String" />
+        <field name="probeId" class="java.lang.String" />
+        <field name="status" class="java.lang.String" />
+        <field name="treeModified" class="java.lang.String" />
+        <field name="statusEdit" class="java.lang.String" />
+        <field name="parentModified" class="java.lang.String" />
+        <field name="owner" class="java.lang.String" />
+        <field name="readonly" class="java.lang.String" />
+        <field name="statusProtokoll" class="net.sf.jasperreports.engine.JRDataSource" />
+        <field name="messwerte" class="net.sf.jasperreports.engine.JRDataSource" />
+        <field name="kommentare" class="net.sf.jasperreports.engine.JRDataSource" />
 	<group name="record" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{REPORT_COUNT}]]></groupExpression>
 	</group>
@@ -144,27 +112,27 @@
 				<reportElement positionType="Float" x="-20" y="50" width="595" height="80" uuid="415fdc8d-4067-4766-91d8-35ca74670321">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("messwerte")]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{messwerte}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messwerte.jasper"]]></subreportExpression>
 			</subreport>
 			<staticText>
-				<reportElement x="0" y="0" width="130" height="20" uuid="beabc139-7164-4e69-85e9-585fdf3a94af">
+				<reportElement x="0" y="0" width="160" height="20" uuid="beabc139-7164-4e69-85e9-585fdf3a94af">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Bottom" markup="none">
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nebenprobennummer]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="130" y="0" width="145" height="20" uuid="b67e5760-bc01-4c9c-8d74-d7258cebb439">
+				<reportElement x="160" y="0" width="115" height="20" uuid="b67e5760-bc01-4c9c-8d74-d7258cebb439">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<box>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement verticalAlignment="Bottom">
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nebenprobenNr}]]></textFieldExpression>
 			</textField>
@@ -173,7 +141,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("statusProtokoll")]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{statusProtokoll}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["statusprotokoll.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
@@ -181,7 +149,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("kommentare")]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{kommentare}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messungskommentare.jasper"]]></subreportExpression>
 			</subreport>
 		</band>

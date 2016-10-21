@@ -1,0 +1,93 @@
+
+throwErrorOnExtraParameters: true                                                                                                                                                                                                    
+#===========================================================================
+# Template for full Erfassungsbogen
+
+templates:
+  A4 portrait: !template
+    reportTemplate: erfassungsbogen.jrxml
+    attributes:
+        id: !string
+          default: ""
+        baId: !string
+          default: ""
+        datenbasisId: !string
+          default: ""
+        erzeugerId: !string
+          default: ""
+        hauptprobenNr: !string
+          default: ""
+        idAlt: !string
+          default: ""
+        laborMstId: !string
+          default: ""
+        letzteAenderung: !integer
+          default: 0
+        media: !string
+          default: ""
+        mediaDesk: !string
+          default: ""
+        probeentnahmeBeginn: !integer
+          default: 0
+        probeentnahmeEnde: !integer
+          default: 0
+        solldatumBeginn: !integer
+          default: 0
+        solldatumEnde: !integer
+          default: 0
+        zusatz-werte: !datasource
+          attributes:
+            id: !integer {}
+        kommentare: !datasource
+          attributes:
+            id: !integer {}
+        messungen: !datasource
+          attributes:
+            id: !integer {}
+            statusProtokoll: !datasource
+              attributes:
+                id: !integer {}
+            kommentare: !datasource
+              attributes:
+                id: !integer {}
+            messwerte: !datasource
+              attributes:
+                id: !integer {}
+
+    processors:
+    - !reportBuilder
+      directory: '.'
+    - !createDataSource
+      inputMapper: {kommentare: datasource}
+      outputMapper: {jrDataSource: kommentare}
+      processors:
+      - !reportBuilder
+        directory: '.'
+    - !createDataSource
+      inputMapper: {zusatz-werte: datasource}
+      outputMapper: {jrDataSource: zusatz-werte}
+      processors:
+      - !reportBuilder
+        directory: '.'
+    - !createDataSource
+      inputMapper: {messungen: datasource}
+      outputMapper: {jrDataSource: messungen}
+      processors:
+      - !createDataSource
+        inputMapper: {kommentare: datasource}
+        outputMapper: {jrDataSource: kommentare}
+        processors:
+        - !reportBuilder
+          directory: '.'
+      - !createDataSource
+        inputMapper: {statusProtokoll: datasource}
+        outputMapper: {jrDataSource: statusProtokoll}
+        processors:
+        - !reportBuilder
+          directory: '.'
+      - !createDataSource
+        inputMapper: {messwerte: datasource}
+        outputMapper: {jrDataSource: messwerte}
+        processors:
+        - !reportBuilder
+          directory: '.'
