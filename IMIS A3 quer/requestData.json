@@ -1,6 +1,7 @@
 {
-  "layout": "rodosTest",
+  "layout": "imis_A3",
   "outputFormat": "pdf",
+  "outputFilename": "imis_A3_${yyyyMMdd}",
   "attributes": {
     "map_attribution": "© Bundesamt für Strahlenschutz",
     "map": {
@@ -29,7 +30,7 @@
       ]
     },
 
-    "is_exercise": "true",
+    "is_exercise": "Ja",
     "title": "Ein Ortsdosisleistungstest mit Bundeswasserstraßen<br/><b>KOALA-Druckdienst</b>",
 
     "legend": {
@@ -44,11 +45,9 @@
          ]
     },
 
-    "description": "<b>Datenquelle: TEST</b><br/>Freisetzungsort: Neuer Graben 17, Osnabrück<br/>Ereignis: Übungsstrahler im Büro der Intevation GmbH<br/>Datenbasis: willkürlich",
-    "comment": "Hier könnte auch ein sinnvoller, <i>schön</i> formatierter Kommentar stehen.",
-    "impressum": "<b>Bundesamt für Strahlenschutz<br/>(im Auftrag des BMU)</b><br/><br/>RODOS-Zentrale<br/>Rechnung von: 2015-02-25 11:22 MET<br/>Lauf-Kennung: intevation0001<br/>User-ID: test",
-
+    "description": "<b>Deutschland</b><br/><br/>26.09.2015 11:00 (ges. Zeit)<br/><br/>",
+    "comment": "Datenquelle: DWD<br/>§2 - Routinemessprogramm",
+    "impressum": "<b>Bundesamt für Strahlenschutz<br/>(im Auftrag des BMUB)</b><br/><br/>Status: 1/1/1/ Freigabe BMUB<br/>Vorgang: 1616067359, 1616067376<br/>28.09.2015 15:22 (ges. Zeit)",
     "doc_creator": "automatisch"
-
   }
 }

@@ -2,28 +2,29 @@
 templates:
   #===========================================================================
   # template for map only
-  imis_A3_map: !template
-    reportTemplate: imis_A3_map.jrxml
+  imis_A4_map: !template
+    reportTemplate: imis_A4_map.jrxml
     attributes:
       map: &map !map
         maxDpi: 400
-        width: 769
-        height: 799
+        width: 518
+        height: 534
       northArrow: &northArrow !northArrow
         size: 45
         default:
           graphic: "file://NorthArrow_10.svg"
-          backgroundColor: "rgba(0, 0, 0, 0)"
+          backgroundColor: "rgba(255, 255, 255, 200)"
       scalebar: &scalebar !scalebar
         width: 159
-        height: 36
+        height: 22
         default:
-          #backgroundColor: "rgba(200, 200, 200, 100)"
+          backgroundColor: "rgba(255, 255, 255, 200)"
           align: "right"
           intervals: 2
           fontSize: 10
           renderAsSvg: true
-      map_attribution: &map_attribution !string {}
+      map_attribution: &map_attribution !string
+        default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory
@@ -34,20 +35,22 @@ templates:
 
   #===========================================================================
   # template for legend only
-  imis_A3_legend: !template
-    reportTemplate: imis_A3_legend.jrxml
+  imis_A4_legend: !template
+    reportTemplate: imis_A4_legend.jrxml
     attributes:
       is_exercise: &is_exercise !string
         default: "true"
-      title: &title !string {}
+      title: &title !string
+        default: "<div><b>KOALA Druckdienst</b></div>"
 
       legend: &legend !legend {}
 
       description: &description !string
-        default: ""
+        default: "<div><b>Datenquelle: RODOS</b><br>Freisetzungsort: &lt;...BITTE EINTRAGEN...&gt;<br>Ereignis: &lt;...BITTE EINTRAGEN...&gt;</div>"
       comment: &comment !string
-        default: ""
-      impressum: &impressum !string {}
+        default: "<div>&lt;..Kommentar: ...&gt; </div>"
+      impressum: &impressum !string
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br><br>RODOS-Zentrale<br>Rechnung vom: &lt;...BITTE EINTRAGEN...&gt;<br>RODOS-Zentrale<br>Lauf Kennung: &lt;...BITTE EINTRAGEN...&gt;<br></div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory
@@ -57,18 +60,18 @@ templates:
 
   #===========================================================================
   # template for document including map and legend
-  imis_A3: !template
-    reportTemplate: imis_A3.jrxml
+  imis_A4: !template
+    reportTemplate: imis_A4.jrxml
     attributes:
       map_template: !string
-        default: "imis_A3_map.jasper"
+        default: "imis_A4_map.jasper"
       map: *map
       northArrow: *northArrow
       scalebar: *scalebar
       map_attribution: *map_attribution
 
       legend_template: !string
-        default: "imis_A3_legend.jasper"
+        default: "imis_A4_legend.jasper"
       is_exercise: *is_exercise
       title: *title
       legend: *legend

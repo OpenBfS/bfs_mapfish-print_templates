@@ -32,6 +32,8 @@
                         </subreport>
 			<staticText>
 				<reportElement mode="Opaque" x="-9" y="1" width="379" height="39" forecolor="#FFFFFF" backcolor="#808080" uuid="27f509d1-cef1-45b8-9021-9e6306924c79"/>
+                                        <printWhenExpression><![CDATA[$P{is_exercise}.equals(Boolean.TRUE?"Ja":"Nein")]]></printWhenExpression>
+                                </reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
 					<font size="24" isBold="true"/>
 				</textElement>
