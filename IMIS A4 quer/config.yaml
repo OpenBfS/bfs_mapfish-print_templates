@@ -39,7 +39,7 @@ templates:
     reportTemplate: imis_A4_legend.jrxml
     attributes:
       is_exercise: &is_exercise !string
-        default: "true"
+        default: "Ja"
       title: &title !string
         default: "<div><b>KOALA Druckdienst</b></div>"
 
