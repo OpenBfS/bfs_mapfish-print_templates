@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
 <!-- 2016-07-22T11:41:12 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="probekommentare" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4793b44e-9d69-49f3-8aef-a1bc4917f9d3">
-	<field name="datum" class="java.lang.Long">
-		<fieldDescription><![CDATA[datum]]></fieldDescription>
-	</field>
-	<field name="mstId" class="java.lang.String">
-		<fieldDescription><![CDATA[mstId]]></fieldDescription>
-	</field>
-	<field name="text" class="java.lang.String">
-		<fieldDescription><![CDATA[text]]></fieldDescription>
-	</field>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="probekommentare" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4793b44e-9d69-49f3-8aef-a1bc4917f9d3">
+	<field name="datum" class="java.lang.String" />
+	<field name="mstId" class="java.lang.String" />
+	<field name="text" class="java.lang.String" />
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -79,7 +73,7 @@
 				<textElement>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date($F{datum})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new Date(Long.valueOf($F{datum}))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="100" y="0" width="100" height="20" uuid="62cf7f3e-9215-4230-94e2-788963b18955"/>

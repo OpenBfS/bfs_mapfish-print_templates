@@ -1,5 +1,5 @@
 
-throwErrorOnExtraParameters: true                                                                                                                                                                                                    
+throwErrorOnExtraParameters: false
 #===========================================================================
 # Template for full Erfassungsbogen
 
@@ -17,55 +17,75 @@ templates:
           default: ""
         hauptprobenNr: !string
           default: ""
+        umwId: !string
+          default: ""
+        mplId: !string
+          default: ""
+        probenartId: !string
+          default: ""
+        mstId: !string
+          default: ""
         idAlt: !string
           default: ""
         laborMstId: !string
           default: ""
-        letzteAenderung: !integer
+        letzteAenderung: !string
           default: 0
         media: !string
           default: ""
         mediaDesk: !string
           default: ""
-        probeentnahmeBeginn: !integer
+        probeentnahmeBeginn: !string
           default: 0
-        probeentnahmeEnde: !integer
+        probeentnahmeEnde: !string
           default: 0
-        solldatumBeginn: !integer
+        solldatumBeginn: !string
           default: 0
-        solldatumEnde: !integer
+        solldatumEnde: !string
           default: 0
         zusatz-werte: !datasource
           attributes:
-            id: !integer {}
+            id: !integer
+              default: 0
         kommentare: !datasource
           attributes:
-            id: !integer {}
+            datum: !string
+              default: ""
+            mstId: !string
+              default: ""
+            text: !string
+              default: ""
+            id: !integer
+              default: 0
         messungen: !datasource
           attributes:
-            id: !integer {}
+            id: !integer
+              default: 0
             statusProtokoll: !datasource
               attributes:
-                id: !integer {}
+                id: !integer
+                  default: 0
             kommentare: !datasource
               attributes:
-                id: !integer {}
+                id: !integer
+                  default: 0
             messwerte: !datasource
               attributes:
-                id: !integer {}
+                id: !integer
+                  default: 0
 
     processors:
     - !reportBuilder
       directory: '.'
     - !createDataSource
-      inputMapper: {kommentare: datasource}
-      outputMapper: {jrDataSource: kommentare}
+      inputMapper: {zusatz-werte: datasource}
+      outputMapper: {jrDataSource: zusatz-werte}
       processors:
       - !reportBuilder
         directory: '.'
     - !createDataSource
-      inputMapper: {zusatz-werte: datasource}
-      outputMapper: {jrDataSource: zusatz-werte}
+      inputMapper: {kommentare: datasource}
+      outputMapper: {jrDataSource: kommentare}
       processors:
       - !reportBuilder
         directory: '.'

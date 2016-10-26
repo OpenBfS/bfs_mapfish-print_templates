@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2016-08-26T08:54:09 -->
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-10-26T13:53:02 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="erfassungsbogen" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="48e3dc13-4280-4df2-bbea-ad5fac75145b">
-	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
-        <field name="id" class="java.lang.String" />
-        <field name="baId" class="java.lang.String" />
-        <field name="datenbasisId" class="java.lang.String" />
-        <field name="erzeugerId" class="java.lang.String" />
-        <field name="hauptprobenNr" class="java.lang.String" />
-        <field name="idAlt" class="java.lang.String" />
-        <field name="laborMstId" class="java.lang.String" />
-        <field name="letzteAenderung" class="java.lang.String" />
-        <field name="media" class="java.lang.String" />
-        <field name="mediaDesk" class="java.lang.String" />
-        <field name="mittelungsdauer" class="java.lang.String" />
-        <field name="mplId" class="java.lang.String" />
-        <field name="mprId" class="java.lang.String" />
-        <field name="mstId" class="java.lang.String" />
-        <field name="probeNehmerId" class="java.lang.String" />
-        <field name="probeentnahmeBeginn" class="java.lang.Long" />
-        <field name="probeentnahmeEnde" class="java.lang.Long" />
-        <field name="probenartId" class="java.lang.String" />
-        <field name="solldatumBeginn" class="java.lang.Long" />
-        <field name="solldatumEnde" class="java.lang.Long" />
-        <field name="test" class="java.lang.String" />
-        <field name="treeModified" class="java.lang.String" />
-        <field name="umwId" class="java.lang.String" />
-        <field name="readonly" class="java.lang.String" />
-        <field name="owner" class="java.lang.String" />
-        <field name="kommentare" class="net.sf.jasperreports.engine.JRDataSource" />
-        <field name="zusatz-werte" class="net.sf.jasperreports.engine.JRDataSource" />
-        <field name="messungen" class="net.sf.jasperreports.engine.JRDataSource" />
+	<parameter name="hauptprobenNr" class="java.lang.String" />
+	<parameter name="id" class="java.lang.String" />
+	<parameter name="baId" class="java.lang.String" />
+	<parameter name="datenbasisId" class="java.lang.String" />
+	<parameter name="erzeugerId" class="java.lang.String" />
+	<parameter name="idAlt" class="java.lang.String" />
+	<parameter name="laborMstId" class="java.lang.String" />
+	<parameter name="letzteAenderung" class="java.lang.String" />
+	<parameter name="media" class="java.lang.String" />
+	<parameter name="mediaDesk" class="java.lang.String" />
+	<!--parameter name="mittelungsdauer" class="java.lang.String" /-->
+	<parameter name="mplId" class="java.lang.String" />
+	<!--parameter name="mprId" class="java.lang.String" /-->
+	<parameter name="mstId" class="java.lang.String" />
+	<!--parameter name="probeNehmerId" class="java.lang.String" /-->
+	<parameter name="probeentnahmeBeginn" class="java.lang.String" />
+	<parameter name="probeentnahmeEnde" class="java.lang.String" />
+	<parameter name="probenartId" class="java.lang.String" />
+	<parameter name="solldatumBeginn" class="java.lang.String" />
+	<parameter name="solldatumEnde" class="java.lang.String" />
+	<!--parameter name="test" class="java.lang.String" /-->
+	<!--parameter name="treeModified" class="java.lang.String" /-->
+	<parameter name="umwId" class="java.lang.String" />
+	<!--parameter name="readonly" class="java.lang.String" /-->
+	<!--parameter name="owner" class="java.lang.String" /-->
+        <parameter name="kommentare" class="net.sf.jasperreports.engine.JRDataSource" />
+	<parameter name="messungen" class="net.sf.jasperreports.engine.JRDataSource" />
+	<parameter name="zusatz-werte" class="net.sf.jasperreports.engine.JRDataSource" />
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -62,16 +61,6 @@
 				</textElement>
 				<text><![CDATA[v 9.0]]></text>
 			</staticText>
-                        <!-- Barcode Does not work in Mapfish...
-			<componentElement>
-				<reportElement key="" mode="Opaque" x="380" y="0" width="173" height="30" isRemoveLineWhenBlank="true" uuid="119576ab-d5f6-4562-b2be-bb6784bf6e6e">
-					<property name="com.jaspersoft.studio.unit.barWidth" value="pixel"/>
-				</reportElement>
-				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39" drawText="false" checksumRequired="false" evaluationTime="Report">
-					<jr:codeExpression><![CDATA[$F{hauptprobenNr}]]></jr:codeExpression>
-				</jr:barbecue>
-			</componentElement>
-                        -->
 		</band>
 	</title>
 	<pageHeader>
@@ -85,7 +74,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Bottom" markup="none">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{hauptprobenNr}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{hauptprobenNr}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="280" y="0" width="130" height="20" uuid="02e415ed-b557-4471-96b2-a87a740cea51">
@@ -109,7 +98,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{laborMstId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{laborMstId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="20" width="60" height="20" uuid="6d78056b-d8b2-4101-9d34-fb9997f6609a"/>
@@ -126,7 +115,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{mstId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{mstId}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="45" width="555" height="1" uuid="bbb37163-26da-40ed-ace2-dabcb6115c0b">
@@ -149,7 +138,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date($F{solldatumBeginn})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{solldatumBeginn}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="90" width="140" height="20" uuid="2da197cb-491a-4324-9ba7-e6836305dda1">
@@ -168,7 +157,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date($F{solldatumEnde})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{solldatumEnde}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="260" y="90" width="20" height="20" uuid="4978e7ce-64fa-47d1-88fc-66d98de648c8"/>
@@ -185,7 +174,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{probenartId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{probenartId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="50" width="70" height="20" uuid="0a327073-5841-4ad0-9649-bae70ede0a89">
@@ -213,7 +202,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{baId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{baId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="0" width="70" height="20" uuid="83303df3-3f15-40b3-a0c8-bb72e7f58cfe"/>
@@ -230,7 +219,7 @@
 				<textElement verticalAlignment="Bottom" markup="none">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{mplId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{mplId}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="200" y="50" width="50" height="20" uuid="5c12ab3e-9894-423b-bc50-8be76a194b5b"/>
@@ -242,7 +231,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{datenbasisId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{datenbasisId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="130" y="50" width="70" height="20" uuid="d5d5b402-0535-40d8-9ed3-4947e71a2872"/>
@@ -264,7 +253,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{mediaDesk}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{mediaDesk}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="152" width="70" height="20" uuid="7cbff6eb-7183-4296-8d7b-accebbd3b982"/>
@@ -279,7 +268,7 @@
 				<textElement verticalAlignment="Bottom" markup="none">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{umwId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{umwId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="289" y="150" width="90" height="20" uuid="8c0588d3-c0ce-440e-acb4-1ed7a4d947c1"/>
@@ -303,7 +292,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date($F{probeentnahmeBeginn})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{probeentnahmeBeginn}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="110" width="140" height="20" uuid="46fae886-1046-4820-930f-8986da675242">
@@ -322,7 +311,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date($F{probeentnahmeEnde})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{probeentnahmeEnde}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="260" y="110" width="20" height="20" uuid="2551cdd5-1151-448d-9444-1f73904f7ce4"/>
@@ -374,7 +363,7 @@
 				<reportElement key="" positionType="Float" x="-20" y="0" width="595" height="80" uuid="bef045f8-62f4-4ca0-bc9d-014b6b61a1ab">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{kommentare}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$P{kommentare}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenkommentare.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
@@ -382,11 +371,10 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{zusatz-werte}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$P{zusatz-werte}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenzusatzwerte.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
-                                <!-- TODO --> 
 				<reportElement positionType="Float" x="-20" y="160" width="595" height="80" uuid="77a490ea-4a9d-4733-9251-127c6f0fa986">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -398,7 +386,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{messungen}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$P{messungen}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messungen.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
