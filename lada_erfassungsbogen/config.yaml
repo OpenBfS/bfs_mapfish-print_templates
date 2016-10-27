@@ -59,20 +59,61 @@ templates:
               default: 0
         messungen: !datasource
           attributes:
-            id: !integer
-              default: 0
+            fertig: !string
+              default: ""
+            geplant: !string
+              default: ""
+            idAlt: !string
+              default: ""
+            letzteAenderung: !string
+              default: ""
+            messdauer: !string
+              default: ""
+            messzeitpunkt: !string
+              default: ""
+            mmtId: !string
+              default: ""
+            nebenprobenNr: !string
+              default: ""
+            probeId: !string
+              default: ""
+            status: !string
+              default: ""
             statusProtokoll: !datasource
               attributes:
-                id: !integer
-                  default: 0
+                datum: !string
+                  default: ""
+                mstId: !string
+                  default: ""
+                statusStufe: !string
+                  default: ""
+                statusWert: !string
+                  default: ""
+                text: !string
+                  default: ""
             kommentare: !datasource
               attributes:
                 id: !integer
                   default: 0
             messwerte: !datasource
               attributes:
-                id: !integer
-                  default: 0
+                grenzwertueberschreitung: !string
+                  default: ""
+                letzeAenderung: !string
+                  default: ""
+                mehId: !string
+                  default: ""
+                messfehler: !string
+                  default: ""
+                messgroesseId: !string
+                  default: ""
+                messwert: !string
+                  default: ""
+                messwertNwg: !string
+                  default: ""
+                nwgZuMesswert: !string
+                  default: ""
+
 
     processors:
     - !reportBuilder

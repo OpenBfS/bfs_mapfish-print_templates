@@ -138,7 +138,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{solldatumBeginn}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[!$P{solldatumBeginn}.equals("") ? new Date(Long.valueOf($P{solldatumBeginn})) : null ]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="90" width="140" height="20" uuid="2da197cb-491a-4324-9ba7-e6836305dda1">
@@ -157,7 +157,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{solldatumEnde}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[!$P{solldatumEnde}.equals("") ? new Date(Long.valueOf($P{solldatumEnde})) : null ]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="260" y="90" width="20" height="20" uuid="4978e7ce-64fa-47d1-88fc-66d98de648c8"/>
@@ -292,7 +292,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{probeentnahmeBeginn}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[!$P{probeentnahmeBeginn}.equals("") ? new Date(Long.valueOf($P{probeentnahmeBeginn})) : null ]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="110" width="140" height="20" uuid="46fae886-1046-4820-930f-8986da675242">
@@ -311,7 +311,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Date(Long.valueOf($P{probeentnahmeEnde}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[!$P{probeentnahmeEnde}.equals("") ? new Date(Long.valueOf($P{probeentnahmeEnde})) : null ]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="260" y="110" width="20" height="20" uuid="2551cdd5-1151-448d-9444-1f73904f7ce4"/>

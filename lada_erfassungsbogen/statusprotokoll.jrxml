@@ -1,34 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
 <!-- 2016-07-22T11:15:51 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="statusprotokoll" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a8736ae-f744-4745-9fb2-5ed002dc8d7e">
-	<field name="id" class="java.lang.String">
-		<fieldDescription><![CDATA[id]]></fieldDescription>
-	</field>
-	<field name="datum" class="java.lang.Long">
-		<fieldDescription><![CDATA[datum]]></fieldDescription>
-	</field>
-	<field name="mstId" class="java.lang.String">
-		<fieldDescription><![CDATA[mstId]]></fieldDescription>
-	</field>
-	<field name="messungsId" class="java.lang.String">
-		<fieldDescription><![CDATA[messungsId]]></fieldDescription>
-	</field>
-	<field name="statusWert" class="java.lang.String">
-		<fieldDescription><![CDATA[statusWert]]></fieldDescription>
-	</field>
-	<field name="statusStufe" class="java.lang.String">
-		<fieldDescription><![CDATA[statusStufe]]></fieldDescription>
-	</field>
-	<field name="text" class="java.lang.String">
-		<fieldDescription><![CDATA[text]]></fieldDescription>
-	</field>
-	<field name="owner" class="java.lang.String">
-		<fieldDescription><![CDATA[owner]]></fieldDescription>
-	</field>
-	<field name="readonly" class="java.lang.String">
-		<fieldDescription><![CDATA[readonly]]></fieldDescription>
-	</field>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="statusprotokoll" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a8736ae-f744-4745-9fb2-5ed002dc8d7e">
+	<field name="datum" class="java.lang.String" />
+	<field name="mstId" class="java.lang.String" />
+	<field name="statusWert" class="java.lang.String" />
+	<field name="statusStufe" class="java.lang.String" />
+	<field name="text" class="java.lang.String" />
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -111,31 +89,31 @@
 	<detail>
 		<band height="20" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-			<textField pattern="dd.MM.yyyy">
+			<textField pattern="dd.MM.yyyy" isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="80" height="20" uuid="dd203ce3-90b5-46d5-a376-f0926c4b657e">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Bottom"/>
-				<textFieldExpression><![CDATA[new Date($F{datum})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[!$F{datum}.equals("") ? new Date(Long.valueOf($F{datum})) : null]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="100" height="20" uuid="c99ea7eb-4281-4dc4-81ed-6d604c8938f9">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{statusWert}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="180" y="0" width="70" height="20" uuid="16d638c3-4b73-41a6-838d-e8e3bd2bc878"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{statusStufe}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="250" y="0" width="70" height="20" uuid="ea83b82d-e7df-4cae-be52-e8f2f13f4e8e"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{mstId}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="320" y="0" width="234" height="20" uuid="6e34617a-3e96-4559-9770-02f659dfc263"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
