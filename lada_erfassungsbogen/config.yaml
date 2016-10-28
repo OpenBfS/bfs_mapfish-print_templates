@@ -43,7 +43,7 @@ templates:
           default: 0
         solldatumEnde: !string
           default: 0
-        zusatz-werte: !datasource
+        zusatzwerte: !datasource
           attributes:
             id: !integer
               default: 0
@@ -79,7 +79,7 @@ templates:
               default: ""
             status: !string
               default: ""
-            statusProtokoll: !datasource
+            statusprotokoll: !datasource
               attributes:
                 datum: !string
                   default: ""
@@ -119,8 +119,8 @@ templates:
     - !reportBuilder
       directory: '.'
     - !createDataSource
-      inputMapper: {zusatz-werte: datasource}
-      outputMapper: {jrDataSource: zusatz-werte}
+      inputMapper: {zusatzwerte: datasource}
+      outputMapper: {jrDataSource: zusatzwerte}
       processors:
       - !reportBuilder
         directory: '.'
@@ -141,8 +141,8 @@ templates:
         - !reportBuilder
           directory: '.'
       - !createDataSource
-        inputMapper: {statusProtokoll: datasource}
-        outputMapper: {jrDataSource: statusProtokoll}
+        inputMapper: {statusprotokoll: datasource}
+        outputMapper: {jrDataSource: statusprotokoll}
         processors:
         - !reportBuilder
           directory: '.'

@@ -29,7 +29,7 @@
 	<!--parameter name="owner" class="java.lang.String" /-->
         <parameter name="kommentare" class="net.sf.jasperreports.engine.JRDataSource" />
 	<parameter name="messungen" class="net.sf.jasperreports.engine.JRDataSource" />
-	<parameter name="zusatz-werte" class="net.sf.jasperreports.engine.JRDataSource" />
+	<parameter name="zusatzwerte" class="net.sf.jasperreports.engine.JRDataSource" />
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -371,7 +371,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$P{zusatz-werte}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$P{zusatzwerte}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenzusatzwerte.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
