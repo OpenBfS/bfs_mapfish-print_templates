@@ -5,135 +5,141 @@ throwErrorOnExtraParameters: false
 
 templates:
   A4 portrait: !template
-    reportTemplate: erfassungsbogen.jrxml
+    reportTemplate: erfassungsbogen_mantel.jrxml
     attributes:
-        id: !string
-          default: ""
-        baId: !string
-          default: ""
-        datenbasisId: !string
-          default: ""
-        erzeugerId: !string
-          default: ""
-        hauptprobenNr: !string
-          default: ""
-        umwId: !string
-          default: ""
-        mplId: !string
-          default: ""
-        probenartId: !string
-          default: ""
-        mstId: !string
-          default: ""
-        idAlt: !string
-          default: ""
-        laborMstId: !string
-          default: ""
-        letzteAenderung: !string
-          default: 0
-        media: !string
-          default: ""
-        mediaDesk: !string
-          default: ""
-        probeentnahmeBeginn: !string
-          default: 0
-        probeentnahmeEnde: !string
-          default: 0
-        solldatumBeginn: !string
-          default: 0
-        solldatumEnde: !string
-          default: 0
-        zusatzwerte: !datasource
-          attributes:
-            id: !integer
-              default: 0
-        kommentare: !datasource
-          attributes:
-            datum: !string
-              default: ""
-            mstId: !string
-              default: ""
-            text: !string
-              default: ""
-            id: !integer
-              default: 0
-        messungen: !datasource
-          attributes:
-            fertig: !string
-              default: ""
-            geplant: !string
-              default: ""
-            idAlt: !string
-              default: ""
-            letzteAenderung: !string
-              default: ""
-            messdauer: !string
-              default: ""
-            messzeitpunkt: !string
-              default: ""
-            mmtId: !string
-              default: ""
-            nebenprobenNr: !string
-              default: ""
-            probeId: !string
-              default: ""
-            status: !string
-              default: ""
-            statusprotokoll: !datasource
-              attributes:
-                datum: !string
-                  default: ""
-                mstId: !string
-                  default: ""
-                statusStufe: !string
-                  default: ""
-                statusWert: !string
-                  default: ""
-                text: !string
-                  default: ""
-            kommentare: !datasource
-              attributes:
-                id: !integer
-                  default: 0
-            messwerte: !datasource
-              attributes:
-                grenzwertueberschreitung: !string
-                  default: ""
-                letzeAenderung: !string
-                  default: ""
-                mehId: !string
-                  default: ""
-                messfehler: !string
-                  default: ""
-                messgroesseId: !string
-                  default: ""
-                messwert: !string
-                  default: ""
-                messwertNwg: !string
-                  default: ""
-                nwgZuMesswert: !string
-                  default: ""
+      proben: !datasource
+        attributes:
+          id: !string
+            default: ""
+          baId: !string
+            default: ""
+          datenbasisId: !string
+            default: ""
+          erzeugerId: !string
+            default: ""
+          hauptprobenNr: !string
+            default: ""
+          umwId: !string
+            default: ""
+          mplId: !string
+            default: ""
+          probenartId: !string
+            default: ""
+          mstId: !string
+            default: ""
+          idAlt: !string
+            default: ""
+          laborMstId: !string
+            default: ""
+          letzteAenderung: !string
+            default: 0
+          media: !string
+            default: ""
+          mediaDesk: !string
+            default: ""
+          ortszuordnung: !datasource
+            attributes:
+              ortszuordnungTyp: !string
+                default: ""
+          probeentnahmeBeginn: !string
+            default: 0
+          probeentnahmeEnde: !string
+            default: 0
+          solldatumBeginn: !string
+            default: 0
+          solldatumEnde: !string
+            default: 0
+          zusatzwerte: !datasource
+            attributes:
+              id: !integer
+                default: 0
+          kommentare: !datasource
+            attributes:
+              datum: !string
+                default: ""
+              mstId: !string
+                default: ""
+              text: !string
+                default: ""
+              id: !integer
+                default: 0
+          messungen: !datasource
+            attributes:
+              fertig: !string
+                default: ""
+              geplant: !string
+                default: ""
+              idAlt: !string
+                default: ""
+              letzteAenderung: !string
+                default: ""
+              messdauer: !string
+                default: ""
+              messzeitpunkt: !string
+                default: ""
+              mmtId: !string
+                default: ""
+              nebenprobenNr: !string
+                default: ""
+              probeId: !string
+                default: ""
+              status: !string
+                default: ""
+              statusprotokoll: !datasource
+                attributes:
+                  datum: !string
+                    default: ""
+                  mstId: !string
+                    default: ""
+                  statusStufe: !string
+                    default: ""
+                  statusWert: !string
+                    default: ""
+                  text: !string
+                    default: ""
+              kommentare: !datasource
+                attributes:
+                  id: !integer
+                    default: 0
+              messwerte: !datasource
+                attributes:
+                  grenzwertueberschreitung: !string
+                    default: ""
+                  letzeAenderung: !string
+                    default: ""
+                  mehId: !string
+                    default: ""
+                  messfehler: !string
+                    default: ""
+                  messgroesseId: !string
+                    default: ""
+                  messwert: !string
+                    default: ""
+                  messwertNwg: !string
+                    default: ""
+                  nwgZuMesswert: !string
+                    default: ""
 
 
     processors:
     - !reportBuilder
       directory: '.'
     - !createDataSource
-      inputMapper: {zusatzwerte: datasource}
-      outputMapper: {jrDataSource: zusatzwerte}
+      inputMapper: {proben: datasource}
+      outputMapper: {jrDataSource: proben}
       processors:
-      - !reportBuilder
-        directory: '.'
-    - !createDataSource
-      inputMapper: {kommentare: datasource}
-      outputMapper: {jrDataSource: kommentare}
-      processors:
-      - !reportBuilder
-        directory: '.'
-    - !createDataSource
-      inputMapper: {messungen: datasource}
-      outputMapper: {jrDataSource: messungen}
-      processors:
+      - !createDataSource
+        inputMapper: {zusatzwerte: datasource}
+        outputMapper: {jrDataSource: zusatzwerte}
+        processors:
+        - !reportBuilder
+          directory: '.'
+      - !createDataSource
+        inputMapper: {ortszuordnung: datasource}
+        outputMapper: {jrDataSource: ortszuordnung}
+        processors:
+        - !reportBuilder
+          directory: '.'
       - !createDataSource
         inputMapper: {kommentare: datasource}
         outputMapper: {jrDataSource: kommentare}
@@ -141,14 +147,24 @@ templates:
         - !reportBuilder
           directory: '.'
       - !createDataSource
-        inputMapper: {statusprotokoll: datasource}
-        outputMapper: {jrDataSource: statusprotokoll}
+        inputMapper: {messungen: datasource}
+        outputMapper: {jrDataSource: messungen}
         processors:
-        - !reportBuilder
-          directory: '.'
-      - !createDataSource
-        inputMapper: {messwerte: datasource}
-        outputMapper: {jrDataSource: messwerte}
-        processors:
-        - !reportBuilder
-          directory: '.'
+        - !createDataSource
+          inputMapper: {kommentare: datasource}
+          outputMapper: {jrDataSource: kommentare}
+          processors:
+          - !reportBuilder
+            directory: '.'
+        - !createDataSource
+          inputMapper: {statusprotokoll: datasource}
+          outputMapper: {jrDataSource: statusprotokoll}
+          processors:
+          - !reportBuilder
+            directory: '.'
+        - !createDataSource
+          inputMapper: {messwerte: datasource}
+          outputMapper: {jrDataSource: messwerte}
+          processors:
+          - !reportBuilder
+            directory: '.'
