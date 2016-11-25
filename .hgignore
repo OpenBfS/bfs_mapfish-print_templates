@@ -1,4 +1,0 @@
-syntax: regexp
-.metadata/.*      # Jaspersoft Studio Workspace
-MyReports/.*      # Jaspersoft Studio Workspace
-.idea             # IntelliJ IDEA
