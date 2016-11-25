@@ -13,7 +13,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<parameter name="is_exercise" class="java.lang.String"/>
+	<parameter name="is_exercise" class="java.lang.Boolean"/>
 	<parameter name="title" class="java.lang.String"/>
 	<parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
 	<parameter name="legendSubReport" class="java.lang.String" isForPrompting="false"/>
@@ -36,7 +36,7 @@
 			</subreport>
 			<staticText>
 				<reportElement mode="Opaque" x="0" y="0" width="279" height="30" forecolor="#FFFFFF" backcolor="#7F7F7F" uuid="7d7743af-944c-48f1-9ff7-6886393847e6">
-                                        <printWhenExpression><![CDATA[$P{is_exercise}.equals(Boolean.TRUE?"Ja":"Nein")]]></printWhenExpression>
+                                        <printWhenExpression><![CDATA[$P{is_exercise}.equals(Boolean.TRUE?Boolean.TRUE:Boolean.FALSE)]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
 					<font size="20" isBold="true"/>

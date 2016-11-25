@@ -6,6 +6,7 @@ templates:
     reportTemplate: imis_A4_map.jrxml
     attributes:
       map: &map !map
+        dpiSuggestions: [200, 72, 90, 150, 300]
         maxDpi: 400
         width: 518
         height: 534
@@ -38,19 +39,19 @@ templates:
   imis_A4_legend: !template
     reportTemplate: imis_A4_legend.jrxml
     attributes:
-      is_exercise: &is_exercise !string
-        default: "Ja"
+      is_exercise: &is_exercise !boolean
+        default: true
       title: &title !string
         default: "<div><b>KOALA Druckdienst</b></div>"
 
       legend: &legend !legend {}
 
       description: &description !string
-        default: "<div><b>Datenquelle: RODOS</b><br>Freisetzungsort: &lt;...BITTE EINTRAGEN...&gt;<br>Ereignis: &lt;...BITTE EINTRAGEN...&gt;</div>"
+        default: "<div><b>Datenquelle: IMIS</b><br>&lt;...BITTE EINTRAGEN...&gt;</div>"
       comment: &comment !string
         default: "<div>&lt;..Kommentar: ...&gt; </div>"
       impressum: &impressum !string
-        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br><br>RODOS-Zentrale<br>Rechnung vom: &lt;...BITTE EINTRAGEN...&gt;<br>RODOS-Zentrale<br>Lauf Kennung: &lt;...BITTE EINTRAGEN...&gt;<br></div>"
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br></div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory
