@@ -39,7 +39,7 @@ templates:
     reportTemplate: rodosTest_legend.jrxml
     attributes:
       is_exercise: &is_exercise !boolean
-        {default: true}
+        default: true
       title: &title !string {}
 
       legend: &legend !legend {}
