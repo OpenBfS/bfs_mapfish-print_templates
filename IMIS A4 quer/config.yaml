@@ -24,6 +24,7 @@ templates:
           intervals: 2
           fontSize: 10
           renderAsSvg: true
+          geodetic: true
       map_attribution: &map_attribution !string
         default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
 
