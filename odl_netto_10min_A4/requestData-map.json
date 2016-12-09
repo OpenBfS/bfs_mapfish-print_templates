@@ -1,0 +1,32 @@
+{
+  "layout": "odl_netto_10min_A4_map",
+  "outputFormat": "pdf",
+  "outputFilename": "odl_netto_10min_A4_map_${yyyyMMdd}",
+  "attributes": {
+    "map_attribution": "© Bundesamt für Strahlenschutz",
+    "map": {
+      "projection": "EPSG:3857",
+      "dpi": 72,
+      "rotation": 0,
+      "center": [1153044,6650612],
+      "scale": 5000000,
+      "layers": [
+        {
+          "baseURL": "http://www.imis.bfs.de/cgi-public/wms_geoportal",
+          "opacity": 1,
+          "type": "WMS",
+          "layers": [
+            "imis.p2odl24h",
+            "imis.p2g11bfg",
+            "bundeslaender"
+          ],
+          "imageFormat": "image/png",
+
+          "customParams": {
+            "TRANSPARENT": "true"
+          }
+        }
+      ]
+    }
+  }
+}

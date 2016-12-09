@@ -1,0 +1,98 @@
+
+templates:
+  #===========================================================================
+  # template for map only
+  odl_netto_10min_A4_map: !template
+    reportTemplate: odl_netto_10min_A4_map.jrxml
+    attributes:
+      # mark as custom template (hide in print/info.json)
+      gb_custom_template: !boolean {default: true}
+      map: &map !map
+        dpiSuggestions: [200, 72, 90, 150, 300]
+        maxDpi: 400
+        width: 518
+        height: 534
+      northArrow: &northArrow !northArrow
+        size: 45
+        default:
+          graphic: "file://NorthArrow_10.svg"
+          backgroundColor: "rgba(255, 255, 255, 200)"
+      scalebar: &scalebar !scalebar
+        width: 159
+        height: 22
+        default:
+          backgroundColor: "rgba(255, 255, 255, 200)"
+          align: "right"
+          intervals: 2
+          fontSize: 10
+          renderAsSvg: true
+      map_attribution: &map_attribution !string
+        default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
+
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap {}
+    - !createNorthArrow {}
+    - !createScalebar {}
+
+  #===========================================================================
+  # template for legend only
+  odl_netto_10min_A4_legend: !template
+    reportTemplate: odl_netto_10min_A4_legend.jrxml
+    attributes:
+      # mark as custom template (hide in print/info.json)
+      gb_custom_template: !boolean {default: true}
+      is_exercise: &is_exercise !boolean
+        default: true
+      title: &title !string
+        default: "<div><b>Netto-Ortsdosisleistung (10min)</b></div>"
+
+      legend: &legend !legend {}
+
+      description: &description !string
+        default: "<div><b>Datenquelle: IMIS</b><br></div>"
+      comment: &comment !string
+        default: "<div>gesetzl. Grundlage: &sect;2 Intensivmessprogramm<</div>"
+      impressum: &impressum !string
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br></div>"
+
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !prepareLegend
+      template: legend.jrxml
+
+  #===========================================================================
+  # template for document including map and legend
+  odl_netto_10min_A4: !template
+    reportTemplate: odl_netto_10min_A4.jrxml
+    attributes:
+      # mark as custom template (hide in print/info.json)
+      gb_custom_template: !boolean {default: true}
+      map_template: !string
+        default: "odl_netto_10min_A4_map.jasper"
+      map: *map
+      northArrow: *northArrow
+      scalebar: *scalebar
+      map_attribution: *map_attribution
+
+      legend_template: !string
+        default: "odl_netto_10min_A4_legend.jasper"
+      is_exercise: *is_exercise
+      title: *title
+      legend: *legend
+      description: *description
+      comment: *comment
+      impressum: *impressum
+
+      doc_creator: !string {}
+
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap {}
+    - !createNorthArrow {}
+    - !createScalebar {}
+    - !prepareLegend
+      template: legend.jrxml
