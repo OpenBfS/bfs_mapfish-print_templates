@@ -13,23 +13,49 @@ templates:
             default: ""
           baId: !string
             default: ""
-          datenbasisId: !string
+          datenbasis: !string
             default: ""
+          deskriptoren: !datasource
+            attributes:
+              S0: !string
+                default: ""
+              S1: !string
+                default: ""
+              S2: !string
+                default: ""
+              S3: !string
+                default: ""
+              S4: !string
+                default: ""
+              S5: !string
+                default: ""
+              S6: !string
+                default: ""
+              S7: !string
+                default: ""
+              S8: !string
+                default: ""
+              S9: !string
+                default: ""
+              S10: !string
+                default: ""
+              S11: !string
+                default: ""
           erzeugerId: !string
             default: ""
           hauptprobenNr: !string
             default: ""
-          umwId: !string
+          umw: !string
             default: ""
-          mplId: !string
+          mpl: !string
             default: ""
-          probenartId: !string
+          probenart: !string
             default: ""
-          mstId: !string
+          messstelle.messStelle: !string
             default: ""
           idAlt: !string
             default: ""
-          laborMstId: !string
+          labormessstelle.messStelle: !string
             default: ""
           letzteAenderung: !string
             default: 0
@@ -37,9 +63,25 @@ templates:
             default: ""
           mediaDesk: !string
             default: ""
+          messstelle: !datasource
+            attributes:
+              beschreibung: !string
+                default: ""
           ortszuordnung: !datasource
             attributes:
               ortszuordnungTyp: !string
+                default: ""
+              ort.staat: !string
+                default: ""
+              ort.koordXExtern: !string
+                default: ""
+              ort.koordYExtern: !string
+                default: ""
+              ort.kdaId: !string
+                default: ""
+              ort.gemId: !string
+                default: ""
+              ort.gem: !string
                 default: ""
           probeentnahmeBeginn: !string
             default: 0
@@ -51,13 +93,23 @@ templates:
             default: 0
           zusatzwerte: !datasource
             attributes:
-              id: !integer
-                default: 0
+              messwertPzs: !string
+                default: ""
+              messfehler: !string
+                default: ""
+              nwgZuMesswert: !string
+                default: ""
+              messwertNwg: !string
+                default: "TODO"
+              meh: !string
+                default: "TODO"
+              pzsId: !string
+                default: ""
           kommentare: !datasource
             attributes:
               datum: !string
                 default: ""
-              mstId: !string
+              mst: !string
                 default: ""
               text: !string
                 default: ""
@@ -77,7 +129,7 @@ templates:
                 default: ""
               messzeitpunkt: !string
                 default: ""
-              mmtId: !string
+              mmt: !string
                 default: ""
               nebenprobenNr: !string
                 default: ""
@@ -89,7 +141,7 @@ templates:
                 attributes:
                   datum: !string
                     default: ""
-                  mstId: !string
+                  mst: !string
                     default: ""
                   statusStufe: !string
                     default: ""
@@ -99,19 +151,23 @@ templates:
                     default: ""
               kommentare: !datasource
                 attributes:
-                  id: !integer
-                    default: 0
+                  mst: !string
+                    default: ""
+                  datum: !string
+                    default: ""
+                  text: !string
+                    default: ""
               messwerte: !datasource
                 attributes:
                   grenzwertueberschreitung: !string
                     default: ""
                   letzeAenderung: !string
                     default: ""
-                  mehId: !string
+                  meh: !string
                     default: ""
                   messfehler: !string
                     default: ""
-                  messgroesseId: !string
+                  messgroesse: !string
                     default: ""
                   messwert: !string
                     default: ""
@@ -128,6 +184,18 @@ templates:
       inputMapper: {proben: datasource}
       outputMapper: {jrDataSource: proben}
       processors:
+      - !createDataSource
+        inputMapper: {deskriptoren: datasource}
+        outputMapper: {jrDataSource: deskriptoren}
+        processors:
+        - !reportBuilder
+          directory: '.'
+      - !createDataSource
+        inputMapper: {messstelle: datasource}
+        outputMapper: {jrDataSource: messstelle}
+        processors:
+        - !reportBuilder
+          directory: '.'
       - !createDataSource
         inputMapper: {zusatzwerte: datasource}
         outputMapper: {jrDataSource: zusatzwerte}

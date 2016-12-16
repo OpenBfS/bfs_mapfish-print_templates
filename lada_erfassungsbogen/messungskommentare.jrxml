@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2016-07-22T11:16:29 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="messungskommentare" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4793b44e-9d69-49f3-8aef-a1bc4917f9d3">
-	<field name="id" class="java.lang.String">
-		<fieldDescription><![CDATA[id]]></fieldDescription>
-	</field>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-12-15T12:48:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="messungskommentare" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="4793b44e-9d69-49f3-8aef-a1bc4917f9d3">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<field name="datum" class="java.lang.String">
 		<fieldDescription><![CDATA[datum]]></fieldDescription>
 	</field>
-	<field name="mstId" class="java.lang.String">
-		<fieldDescription><![CDATA[mstId]]></fieldDescription>
-	</field>
-	<field name="messungsId" class="java.lang.String">
-		<fieldDescription><![CDATA[messungsId]]></fieldDescription>
+	<field name="mst" class="java.lang.String">
+		<fieldDescription><![CDATA[mst]]></fieldDescription>
 	</field>
 	<field name="text" class="java.lang.String">
 		<fieldDescription><![CDATA[text]]></fieldDescription>
-	</field>
-	<field name="owner" class="java.lang.String">
-		<fieldDescription><![CDATA[owner]]></fieldDescription>
-	</field>
-	<field name="readonly" class="java.lang.String">
-		<fieldDescription><![CDATA[readonly]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="20" splitType="Stretch">
+		<band height="20" splitType="Prevent">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
 				<reportElement x="0" y="0" width="278" height="20" uuid="4d9b57f6-99b3-4a48-a177-6667b3f32c50"/>
 				<textElement>
-					<font size="12"/>
+					<font size="12" isBold="true"/>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
 				<text><![CDATA[Messungskommentare]]></text>
@@ -77,27 +66,27 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="20" splitType="Stretch">
+		<band height="20" splitType="Prevent">
 			<textField pattern="dd.MM.yyyy" isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="100" height="20" uuid="7d26c091-5344-4cd6-bce5-e089d6a8bb4f"/>
 				<textElement>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[!$F{datum}.equals("") ? new Date(Long.valueOf($F{datum})) : null]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{datum}.equals("") || $F{datum}.equals("null") ? null : new Date(Long.valueOf($F{datum}))]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="100" y="0" width="100" height="20" uuid="62cf7f3e-9215-4230-94e2-788963b18955"/>
 				<textElement>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{mstId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{mst}.equals("null") ? null : $F{mst}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="200" y="0" width="355" height="20" uuid="c742fe02-1bd4-4cb4-841c-c54c085948ef"/>
 				<textElement>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{text}.equals("null") ? null : $F{text}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -114,7 +103,7 @@
 			<staticText>
 				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="20" uuid="1e764f5e-b3cb-4013-86cb-5d54f04a61c5"/>
 				<textElement>
-					<font size="12"/>
+					<font size="12" isBold="true"/>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
 				<text><![CDATA[Messungskommentare]]></text>
