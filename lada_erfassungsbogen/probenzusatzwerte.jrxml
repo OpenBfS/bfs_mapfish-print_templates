@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-12-15T10:59:57 -->
+<!-- 2016-12-19T14:19:23 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="probenzusatzwerte" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="75f893c4-cce5-4477-9551-f202b27fe42a">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<field name="pzsId" class="java.lang.String">
-		<fieldDescription><![CDATA[pzsId]]></fieldDescription>
+	<field name="pzwGroesse" class="java.lang.String">
+		<fieldDescription><![CDATA[pzwGroesse]]></fieldDescription>
 	</field>
 	<field name="messwertPzs" class="java.lang.String">
 		<fieldDescription><![CDATA[messwertPzs]]></fieldDescription>
@@ -47,7 +47,7 @@
 		<band height="20" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
-				<reportElement x="0" y="0" width="155" height="20" uuid="0f859be0-bc64-422e-96da-b7dd64b0cce7"/>
+				<reportElement x="0" y="0" width="200" height="20" uuid="0f859be0-bc64-422e-96da-b7dd64b0cce7"/>
 				<box>
 					<bottomPen lineWidth="1.0"/>
 				</box>
@@ -84,7 +84,7 @@
 				<text><![CDATA[NWG zu MW]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="155" y="0" width="100" height="20" uuid="0a198540-3d2d-4fac-b787-f9dbaaeab3e9"/>
+				<reportElement x="200" y="0" width="100" height="20" uuid="0a198540-3d2d-4fac-b787-f9dbaaeab3e9"/>
 				<box>
 					<bottomPen lineWidth="1.0"/>
 				</box>
@@ -95,7 +95,7 @@
 				<text><![CDATA[Messwert]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="255" y="0" width="100" height="20" uuid="2e2aee28-f947-483b-bb02-9ec7e199ccf5">
+				<reportElement x="300" y="0" width="55" height="20" uuid="2e2aee28-f947-483b-bb02-9ec7e199ccf5">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<box>
@@ -126,11 +126,11 @@
 		<band height="20" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="0" width="155" height="20" uuid="ebeb3e94-c765-43d3-a965-795bec0cc95f">
+				<reportElement x="0" y="0" width="200" height="20" uuid="ebeb3e94-c765-43d3-a965-795bec0cc95f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Bottom"/>
-				<textFieldExpression><![CDATA[$F{pzsId}.equals("null") ? null : $F{pzsId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{pzwGroesse}.equals("null") ? null : $F{pzwGroesse}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="480" y="0" width="75" height="20" uuid="f4353f08-3dc6-4f8c-9f9f-f6ba455ac727">
@@ -140,7 +140,7 @@
 				<textFieldExpression><![CDATA[$F{messfehler}.equals("null") ? null : $F{messfehler}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="155" y="0" width="100" height="20" uuid="8883d8f7-9a38-4ab8-8cc7-9676db8ea2da"/>
+				<reportElement x="200" y="0" width="100" height="20" uuid="8883d8f7-9a38-4ab8-8cc7-9676db8ea2da"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{messwertPzs}.equals("null") ? null : $F{messwertPzs}]]></textFieldExpression>
 			</textField>
@@ -152,7 +152,7 @@
 				<textFieldExpression><![CDATA[$F{nwgZuMesswert}.equals("null") ? null : $F{nwgZuMesswert}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="255" y="0" width="100" height="20" uuid="36acd967-0f93-4e9e-961c-d170931464d8"/>
+				<reportElement x="300" y="0" width="55" height="20" uuid="36acd967-0f93-4e9e-961c-d170931464d8"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{meh}.equals("null") ? null : $F{meh}]]></textFieldExpression>
 			</textField>

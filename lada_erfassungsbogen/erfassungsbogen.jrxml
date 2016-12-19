@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-12-16T11:51:33 -->
+<!-- 2016-12-19T14:03:28 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="erfassungsbogen" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48e3dc13-4280-4df2-bbea-ad5fac75145b">
 	<field name="hauptprobenNr" class="java.lang.String"/>
 	<field name="id" class="java.lang.String"/>
-	<field name="baId" class="java.lang.String"/>
+	<field name="messregime" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="datenbasis" class="java.lang.String"/>
 	<field name="erzeugerId" class="java.lang.String"/>
 	<field name="idAlt" class="java.lang.String"/>
@@ -100,6 +102,12 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 			</line>
+			<componentElement>
+				<reportElement x="410" y="41" width="145" height="19" uuid="e353d280-1c20-41d8-a2c2-7fbf259ea5bb"/>
+				<jr:Code39 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="none">
+					<jr:codeExpression><![CDATA[$F{hauptprobenNr}]]></jr:codeExpression>
+				</jr:Code39>
+			</componentElement>
 		</band>
 	</pageHeader>
 	<detail>
@@ -179,7 +187,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{baId}.equals("null") ? null : $F{baId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{messregime}.equals("null") ? null : $F{messregime}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="0" width="70" height="20" uuid="83303df3-3f15-40b3-a0c8-bb72e7f58cfe"/>

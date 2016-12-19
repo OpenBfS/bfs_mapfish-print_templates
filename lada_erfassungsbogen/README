@@ -1,0 +1,23 @@
+Der Druck des Erfassungsbogens benötigt zur Erzeugung des Barcodes
+eine weitere Bibliothek.
+
+Das erfassungsbogen.jrxml setzt barcode4j voraus.
+Dieses kann aus der Quelle [1] bezogen werden.
+
+Nach dem Entpacken der Binary, muss dem Tomcat die Datei bekannt gemacht werden.
+
+Dies kann bspw. dadurch geschehen, dass der Pfad zur jar-Datei mittels setenv.sh
+beaknnt gegeben wird:
+
+Dazu in der Datei: /usr/share/tomcat7/bin/setenv.sh die Zeile
+
+export CLASSPATH="/opt/barcode4j-2.1.0/build/barcode4j.jar"
+
+hinzufügen, dies setzt voraus, dass barcode4j in demn o.g. Pfad unter /opt/
+entpackt wurde.
+
+
+
+
+
+[1] https://sourceforge.net/projects/barcode4j/files/barcode4j/Barcode4J%202.1/
