@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-12-19T14:03:28 -->
+<!-- 2016-12-20T15:54:20 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="erfassungsbogen" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48e3dc13-4280-4df2-bbea-ad5fac75145b">
 	<field name="hauptprobenNr" class="java.lang.String"/>
 	<field name="id" class="java.lang.String"/>
@@ -246,17 +246,20 @@
 				<text><![CDATA[Deskriptor]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="380" y="140" width="170" height="20" uuid="997bc997-f2d6-449e-b101-200d6c0fbc1f"/>
+				<reportElement x="390" y="110" width="160" height="50" uuid="997bc997-f2d6-449e-b101-200d6c0fbc1f"/>
 				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Bottom" markup="none">
-					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{umw}.equals("null") ? null : $F{umw}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="289" y="140" width="90" height="20" uuid="8c0588d3-c0ce-440e-acb4-1ed7a4d947c1"/>
+				<reportElement x="390" y="90" width="160" height="20" uuid="8c0588d3-c0ce-440e-acb4-1ed7a4d947c1"/>
 				<textElement verticalAlignment="Bottom"/>
 				<text><![CDATA[Umweltbereich]]></text>
 			</staticText>
