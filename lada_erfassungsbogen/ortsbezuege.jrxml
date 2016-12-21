@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-12-15T15:02:39 -->
+<!-- 2016-12-21T09:36:12 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ortsbezuege" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="d444e137-f21c-4a89-94c2-0c4ba4578c53">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<field name="ortszuordnungTyp" class="java.lang.String"/>
@@ -143,28 +143,28 @@
 	<detail>
 		<band height="20" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="30" height="20" uuid="a8dadb9e-d79d-4163-893e-3090e0ac1c83"/>
 				<textElement verticalAlignment="Top" markup="styled">
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ortszuordnungTyp}.equals("null") ? null : $F{ortszuordnungTyp}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="30" y="0" width="60" height="20" uuid="ea698f3f-9cfa-46e7-b478-acef1b31b185"/>
 				<textElement verticalAlignment="Top" markup="styled">
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ort.gemId}.equals("null") ? null : $F{ort.gemId}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="90" y="0" width="155" height="20" uuid="1ddc6670-6ff0-446f-8b6b-f01939a6ddb5"/>
 				<textElement verticalAlignment="Top" markup="styled">
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ort.gem}.equals("null") ? null : $F{ort.gem}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="245" y="0" width="115" height="20" uuid="1bc28cf4-0cdd-430b-a253-abc44efcf87e">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
@@ -173,7 +173,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ort.staat}.equals("null") ? null : $F{ort.staat}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="360" y="0" width="75" height="20" uuid="08c210fb-7f27-4112-942c-c37bcba40011">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
@@ -182,7 +182,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ort.koordXExtern}.equals("null") ? null : $F{ort.koordXExtern}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="435" y="0" width="75" height="20" uuid="f53f0fb3-ff0e-4891-8e0c-d5f07ae2bef4">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
@@ -191,14 +191,14 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ort.koordYExtern}.equals("null") ? null : $F{ort.koordYExtern}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="510" y="0" width="45" height="20" uuid="310295cc-3e33-4ffe-8780-9916589fec73">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ort.kdaId}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ort.kdaId}.equals("null") ? null : $F{ort.kdaId}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
