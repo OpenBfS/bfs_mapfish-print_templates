@@ -20,7 +20,7 @@ before_install:
   - export OLD_HOSTNAME=`hostname` && sudo sed -i -e "s/$OLD_HOSTNAME/test/g" /etc/hosts && sudo hostname test
   - pwd
   - cd .. && git clone https://github.com/mapfish/mapfish-print.git && cd -
-#  - cp -R ./* ../mapfish-print/examples/src/test/resources/examples/ && cd ../mapfish-print
+  - cp -R ./* ../mapfish-print/examples/src/test/resources/examples/
   - cd ../mapfish-print
 
 # Don't run eval ./gradlew assemble"
