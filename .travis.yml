@@ -1,0 +1,43 @@
+sudo: true
+dist: trusty
+#language: java
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+
+services:
+  - docker
+
+before_install:
+# We have to change the hostname to work around a bug in openjdk7 that crashes when the hostname is
+# too long.
+  - export OLD_HOSTNAME=`hostname` && sudo sed -i -e "s/$OLD_HOSTNAME/test/g" /etc/hosts && sudo hostname test
+  - pwd
+  - cd .. && git clone https://github.com/mapfish/mapfish-print.git && cd -
+  - cp ./* ../mapfish-print/examples/src/test/resources/examples/ && cd ../mapfish-print
+  - cd ../irix-webservice
+
+# Don't run eval ./gradlew assemble"
+install:
+  - ./gradlew examples:geoserverData
+
+script:
+  - travis_wait ./gradlew build
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+
+jdk:
+  - oraclejdk7
+  - openjdk7
+  - oraclejdk8
+  - openjdk8
+
