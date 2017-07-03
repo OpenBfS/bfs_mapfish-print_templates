@@ -33,6 +33,11 @@ templates:
     - !createMap {}
     - !createNorthArrow {}
     - !createScalebar {}
+    - !configureHttpRequests
+      httpProcessors:
+        # Take the Cookie and Referrer headers from the print request and add them to all http requests of the associated print job
+         - !forwardHeaders
+           headers: [Cookie, Referrer]
 
   #===========================================================================
   # template for legend only
@@ -58,6 +63,11 @@ templates:
       directory: '.'
     - !prepareLegend
       template: legend.jrxml
+    - !configureHttpRequests
+      httpProcessors:
+        # Take the Cookie and Referrer headers from the print request and add them to all http requests of the associated print job
+         - !forwardHeaders
+           headers: [Cookie, Referrer]
 
   #===========================================================================
   # template for document including map and legend
@@ -90,3 +100,8 @@ templates:
     - !createScalebar {}
     - !prepareLegend
       template: legend.jrxml
+    - !configureHttpRequests
+      httpProcessors:
+        # Take the Cookie and Referrer headers from the print request and add them to all http requests of the associated print job
+         - !forwardHeaders
+           headers: [Cookie, Referrer]
