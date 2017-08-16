@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<parameter name="title" class="java.lang.String"/>
-        <parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>	
+        <parameter name="legendDataSource" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>	
 	<parameter name="description" class="java.lang.String"/>
 	<parameter name="comment" class="java.lang.String"/>
 	<parameter name="impressum" class="java.lang.String"/>
@@ -27,7 +27,7 @@
                                 <property name="local_mesure_unitheight" value="pixel"/>
                                 <property name="com.jaspersoft.studio.unit.height" value="px"/>
                            </reportElement>
-                           <dataSourceExpression><![CDATA[$P{legend}]]></dataSourceExpression>
+                           <dataSourceExpression><![CDATA[$P{legendDataSource}]]></dataSourceExpression>
                            <subreportExpression><![CDATA[$P{legendSubReport}]]></subreportExpression>
                         </subreport>
 			<staticText>
