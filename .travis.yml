@@ -28,10 +28,10 @@ install:
   - ./gradlew examples:geoserverData
 
 script:
-#  - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
-#  - .travis/test-eof-newline
-#  - travis_wait ./gradlew build
-  - travis_wait ./gradlew clean assemble jar war
+  - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
+  - .travis/test-eof-newline
+  - travis_wait ./gradlew build
+#  - travis_wait ./gradlew clean assemble jar war
 
 notifications:
   email:
