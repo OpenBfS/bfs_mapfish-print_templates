@@ -12,7 +12,7 @@ RUN rm -Rf /usr/local/tomcat/webapps/bfs-printservice/print-apps && mkdir /usr/l
 ADD . /usr/local/tomcat/webapps/bfs-printservice/print-apps
 RUN wget https://downloads.sourceforge.net/project/barcode4j/barcode4j/Barcode4J%202.1/barcode4j-2.1.0-bin.zip -O barcode4j.jar
 RUN cp barcode4j.jar /usr/local/tomcat/lib
-RUN rm -rf .git* Dockerfile LICENSE barcode4j.jar
+RUN rm -rf .git* Dockerfile LICENSE barcode4j.jar .travis.yml
 
 ENV JAVA_OPTS="-Dfile.encoding=UTF-8 -Duser.timezone=UTC -Xmx512M -XX:MaxPermSize=256M"
 
