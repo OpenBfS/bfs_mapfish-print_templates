@@ -28,7 +28,10 @@ install:
   - ./gradlew examples:geoserverData
 
 script:
-  - travis_wait ./gradlew build
+#  - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
+#  - .travis/test-eof-newline
+#  - travis_wait ./gradlew build
+  - travis_wait ./gradlew clean assemble jar war
 
 notifications:
   email:
@@ -36,8 +39,7 @@ notifications:
     on_failure: never
 
 jdk:
-  - oraclejdk7
-  - openjdk7
   - oraclejdk8
   - openjdk8
+
 
