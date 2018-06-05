@@ -1,0 +1,74 @@
+{
+  "layout": "imis_A4",
+  "outputFormat": "pdf",
+  "outputFilename":"imis_A4_${yyyy_MM_dd}",
+  "attributes": {
+      "map": {
+      "bbox":[631172.7004582842,6084956.235607575,1836977.2995417158,7328005.764392425],
+	  "dpi":200,
+	  "layers":[
+		{
+		"baseURL":"https://entw-imis.lab.bfs.de/ogc/osm/wms","customParams":
+			{
+			"LAYERS":"places0,places1,places2,places3,places4,places5,places6,places7,places8,places9,places10,places11,places12,places13,places14,places15,places16,places17,places18",
+			"TRANSPARENT":"true",
+			"VERSION":"1.1.1"
+			},
+			"layers":["places0,places1,places2,places3,places4,places5,places6,places7,places8,places9,places10,places11,places12,places13,places14,places15,places16,places17,places18"],
+			"opacity":1,
+			"styles":[""],
+			"type":"WMS"
+			},
+			{
+			"baseURL":"http://test-docker-fr.lab.bfs.de/ogc/opendata/wms?",
+			"customParams":
+			{
+			"LAYERS":"opendata:odl_brutto_1h",
+			"TRANSPARENT":"true",
+			"VERSION":"1.1.1",
+			"viewparams":"",
+			"TIME":"2018-05-15T10:00:00.000Z",
+			"cql_filter":"source='BfS'"
+			},
+			"layers":["opendata:odl_brutto_1h"],
+			"opacity":1,
+			"styles":[""],
+			"type":"WMS"
+			},
+			{
+			"baseURL":"http://test-docker-fr.lab.bfs.de/ogc/tiles",
+			"customParams":{
+			"LAYERS":"osm_bfs_google_disk",
+			"TRANSPARENT":"true",
+			"VERSION":"1.1.1"
+			},
+			"layers":["osm_bfs_google_disk"],"opacity":0.5,"styles":[""],"type":"WMS"}],
+			"projection":"EPSG:3857",
+			"rotation":0},
+			"northArrow":
+			{"graphic":"file://NorthArrow_10.svg","backgroundColor":"rgba(0, 0, 0, 0)"},
+			"scalebar":{"color":"black",
+			"backgroundColor":"rgba(255, 255, 255, 0)",
+			"barBgColor":"white",
+			"fontColor":"black",
+			"align":"right",
+			"intervals":2,
+			"fontSize":10,
+			"renderAsSvg":true},
+			"is_exercise":true,
+			"map_template":"imis_A4_map.jasper","map_attribution":"<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>",
+			"legend_template":"imis_A4_legend.jasper","title":"<div><b>KOALA Druckdienst</b></div>",
+			"description":"<div><b>Datenquelle: IMIS</b><br>&lt;...BITTE EINTRAGEN...&gt;</div>",
+			"comment":"<div>&lt;..Kommentar: ...&gt; </div>",
+			"impressum":"<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br></div>",
+			"doc_creator":"Fake Authuser",
+			"legend":
+			{
+			"classes":[{"icons":
+			["http://test-docker-fr.lab.bfs.de/ogc/opendata/wms?service=WMS&version=1.3.0&request=GetLegendGraphic&layer=opendata:odl_brutto_1h&LEGEND_OPTIONS=countMatched:true&width=15&height=15&format=image/png&LEGEND_OPTIONS=countMatched:true&TIME=2018-05-15T10:00:00.000Z&cql_filter=source%3D'BfS'&SCALE=8735642.904127963"],
+			"name":"ODL brutto 1 h<br/><font color=\"#999999\">15.05.2018 11:00:00 (lokal) -<br />15.05.2018 12:00:00 (lokal)<br />Messnetz = BfS</font>"}],
+			"name":""}}
+	}  
+
+
+
