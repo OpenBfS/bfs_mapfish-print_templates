@@ -24,7 +24,7 @@
 			<property name="local_mesure_unitheight" value="mm"/>
 			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 			<subreport runToBottom="false" overflowType="NoStretch">
-				<reportElement isPrintRepeatedValues="false" x="0" y="60" width="198" height="336" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
+				<reportElement isPrintRepeatedValues="false" x="0" y="50" width="198" height="358" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -46,7 +46,7 @@
 				<text><![CDATA[Übung/Test]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="30" width="198" height="30" uuid="9cb29803-818d-49e8-86ec-84f493bbf424">
+				<reportElement x="0" y="30" width="198" height="20" uuid="9cb29803-818d-49e8-86ec-84f493bbf424">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -58,7 +58,7 @@
 				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="396" width="198" height="40" uuid="e678395b-c42e-482a-8d48-9e34d4da62b3">
+				<reportElement x="0" y="408" width="198" height="40" uuid="e678395b-c42e-482a-8d48-9e34d4da62b3">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -70,7 +70,7 @@
 				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="436" width="198" height="20" uuid="fb9be0a9-ebc9-4271-8917-877bcfc05491">
+				<reportElement x="0" y="448" width="198" height="20" uuid="fb9be0a9-ebc9-4271-8917-877bcfc05491">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
