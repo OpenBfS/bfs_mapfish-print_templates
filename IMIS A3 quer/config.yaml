@@ -6,9 +6,12 @@ templates:
     reportTemplate: imis_A3_map.jrxml
     attributes:
       map: &map !map
+        # DPI Vorschläge für Aufklappbox
+        dpiSuggestions: [90, 72, 150, 200, 300]
         maxDpi: 400
-        width: 769
-        height: 799
+        # Breite/Höhe der Map (entspricht Ausmaßen des Sub-Reports)
+        width: 848
+        height: 778
       northArrow: &northArrow !northArrow
         size: 45
         default:
@@ -16,7 +19,7 @@ templates:
           backgroundColor: "rgba(255, 255, 255, 200)"
       scalebar: &scalebar !scalebar
         width: 159
-        height: 36
+        height: 22
         default:
           backgroundColor: "rgba(255, 255, 255, 200)"
           align: "right"
@@ -24,7 +27,8 @@ templates:
           fontSize: 10
           renderAsSvg: true
           geodetic: true
-      map_attribution: &map_attribution !string {}
+      map_attribution: &map_attribution !string 
+        default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory
@@ -43,17 +47,19 @@ templates:
   imis_A3_legend: !template
     reportTemplate: imis_A3_legend.jrxml
     attributes:
-      is_exercise: &is_exercise !string
-        default: "Ja"
-      title: &title !string {}
-
+      is_exercise: &is_exercise !boolean
+        default: true
+      title: &title !string 
+        default: "<div><b>KOALA Druckdienst</b></div>"
+        
       legend: &legend !legend {}
 
       description: &description !string
-        default: ""
+        default: "<div><b>Datenquelle: IMIS</b><br>&lt;...BITTE EINTRAGEN...&gt;</div>"
       comment: &comment !string
-        default: ""
-      impressum: &impressum !string {}
+        default: "<div>&lt;..Kommentar: ...&gt; </div>"
+      impressum: &impressum !string 
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory

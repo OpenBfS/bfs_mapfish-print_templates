@@ -57,7 +57,7 @@ templates:
       comment: &comment !string
         default: "<div>&lt;..Kommentar: ...&gt; </div>"
       impressum: &impressum !string
-        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br></div>"
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory

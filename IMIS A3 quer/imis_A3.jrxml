@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
-<!-- 2015-08-03T15:46:31 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imis_A3" pageWidth="1190" pageHeight="842" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="1150" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="4faaa4e5-ec41-4b41-8c4a-3fdae96fabef">
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imis_A3" pageWidth="1191" pageHeight="842" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="1147" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="22" uuid="4faaa4e5-ec41-4b41-8c4a-3fdae96fabef">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -14,48 +13,69 @@
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="doc_creator" class="java.lang.String"/>
 	<title>
-		<band height="800">
+		<band height="780">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-			<!--<rectangle>
-				<reportElement x="0" y="0" width="1150" height="800" backcolor="rgba(255, 255, 255, 0.0)" uuid="93ee4f6b-6691-450d-bd18-a40d5956a497"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="1150" height="780" uuid="ff363a90-0f3e-4ec1-a53d-ae53b1ee1e57">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<graphicElement>
-					<pen lineWidth="0.3"/>
+					<pen lineWidth="0.1"/>
 				</graphicElement>
-			</rectangle>-->
+			</rectangle>
+			<line>
+				<reportElement x="850" y="0" width="1" height="780" uuid="cfe54863-6bbd-4956-a6b2-8c0f590d675e">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.1"/>
+				</graphicElement>
+			</line>
 			<subreport>
-				<reportElement x="0" y="0" width="769" height="800" uuid="86e2e578-c496-42fe-a132-17df9b3e1bdc"/>
-                                <parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<reportElement x="0" y="0" width="849" height="780" uuid="86e2e578-c496-42fe-a132-17df9b3e1bdc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
 				<subreportExpression><![CDATA["imis_A3_map.jasper"]]></subreportExpression>
 			</subreport>
-                        <subreport>
-                                <reportElement x="769" y="0" width="381" height="800" uuid="7789d5ea-b7e6-4476-8ad2-b0bfba3b0206"/>
-                                <parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
-                         	<subreportExpression><![CDATA["imis_A3_legend.jasper"]]></subreportExpression>
-                        </subreport>
+			<subreport>
+				<reportElement x="850" y="0" width="300" height="780" uuid="7789d5ea-b7e6-4476-8ad2-b0bfba3b0206">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportExpression><![CDATA["imis_A3_legend.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</title>
-        <pageFooter>
-                <band height="14" splitType="Stretch">
-                        <property name="local_mesure_unitheight" value="mm"/>
-                        <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-                        <property name="com.jaspersoft.studio.unit.height" value="mm"/>
-                        <textField>
-                                <reportElement x="0" y="0" width="280" height="14" uuid="12586665-3182-441f-8ffb-4b81fe9cd434"/>
-                                <textElement>
-                                        <font size="9"/>
-                                </textElement>
-                                <textFieldExpression><![CDATA[new Date() + " / " + $P{doc_creator}]]></textFieldExpression>
-                        </textField>
-                        <textField>
-                                <reportElement stretchType="RelativeToBandHeight" x="951" y="0" width="199" height="14" uuid="f7980112-b3c5-4cf0-bd82-34aa4b5d97bd">
-                                        <property name="local_mesure_unitheight" value="mm"/>
-                                        <property name="com.jaspersoft.studio.unit.height" value="mm"/>
-                                </reportElement>
-                                <textElement textAlignment="Right">
-                                        <font size="9"/>
-                                </textElement>
-                                <textFieldExpression><![CDATA["Seite " + $V{PAGE_NUMBER} + " von " + $V{PAGE_NUMBER}]]></textFieldExpression>
-                        </textField>
-                </band>
-        </pageFooter>
+	<pageFooter>
+		<band height="14" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="mm"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+			<textField>
+				<reportElement x="0" y="0" width="280" height="14" uuid="12586665-3182-441f-8ffb-4b81fe9cd434"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date() + " / " + $P{doc_creator}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="951" y="0" width="199" height="14" uuid="f7980112-b3c5-4cf0-bd82-34aa4b5d97bd">
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Seite " + $V{PAGE_NUMBER} + " von " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
 </jasperReport>

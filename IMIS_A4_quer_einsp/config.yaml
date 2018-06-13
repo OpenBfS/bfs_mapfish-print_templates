@@ -11,7 +11,7 @@ templates:
         dpiSuggestions: [90, 72, 150, 200, 300]
         maxDpi: 400
         # Breite/Höhe der Map (entspricht Ausmaßen des Sub-Reports)
-        width: 598
+        width: 628
         height: 534
       northArrow: &northArrow !northArrow
         # Grafik entspricht einem Quadrat mit gleicher Breite/Höhe
@@ -65,7 +65,7 @@ templates:
       comment: &comment !string
         default: "<div>&lt;..Kommentar: ...&gt; </div>"
       impressum: &impressum !string
-        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br></div>"
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory

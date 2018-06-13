@@ -1,7 +1,7 @@
 {
   "layout": "imis_A4",
   "outputFormat": "pdf",
-  "outputFilename":"imis_A4_${yyyy_MM_dd}",
+  "outputFilename":"imis_A4_hoch_${yyyy_MM_dd}",
   "attributes": {
       "map": {
       "bbox":[631172.7004582842,6084956.235607575,1836977.2995417158,7328005.764392425],
@@ -60,7 +60,7 @@
 			"legend_template":"imis_A4_legend.jasper","title":"<div><b>KOALA Druckdienst</b></div>",
 			"description":"<div><b>Datenquelle: IMIS</b><br>&lt;...BITTE EINTRAGEN...&gt;</div>",
 			"comment":"<div>&lt;..Kommentar: ...&gt; </div>",
-			"impressum":"<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br></div>",
+			"impressum":"<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>",
 			"doc_creator":"Fake Authuser",
 			"legend":
 			{

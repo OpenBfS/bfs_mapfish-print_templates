@@ -29,15 +29,16 @@
 				</graphicElement>
 			</rectangle>
 			<line>
-				<reportElement x="600" y="0" width="1" height="536" uuid="8fa49692-ec22-4709-9178-8b9c3fc2e551">
+				<reportElement x="630" y="0" width="1" height="536" uuid="8fa49692-ec22-4709-9178-8b9c3fc2e551">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.1"/>
 				</graphicElement>
 			</line>
 			<subreport>
-				<reportElement x="0" y="0" width="600" height="536" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+				<reportElement x="0" y="0" width="630" height="536" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -47,7 +48,7 @@
 				<subreportExpression><![CDATA[$P{map_template}]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement x="600" y="0" width="200" height="536" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+				<reportElement x="630" y="0" width="170" height="536" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>

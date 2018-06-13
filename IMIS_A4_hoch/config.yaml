@@ -12,7 +12,7 @@ templates:
         maxDpi: 400
         # Breite/Höhe der Map (entspricht Ausmaßen des Sub-Reports)
         width: 548
-        height: 398
+        height: 448
       northArrow: &northArrow !northArrow
         # Grafik entspricht einem Quadrat mit gleicher Breite/Höhe
         size: 45
@@ -43,11 +43,10 @@ templates:
     - !createNorthArrow {}
     - !createScalebar {}
     - !configureHttpRequests
-       httpProcessors:
-          - !mapUri
-            mapping:
-              https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
-              https://www.imis.bfs.de/ogc/tiles/wms?(.*) : "http://test-osm01-muc.lab.bfs.de/osm/wms_osm?$1"     
+      httpProcessors:
+        # Take the Cookie and Referrer headers from the print request and add them to all http requests of the associated print job
+         - !forwardHeaders
+           headers: [Cookie, Referrer]
 
   #===========================================================================
   # template for legend only
@@ -66,7 +65,7 @@ templates:
       comment: &comment !string
         default: "<div>&lt;..Kommentar: ...&gt; </div>"
       impressum: &impressum !string
-        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUB)</b><br></div>"
+        default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>"
 
     processors:
     - !reportBuilder # compile all reports in current directory
@@ -75,11 +74,9 @@ templates:
       template: legend.jrxml
     - !configureHttpRequests
       httpProcessors:
-          - !mapUri
-            mapping:
-              https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
-              https://www.imis.bfs.de/ogc/tiles/wms?(.*) : "http://test-osm01-muc.lab.bfs.de/osm/wms_osm?$1"
-
+        # Take the Cookie and Referrer headers from the print request and add them to all http requests of the associated print job
+         - !forwardHeaders
+           headers: [Cookie, Referrer]
 
   #===========================================================================
   # template for document including map and legend
@@ -114,8 +111,6 @@ templates:
       template: legend.jrxml
     - !configureHttpRequests
       httpProcessors:
-          - !mapUri
-            mapping:
-              https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
-              https://www.imis.bfs.de/ogc/tiles/wms?(.*) : "http://test-osm01-muc.lab.bfs.de/osm/wms_osm?$1"
-
+        # Take the Cookie and Referrer headers from the print request and add them to all http requests of the associated print job
+         - !forwardHeaders
+           headers: [Cookie, Referrer]

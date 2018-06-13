@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imis_A4" pageWidth="595" pageHeight="780" whenNoDataType="NoDataSection" columnWidth="551" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="22" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imis_A4" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="551" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="12" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
 	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
@@ -16,11 +16,11 @@
 	<parameter name="map_template" class="java.lang.String"/>
 	<parameter name="legend_template" class="java.lang.String"/>
 	<title>
-		<band height="700">
+		<band height="750">
 			<property name="local_mesure_unitheight" value="mm"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle>
-				<reportElement mode="Transparent" x="0" y="0" width="550" height="400" uuid="92fdb723-3e2c-4f85-b888-cac0f30695e9">
+				<reportElement mode="Transparent" x="0" y="0" width="550" height="450" uuid="92fdb723-3e2c-4f85-b888-cac0f30695e9">
 					<property name="local_mesure_unitwidth" value="mm"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -30,7 +30,7 @@
 				</graphicElement>
 			</rectangle>
 			<subreport>
-				<reportElement x="0" y="0" width="550" height="400" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+				<reportElement x="0" y="0" width="550" height="450" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -40,7 +40,7 @@
 				<subreportExpression><![CDATA[$P{map_template}]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement x="0" y="400" width="550" height="300" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+				<reportElement x="0" y="450" width="550" height="300" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
