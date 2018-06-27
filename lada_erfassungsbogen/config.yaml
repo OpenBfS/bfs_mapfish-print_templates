@@ -182,57 +182,57 @@ templates:
       directory: '.'
     - !createDataSource
       inputMapper: {proben: datasource}
-      outputMapper: {jrDataSource: proben}
+      outputMapper: {jrDataSource: proben2}
       processors:
       - !createDataSource
         inputMapper: {deskriptoren: datasource}
-        outputMapper: {jrDataSource: deskriptoren}
+        outputMapper: {jrDataSource: deskriptoren2}
         processors:
         - !reportBuilder
           directory: '.'
       - !createDataSource
         inputMapper: {messstelle: datasource}
-        outputMapper: {jrDataSource: messstelle}
+        outputMapper: {jrDataSource: messstelle2}
         processors:
         - !reportBuilder
           directory: '.'
       - !createDataSource
         inputMapper: {zusatzwerte: datasource}
-        outputMapper: {jrDataSource: zusatzwerte}
+        outputMapper: {jrDataSource: zusatzwerte2}
         processors:
         - !reportBuilder
           directory: '.'
       - !createDataSource
         inputMapper: {ortszuordnung: datasource}
-        outputMapper: {jrDataSource: ortszuordnung}
+        outputMapper: {jrDataSource: ortszuordnung2}
         processors:
         - !reportBuilder
           directory: '.'
       - !createDataSource
         inputMapper: {kommentare: datasource}
-        outputMapper: {jrDataSource: kommentare}
+        outputMapper: {jrDataSource: kommentare2}
         processors:
         - !reportBuilder
           directory: '.'
       - !createDataSource
         inputMapper: {messungen: datasource}
-        outputMapper: {jrDataSource: messungen}
+        outputMapper: {jrDataSource: messungen2}
         processors:
         - !createDataSource
           inputMapper: {kommentare: datasource}
-          outputMapper: {jrDataSource: kommentare}
+          outputMapper: {jrDataSource: kommentare2}
           processors:
           - !reportBuilder
             directory: '.'
         - !createDataSource
           inputMapper: {statusprotokoll: datasource}
-          outputMapper: {jrDataSource: statusprotokoll}
+          outputMapper: {jrDataSource: statusprotokoll2}
           processors:
           - !reportBuilder
             directory: '.'
         - !createDataSource
           inputMapper: {messwerte: datasource}
-          outputMapper: {jrDataSource: messwerte}
+          outputMapper: {jrDataSource: messwerte2}
           processors:
           - !reportBuilder
-            directory: '.'
+            directory: '.'    

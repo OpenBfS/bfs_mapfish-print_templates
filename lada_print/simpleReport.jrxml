@@ -11,7 +11,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<parameter name="table" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="table2" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="tableSubReport" class="java.lang.String"/>
 	<parameter name="title" class="java.lang.String"/>
 	<parameter name="displayName" class="java.lang.String"/>
@@ -54,7 +54,7 @@
 				<reportElement positionType="Float" x="0" y="0" width="802" height="50" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$P{table}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$P{table2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{tableSubReport}]]></subreportExpression>
 			</subreport>
 		</band>

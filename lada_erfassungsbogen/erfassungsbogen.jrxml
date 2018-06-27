@@ -21,12 +21,12 @@
 	<field name="solldatumBeginn" class="java.lang.String"/>
 	<field name="solldatumEnde" class="java.lang.String"/>
 	<field name="umw" class="java.lang.String"/>
-	<field name="deskriptoren" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<field name="messstelle" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<field name="ortszuordnung" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<field name="kommentare" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<field name="messungen" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<field name="zusatzwerte" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="deskriptoren2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="messstelle2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="ortszuordnung2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="kommentare2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="messungen2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="zusatzwerte2" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -79,7 +79,7 @@
 				<textFieldExpression><![CDATA[$F{labormessstelle.messStelle}.equals("null") ? null : $F{labormessstelle.messStelle}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="40" width="60" height="20" uuid="6d78056b-d8b2-4101-9d34-fb9997f6609a"/>
+				<reportElement x="0" y="40" width="70" height="20" uuid="6d78056b-d8b2-4101-9d34-fb9997f6609a"/>
 				<textElement textAlignment="Left" verticalAlignment="Bottom"/>
 				<text><![CDATA[Messstelle]]></text>
 			</staticText>
@@ -331,14 +331,14 @@
 			</staticText>
 			<subreport>
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="280" y="20" width="270" height="60" uuid="575b15fd-6e03-49dd-983c-d4d7335a9441"/>
-				<dataSourceExpression><![CDATA[$F{messstelle}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{messstelle2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messstelle.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
 				<reportElement x="0" y="170" width="555" height="150" uuid="4ab2822f-6d51-485e-aee8-a1079cbe762f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{deskriptoren}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{deskriptoren2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["deskriptoren.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
@@ -348,14 +348,14 @@
 				<reportElement key="" positionType="Float" x="0" y="0" width="555" height="89" uuid="bef045f8-62f4-4ca0-bc9d-014b6b61a1ab">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{kommentare}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{kommentare2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenkommentare.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
 				<reportElement positionType="Float" x="0" y="89" width="555" height="87" uuid="77a490ea-4a9d-4733-9251-127c6f0fa986">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{ortszuordnung}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{ortszuordnung2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["ortsbezuege.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport isUsingCache="true" runToBottom="true">
@@ -363,7 +363,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{zusatzwerte}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{zusatzwerte2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenzusatzwerte.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
@@ -371,7 +371,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{messungen}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{messungen2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messungen.jasper"]]></subreportExpression>
 			</subreport>
 		</band>

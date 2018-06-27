@@ -22,9 +22,9 @@
 	<field name="nebenprobenNr" class="java.lang.String"/>
 	<field name="probeId" class="java.lang.String"/>
 	<field name="status" class="java.lang.String"/>
-	<field name="statusprotokoll" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<field name="messwerte" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<field name="kommentare" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="statusprotokoll2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="messwerte2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="kommentare2" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<group name="record" isStartNewPage="true">
 		<groupExpression><![CDATA[$V{REPORT_COUNT}]]></groupExpression>
 	</group>
@@ -121,21 +121,21 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{statusprotokoll}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{statusprotokoll2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["statusprotokoll.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
 				<reportElement positionType="Float" x="0" y="74" width="595" height="73" uuid="415fdc8d-4067-4766-91d8-35ca74670321">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{messwerte}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{messwerte2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messwerte.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport isUsingCache="true" runToBottom="true">
 				<reportElement positionType="Float" x="0" y="147" width="595" height="73" uuid="471c30da-8320-43d5-bec6-81bb486795d8">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[$F{kommentare}]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[$F{kommentare2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messungskommentare.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
