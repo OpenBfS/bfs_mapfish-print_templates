@@ -419,7 +419,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("null") ? null : $F{probeentnahmeEnde}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("null")) ? null : new Date(Long.valueOf($F{probeentnahmeEnde}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="245" y="110" width="20" height="20" uuid="2551cdd5-1151-448d-9444-1f73904f7ce4">
