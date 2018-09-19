@@ -406,7 +406,7 @@
 				<textElement verticalAlignment="Bottom"/>
 				<text><![CDATA[Probenentnahme von]]></text>
 			</staticText>
-			<textField pattern="dd.MM.yyyy">
+			<textField pattern="dd.MM.yyyy" isBlankWhenNull="true">
 				<reportElement x="275" y="110" width="115" height="20" uuid="270e1f23-3d26-43ea-82d8-a4a47263e784">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -419,7 +419,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("null")) ? new String("") : new Date(Long.valueOf($F{probeentnahmeEnde}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("0")) ? new String ("") : new Date(Long.valueOf($F{probeentnahmeEnde}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="245" y="110" width="20" height="20" uuid="2551cdd5-1151-448d-9444-1f73904f7ce4">
