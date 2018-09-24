@@ -17,4 +17,3 @@ RUN rm -rf .git* Dockerfile LICENSE barcode4j.jar .travis.yml
 ENV JAVA_OPTS="-Dfile.encoding=UTF-8 -Duser.timezone=UTC -Xmx512M -XX:MaxPermSize=256M"
 
 CMD [ "catalina.sh", "run"]
-
