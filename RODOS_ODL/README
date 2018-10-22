@@ -1,0 +1,14 @@
+Um aus den hier hinterlegten Templates und Konfigurationsdateien PDF-Dateien
+zu erzeugen, folgendermaßen vorgehen:
+
+Download mapfish-print z.B. von
+http://search.maven.org/remotecontent?filepath=org/mapfish/print/print-cli/3.1.2/print-cli-3.1.2-zip.zip
+(Achtung: keine sichere Verbindung und damit auch keine Sicherheit, was man
+sich hier tatsächlich herunter lädt!)
+
+$ unzip print-cli-3.1.2-zip.zip
+$ cd core-3.1.2
+$ bin/print
+  -config config.yaml
+  -spec requestData.json
+  -output rodos-test.pdf
