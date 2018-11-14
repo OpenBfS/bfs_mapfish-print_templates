@@ -24,11 +24,12 @@
 			<property name="local_mesure_unitheight" value="mm"/>
 			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 			<subreport runToBottom="false" overflowType="NoStretch">
-				<reportElement isPrintRepeatedValues="false" x="0" y="80" width="278" height="276" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
+				<reportElement isPrintRepeatedValues="false" x="0" y="60" width="277" height="296" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<dataSourceExpression><![CDATA[$P{legendDataSource}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{legendSubReport}]]></subreportExpression>
@@ -43,7 +44,10 @@
 				<text><![CDATA[Übung/Test]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="30" width="277" height="50" uuid="9cb29803-818d-49e8-86ec-84f493bbf424"/>
+				<reportElement x="0" y="30" width="277" height="30" uuid="9cb29803-818d-49e8-86ec-84f493bbf424">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box topPadding="8" leftPadding="5" rightPadding="5"/>
 				<textElement textAlignment="Center" markup="html">
 					<font size="10" isBold="true"/>

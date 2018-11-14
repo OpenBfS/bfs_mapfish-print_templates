@@ -14,7 +14,7 @@
 	<field name="id" class="java.lang.String"/>
 	<field name="fertig" class="java.lang.String"/>
 	<field name="geplant" class="java.lang.String"/>
-	<field name="idAlt" class="java.lang.String"/>
+	<field name="externeProbeId" class="java.lang.String"/>
 	<field name="letzteAenderung" class="java.lang.String"/>
 	<field name="messdauer" class="java.lang.String"/>
 	<field name="messzeitpunkt" class="java.lang.String"/>

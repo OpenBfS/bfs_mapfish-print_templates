@@ -7,7 +7,7 @@
 	<field name="messregime" class="java.lang.String"/>
 	<field name="datenbasis" class="java.lang.String"/>
 	<field name="erzeugerId" class="java.lang.String"/>
-	<field name="idAlt" class="java.lang.String"/>
+	<field name="externeProbeId" class="java.lang.String"/>
 	<field name="labormessstelle.messStelle" class="java.lang.String"/>
 	<field name="letzteAenderung" class="java.lang.String"/>
 	<field name="media" class="java.lang.String"/>
@@ -41,7 +41,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<jr:Code39 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none">
-					<jr:codeExpression><![CDATA[$F{idAlt}.equals("null") ? null : $F{idAlt}]]></jr:codeExpression>
+					<jr:codeExpression><![CDATA[$F{externeProbeId}.equals("null") ? null : $F{externeProbeId}]]></jr:codeExpression>
 				</jr:Code39>
 			</componentElement>
 			<staticText>
@@ -62,7 +62,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Bottom" markup="none">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{idAlt}.equals("null") ? null : $F{idAlt}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{externeProbeId}.equals("null") ? null : $F{externeProbeId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="280" y="25" width="145" height="20" uuid="02e415ed-b557-4471-96b2-a87a740cea51">
@@ -228,7 +228,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{solldatumBeginn}.equals("") || $F{solldatumBeginn}.equals("null")  ? null : new Date(Long.valueOf($F{solldatumBeginn}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{solldatumBeginn}.equals("") || $F{solldatumBeginn}.equals("0") ? new String ("") : new Date(Long.valueOf($F{solldatumBeginn}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="90" width="140" height="20" uuid="2da197cb-491a-4324-9ba7-e6836305dda1">
@@ -250,7 +250,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{solldatumEnde}.equals("") || $F{solldatumEnde}.equals("null") ? null : new Date(Long.valueOf($F{solldatumEnde}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{solldatumEnde}.equals("") || $F{solldatumEnde}.equals("0") ? new String ("") : new Date(Long.valueOf($F{solldatumEnde}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="245" y="90" width="20" height="20" uuid="4978e7ce-64fa-47d1-88fc-66d98de648c8">
@@ -397,7 +397,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{probeentnahmeBeginn}.equals("") || $F{probeentnahmeBeginn}.equals("null") ? null : new Date(Long.valueOf($F{probeentnahmeBeginn}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{probeentnahmeBeginn}.equals("") || $F{probeentnahmeBeginn}.equals("0") ? new String ("") : new Date(Long.valueOf($F{probeentnahmeBeginn}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="110" width="140" height="20" uuid="46fae886-1046-4820-930f-8986da675242">
@@ -406,7 +406,7 @@
 				<textElement verticalAlignment="Bottom"/>
 				<text><![CDATA[Probenentnahme von]]></text>
 			</staticText>
-			<textField pattern="dd.MM.yyyy">
+			<textField pattern="dd.MM.yyyy" isBlankWhenNull="true">
 				<reportElement x="275" y="110" width="115" height="20" uuid="270e1f23-3d26-43ea-82d8-a4a47263e784">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -419,7 +419,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("null")) ? new String("") : new Date(Long.valueOf($F{probeentnahmeEnde}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("0")) ? new String ("") : new Date(Long.valueOf($F{probeentnahmeEnde}))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="245" y="110" width="20" height="20" uuid="2551cdd5-1151-448d-9444-1f73904f7ce4">
