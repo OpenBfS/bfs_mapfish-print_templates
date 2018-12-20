@@ -1,6 +1,6 @@
 
 # enthält 3 Templates
-templates: 
+templates:
   #===========================================================================
   # template for map only
   imis_A4_map: !template
@@ -8,7 +8,7 @@ templates:
     attributes:
       map: &map !map
         # DPI Vorschläge für Aufklappbox
-        dpiSuggestions: [90, 72, 150, 200, 300]
+        dpiSuggestions: [200, 90, 72, 150, 200, 300]
         maxDpi: 400
         # Breite/Höhe der Map (entspricht Ausmaßen des Sub-Reports)
         width: 518
