@@ -31,13 +31,8 @@ templates:
         default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
 
     processors:
-    - !reportBuilder # compile all reports in current directory
-      directory: '.'
-    - !createMap {}
-    - !createNorthArrow {}
-    - !createScalebar {}
-    - !configureHttpRequests
-      httpProcessors:
+      - !configureHttpRequests
+        httpProcessors:
           - !mapUri
             mapping:
               https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
@@ -50,6 +45,11 @@ templates:
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
+      - !reportBuilder # compile all reports in current directory
+        directory: '.'
+      - !createMap {}
+      - !createNorthArrow {}
+      - !createScalebar {}
 
   #===========================================================================
   # template for legend only
@@ -71,12 +71,8 @@ templates:
         default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>"
 
     processors:
-    - !reportBuilder # compile all reports in current directory
-      directory: '.'
-    - !prepareLegend
-      template: legend.jrxml
-    - !configureHttpRequests
-      httpProcessors:
+      - !configureHttpRequests
+        httpProcessors:
           - !mapUri
             mapping:
               https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
@@ -89,7 +85,10 @@ templates:
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
-
+      - !reportBuilder # compile all reports in current directory
+        directory: '.'
+      - !prepareLegend
+        template: legend.jrxml
 
   #===========================================================================
   # template for document including map and legend
@@ -115,15 +114,8 @@ templates:
       doc_creator: !string {}
 
     processors:
-    - !reportBuilder # compile all reports in current directory
-      directory: '.'
-    - !createMap {}
-    - !createNorthArrow {}
-    - !createScalebar {}
-    - !prepareLegend
-      template: legend.jrxml
-    - !configureHttpRequests
-      httpProcessors:
+      - !configureHttpRequests
+        httpProcessors:
           - !mapUri
             mapping:
               https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
@@ -136,3 +128,10 @@ templates:
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
+      - !reportBuilder # compile all reports in current directory
+        directory: '.'
+      - !createMap {}
+      - !createNorthArrow {}
+      - !createScalebar {}
+      - !prepareLegend
+        template: legend.jrxml
