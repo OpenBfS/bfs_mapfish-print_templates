@@ -8,11 +8,7 @@ templates:
     attributes:
       map: &map !map
         # DPI Vorschläge für Aufklappbox
-<<<<<<< HEAD
         dpiSuggestions: [90, 72, 150, 200, 300]
-=======
-        dpiSuggestions: [200, 90, 72, 150, 200, 300]
->>>>>>> 8443825546ac4cd0f27780e92c194d3bcab6e4e4
         maxDpi: 400
         # Breite/Höhe der Map (entspricht Ausmaßen des Sub-Reports)
         width: 518
