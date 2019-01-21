@@ -1,20 +1,23 @@
 
+# enthält 3 Templates
 templates:
   #===========================================================================
   # template for map only
-  imis_A3_map: !template
-    reportTemplate: imis_A3_map.jrxml
+  imis_A4_map: !template
+    reportTemplate: imis_A4_map.jrxml
     attributes:
       map: &map !map
         # DPI Vorschläge für Aufklappbox
         dpiSuggestions: [90, 72, 150, 200, 300]
         maxDpi: 400
         # Breite/Höhe der Map (entspricht Ausmaßen des Sub-Reports)
-        width: 848
-        height: 778
+        width: 518
+        height: 534
       northArrow: &northArrow !northArrow
+        # Grafik entspricht einem Quadrat mit gleicher Breite/Höhe
         size: 45
         default:
+          # Dateipfad in Verzeichnis
           graphic: "file://NorthArrow_10.svg"
           backgroundColor: "rgba(255, 255, 255, 200)"
       scalebar: &scalebar !scalebar
@@ -23,9 +26,11 @@ templates:
         default:
           backgroundColor: "rgba(255, 255, 255, 200)"
           align: "right"
+          # Anzahl der schwarz/weiß-Abschnitte (mind. 2; default 3)
           intervals: 2
           fontSize: 10
           renderAsSvg: true
+          # geodätische Messung
           geodetic: true
       map_attribution: &map_attribution !string
         default: "<div>&copy;Bundesamt f&uuml;r Strahlenschutz</div>"
@@ -47,26 +52,27 @@ templates:
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
       - !reportBuilder # compile all reports in current directory
         directory: '.'
+      # Prozessors, die die atrributes bedienen
       - !createMap {}
       - !createNorthArrow {}
       - !createScalebar {}
 
   #===========================================================================
   # template for legend only
-  imis_A3_legend: !template
-    reportTemplate: imis_A3_legend.jrxml
+  imis_A4_legend: !template
+    reportTemplate: imis_A4_legend.jrxml
     attributes:
       is_exercise: &is_exercise !boolean
         default: true
       title: &title !string
-        default: "<div><b>KOALA Druckdienst</b></div>"
+        default: "<div><b><u>Übung &lt;KKW / KTA&gt; &lt;Datum Uhrzeit&gt;</u></b></div>"
 
       legend: &legend !legend {}
 
       description: &description !string
-        default: "<div><b>Datenquelle: IMIS</b><br>&lt;...BITTE EINTRAGEN...&gt;</div>"
+        default: "<div><b><u>Datenquelle: IMIS</u></b><br>&lt;...BITTE EINTRAGEN...&gt;</div>"
       comment: &comment !string
-        default: "<div>&lt;..Kommentar: ...&gt; </div>"
+        default: "<div><b><u>radiologische Auffälligkeiten:</u></b></div><div>&lt;...BITTE EINTRAGEN...&gt;</div>"
       impressum: &impressum !string
         default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>"
 
@@ -92,18 +98,18 @@ templates:
 
   #===========================================================================
   # template for document including map and legend
-  imis_A3: !template
-    reportTemplate: imis_A3.jrxml
+  imis_A4: !template
+    reportTemplate: imis_A4.jrxml
     attributes:
       map_template: !string
-        default: "imis_A3_map.jasper"
+        default: "imis_A4_map.jasper"
       map: *map
       northArrow: *northArrow
       scalebar: *scalebar
       map_attribution: *map_attribution
 
       legend_template: !string
-        default: "imis_A3_legend.jasper"
+        default: "imis_A4_legend.jasper"
       is_exercise: *is_exercise
       title: *title
       legend: *legend
