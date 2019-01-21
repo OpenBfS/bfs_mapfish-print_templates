@@ -1,4 +1,6 @@
-.metadata      # Jaspersoft Studio Workspace
-MyReports      # Jaspersoft Studio Workspace
-.idea          # IntelliJ IDEA
+# Jaspersoft Studio Workspace
+.metadata
+MyReports
+# IntelliJ IDEA and PyCharm
+.idea
 .project
