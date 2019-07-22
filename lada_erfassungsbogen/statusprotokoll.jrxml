@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-12-15T12:48:49 -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="statusprotokoll" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="5a8736ae-f744-4745-9fb2-5ed002dc8d7e">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -101,30 +100,63 @@
 			<textField pattern="dd.MM.yyyy" isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="80" height="20" uuid="dd203ce3-90b5-46d5-a376-f0926c4b657e">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 				</reportElement>
-				<textElement verticalAlignment="Bottom"/>
+				<textElement verticalAlignment="Bottom">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{datum}.equals("") || $F{datum}.equals("null") ? null : new Date(Long.valueOf($F{datum}))]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="100" height="20" uuid="c99ea7eb-4281-4dc4-81ed-6d604c8938f9">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
 				</reportElement>
-				<textElement verticalAlignment="Bottom"/>
+				<textElement verticalAlignment="Bottom">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{statusWert}.equals("null") ? null : $F{statusWert}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="180" y="0" width="70" height="20" uuid="16d638c3-4b73-41a6-838d-e8e3bd2bc878"/>
-				<textElement verticalAlignment="Bottom"/>
+				<reportElement x="180" y="0" width="70" height="20" uuid="16d638c3-4b73-41a6-838d-e8e3bd2bc878">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{statusStufe}.equals("null") ? null : $F{statusStufe}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="250" y="0" width="70" height="20" uuid="ea83b82d-e7df-4cae-be52-e8f2f13f4e8e"/>
-				<textElement verticalAlignment="Bottom"/>
+				<reportElement x="250" y="0" width="70" height="20" uuid="ea83b82d-e7df-4cae-be52-e8f2f13f4e8e">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{mst}.equals("null") ? null : $F{mst}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="320" y="0" width="234" height="20" uuid="6e34617a-3e96-4559-9770-02f659dfc263"/>
-				<textElement verticalAlignment="Bottom"/>
+				<reportElement x="320" y="0" width="234" height="20" uuid="6e34617a-3e96-4559-9770-02f659dfc263">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{text}.equals("null") ? null : $F{text}]]></textFieldExpression>
 			</textField>
 		</band>

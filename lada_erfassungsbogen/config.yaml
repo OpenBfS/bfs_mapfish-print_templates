@@ -45,10 +45,20 @@ templates:
             default: ""
           hauptprobenNr: !string
             default: ""
+          prnId: !string
+            default: ""  
+          prnBezeichnung: !string
+            default: ""
+          prnKurzBezeichnung: !string
+            default: ""  
           umw: !string
+            default: ""
+          messRegime: !string
             default: ""
           mpl: !string
             default: ""
+          mplCode: !string
+            default: ""  
           probenart: !string
             default: ""
           messstelle.messStelle: !string

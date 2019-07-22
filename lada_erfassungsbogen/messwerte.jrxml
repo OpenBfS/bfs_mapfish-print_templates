@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-12-21T15:22:54 -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="messwerte" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="66ed2622-057e-4fec-b9ae-693c594fa6b9">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<field name="id" class="java.lang.String">
@@ -143,21 +142,21 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{messgroesse}.equals("null") ? null : $F{messgroesse}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField pattern="0.000E0" isBlankWhenNull="true">
 				<reportElement x="280" y="0" width="100" height="20" uuid="731fb9e8-06d2-4843-af65-450427c12de0">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{nwgZuMesswert}.equals("null") ? null : $F{nwgZuMesswert}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nwgZuMesswert}.equals("null") || $F{nwgZuMesswert}.equals("") ? new String ("") : Double.parseDouble($F{nwgZuMesswert})]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField pattern="0.000E0" isBlankWhenNull="true">
 				<reportElement x="180" y="0" width="100" height="20" uuid="efa7e195-be70-4a14-abaa-cedd218fe36e"/>
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{messwert}.equals("null") ? null : $F{messwert}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{messwert}.equals("null") || $F{messwert}.equals("") ? new String ("") : Double.parseDouble($F{messwert})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="380" y="0" width="100" height="20" uuid="2c5c0ee6-4ffc-41e9-b39c-c998e04c5a96">
@@ -178,8 +177,15 @@
 				<textFieldExpression><![CDATA[$F{messfehler}.equals("null") ? null : $F{messfehler}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="155" y="0" width="25" height="20" uuid="cd1c6a76-ba20-42e5-95f4-e444e7fe22a7"/>
-				<textElement verticalAlignment="Bottom"/>
+				<reportElement x="155" y="0" width="25" height="20" uuid="cd1c6a76-ba20-42e5-95f4-e444e7fe22a7">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{messwertNwg}.equals("null") ? null : $F{messwertNwg}]]></textFieldExpression>
 			</textField>
 		</band>

@@ -4,6 +4,9 @@
          {
             "readonly" : false,
             "messstelle.messStelle" : "bblm21",
+			"prnId":"V15",
+			"prnBezeichnung":"VLÜA PR Perleberg",
+			"prnKurzBezeichnung":"VLÜA PR",
             "mediaDesk" : "D: 01 03 52 02 00 00 00 00 00 00 00",
             "umwId" : "N92",
             "messungen" : [
@@ -145,7 +148,7 @@
                   ],
                   "messdauer" : 82693,
                   "mmtId" : "G1",
-                  "idAlt" : 1,
+                  "externeProbeId" : 1,
                   "statusprotokoll" : [
                      {
                         "readonly" : false,
@@ -174,9 +177,10 @@
                }
             ],
             "solldatumEnde" : 1328047199000,
-            "mpl" : "",
-            "messregime" : "Normal-/Routinebetrieb",
-            "idAlt" : "000007590041X",
+            "mpl": "Lebensmittelüberwachung",
+			"mplCode": "LHL",
+            "messRegime" : "Normal-/Routinebetrieb",
+            "externeProbeId" : "000007590041X",
             "datenbasis" : "§3",
             "zusatzwerte" : [],
             "labormessstelle" : {
@@ -306,7 +310,7 @@
             "media" : "Magermilchpulver",
             "probeentnahmeEnde" : null,
             "probenartId" : 1,
-            "idAlt" : "000007589343X",
+            "externeProbeId" : "000007589343X",
             "datenbasis" : "§3",
             "zusatzwerte" : [],
             "labormessstelle" : {
@@ -525,7 +529,7 @@
                         "messungsId" : 198
                      }
                   ],
-                  "idAlt" : 1,
+                  "externeProbeId" : 1,
                   "letzteAenderung" : 1334691745000,
                   "nebenprobenNr" : "01G1",
                   "status" : 572,
@@ -540,7 +544,7 @@
             "readonly" : false,
             "solldatumEnde" : 1333231199000,
             "mpl" : "",
-            "messregime" : "Normal-/Routinebetrieb",
+            "messRegime" : "Normal-/Routinebetrieb",
             "test" : false,
             "umw" : "Milchprodukte außer Käse, Trockenprodukte",
             "messstelle" : [
@@ -635,14 +639,14 @@
             "mprId" : null,
             "erzeugerId" : null,
             "solldatumEnde" : 1329688799000,
-            "messregime" : "Normal-/Routinebetrieb",
+            "messRegime" : "Normal-/Routinebetrieb",
             "mpl" : "G04",
             "messstelle.messStelle" : "helm21-HLUG-Kassel",
             "umwId" : "G12",
             "mediaDesk" : "D: 06 05 00 01 00 00 00 06 00 00 01",
             "messungen" : [
                {
-                  "idAlt" : 1,
+                  "externeProbeId" : 1,
                   "statusprotokoll" : [
                      {
                         "readonly" : false,
@@ -904,7 +908,7 @@
             "probeentnahmeEnde" : 1330070400000,
             "media" : "Schwebstoffe",
             "datenbasis" : "§3",
-            "idAlt" : "000007578331X",
+            "externeProbeId" : "000007578331X",
             "labormessstelle" : {
                "netzbetreiberId" : "06",
                "id" : "06010",
