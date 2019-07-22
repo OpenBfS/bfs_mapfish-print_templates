@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REI_quartal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" isTitleNewPage="true" uuid="b00333f1-1097-4198-9152-d74d211fa0b1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="tableSubReport" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tableDataSource" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
+	<parameter name="table2" class="net.sf.jasperreports.engine.JRTableDataSource"/>
+	<field name="anlagebeschr" class="java.lang.String"/>
+	<field name="reiproggrp" class="java.lang.String"/>
+	<field name="mmt" class="java.lang.String"/>
+	<field name="dBasis" class="java.lang.String"/>
+	<field name="qmitteSammelzeitraum" class="java.lang.String"/>
+	<field name="mstLaborId" class="java.lang.String"/>
+	<field name="mstLabor" class="java.lang.String"/>
+	<field name="reiproggrpbeschr" class="java.lang.String"/>
+	<field name="messungen2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="jmitteSammelzeitraum" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="454" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="20" y="10" width="530" height="40" uuid="0f0204a7-4338-4b8e-bcc4-a2618a6695dc">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["REI-Immissionsbericht des "+ $F{qmitteSammelzeitraum}+". Quartals "+ $F{jmitteSammelzeitraum} + " für die Kerntechnische Anlage " + $F{anlagebeschr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="120" y="140" width="250" height="15" uuid="b696390a-680c-43e7-8d8a-0a07eaf9bbcd">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{anlagebeschr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Selektion]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="20" y="50" width="360" height="160" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="180" width="80" height="15" uuid="dcdda108-768b-44d6-8b00-f8a255c00641">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Messmethode:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="120" width="80" height="15" uuid="4c3769bc-9a05-4374-b540-02c88abdb9f9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[REI-Prg.-Pkt.:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="20" y="227" width="280" height="190" uuid="c8ae9e75-5fc4-4bb6-90ec-b58e0a2c9325"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="100" width="80" height="15" uuid="e02d43c7-7f85-4598-b7ea-94ecfb851d5f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Messzeitraum:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="160" width="80" height="15" uuid="d6b8508e-9407-4808-a70b-69d9dba52219">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Messpunkt:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="140" width="80" height="15" uuid="f88b53b5-6fcd-4f82-828b-24d2f6d6be92">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Kernt. Anlage:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="65" width="100" height="30" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Bedingungen:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="142" width="250" height="15" uuid="68f3ac87-f79a-446a-b029-71ac444d1bbe">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{anlagebeschr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="231" width="228" height="15" uuid="e42020ae-fadb-448b-9032-d2b229d7087f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Sortiert nach:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="248" width="218" height="12" uuid="6b9a347c-73a3-4b5c-8b82-bad1c0ce6d15">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[1. KtA (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="278" width="218" height="12" uuid="33000e53-4dbc-47a2-95b5-510ed76eecb1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[3. Labor (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="263" width="218" height="12" uuid="41a25822-413a-4f9a-848a-0dff9cd7675c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[2. Labor (Id) (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="309" width="218" height="12" uuid="24e6f346-4a9a-43e3-9774-7fdd89198ffc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[5. REI-Progr-Pkt (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="325" width="218" height="12" uuid="58357a33-3c5a-422c-9c5a-ce95b6b29cab">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[6. Messmethode (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="340" width="218" height="12" uuid="11b3f283-7e4d-413c-97e8-28507f97c8bb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[7. Messpunkt (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="355" width="218" height="12" uuid="b63f700c-606a-4fa1-96b2-ea3fb34bdfe5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[8. Gemeinde (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="370" width="218" height="12" uuid="a0f33640-cb5f-4466-9302-c4ed5aaf0a49">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[9. Probenahmebeginn (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="385" width="218" height="12" uuid="d11325a2-f893-4e80-8893-3123da0789b3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[10. Probenahmeende (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="400" width="218" height="12" uuid="9bd5c2de-a2c6-4958-8d8a-66dc1e2edf99">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[11. Probe-Id (aufst.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="294" width="218" height="12" uuid="351d30d0-db55-46e8-8a09-3f7957ff25be">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[4. REI-Progr-Pkt-Id (aufst.)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="20" y="0" width="451" height="20" uuid="1bfafa03-89c6-4876-8808-ba0427dca56d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dBasis} + " / " + $F{qmitteSammelzeitraum} + ". Quartal / " + $F{anlagebeschr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="238">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<break>
+				<reportElement x="0" y="0" width="560" height="1" uuid="f6913fa7-40d4-4875-b59c-0d2db6eed7c6"/>
+			</break>
+			<rectangle>
+				<reportElement x="20" y="2" width="530" height="55" uuid="e2526c82-499d-4d61-889a-8a1af48608f1">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="24" y="9" width="156" height="15" uuid="16f7d4c8-431a-4a12-ae27-9729d8a54847">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<text><![CDATA[Überwachte Anlage /Tätigkeit:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="9" width="364" height="15" uuid="4b58aa4e-bc6a-4379-8f11-072c913c19d7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{anlagebeschr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="24" y="25" width="156" height="15" uuid="3fc26eaf-8673-4076-b226-92858c6a06f6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<text><![CDATA[Messlabor:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="180" y="25" width="364" height="30" uuid="c08fb232-3028-43c9-b11d-d407f27db629">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{mstLaborId} + ": " + $F{mstLabor}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="20" y="57" width="530" height="55" uuid="6c3201f4-b6e9-4393-91bc-b9963705270d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="24" y="64" width="66" height="15" uuid="7b05cceb-c6f2-4fab-8989-ae60dfe44667">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<text><![CDATA[REI Prg.-Pkt.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="64" width="80" height="15" uuid="5c4fa3be-32d8-4d1e-8159-3b8ca062e2d9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{reiproggrp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="180" y="64" width="364" height="30" uuid="af5dbc8e-8c80-458a-a4ff-6d05dfc39d6e">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{reiproggrpbeschr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="24" y="95" width="156" height="15" uuid="f951e318-2207-47ae-90a3-da9ae2ddc5f2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[Messmethode / Messgröße:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="95" width="364" height="15" uuid="f54eadf6-1781-4f5f-9d64-aca943a4b495">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{mmt}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="20" y="112" width="530" height="125" uuid="dfc46040-5504-4af5-920d-bf8206c9c83f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$F{messungen2}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["rei_messungen.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="237" width="99" height="1" uuid="af2d8a6e-ee53-46f7-b00f-2cf31ba732c8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</break>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="349" y="0" width="180" height="10" uuid="44b1e299-09f8-4007-969b-6cafe570958f">
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Seite " + $V{PAGE_NUMBER} + " von "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="529" y="0" width="20" height="10" uuid="28c86064-8333-474a-b898-3adafec99d0c">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

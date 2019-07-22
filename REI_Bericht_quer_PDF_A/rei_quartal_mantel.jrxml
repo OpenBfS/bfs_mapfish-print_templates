@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rei_quartal_mantel" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="0942d26f-9b15-4b08-945a-dc371a864c36">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="net.sf.jasperreports.export.pdf.exclude.key.TransparentImage" value=""/>
+	<property name="net.sf.jasperreports.export.pdf.tagged" value="true"/>
+	<property name="net.sf.jasperreports.export.pdfa.conformance" value="pdfa1a"/>
+	<property name="net.sf.jasperreports.export.pdfa.icc.profile.path" value="/data/gis_print_templates/PDF_A_REI/AdobeRGB1998.icc"/>
+	<style name="Style1" isDefault="true" fontName="PDF_A_Font_OpenSans" pdfFontName="" pdfEncoding="CP1252 (Western European ANSI aka WinAnsi)" isPdfEmbedded="true"/>
+	<parameter name="proben2" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="doc_creator" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="842" height="80" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+				<dataSourceExpression><![CDATA[$P{proben2}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["rei_quartal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField pattern="EEEEE dd.MM.yyyy hh.mm zzz">
+				<reportElement x="20" y="0" width="240" height="10" uuid="c4b05ec3-edb4-4256-a38d-9781328805f6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="PDF_A_Font_OpenSans" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date() + " / " + $P{doc_creator}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
