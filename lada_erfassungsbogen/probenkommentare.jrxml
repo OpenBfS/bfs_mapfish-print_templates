@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="probenkommentare" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="4793b44e-9d69-49f3-8aef-a1bc4917f9d3">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
@@ -95,7 +95,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mst}.equals("null") ? null : $F{mst}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement x="200" y="0" width="355" height="20" uuid="c742fe02-1bd4-4cb4-841c-c54c085948ef"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
