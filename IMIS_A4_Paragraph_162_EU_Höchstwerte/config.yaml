@@ -188,8 +188,8 @@ templates:
       comment: *comment
       impressum: *impressum
       
-      table_template: !string
-        default: "results.jasper"
+      #table_template: !string
+      #  default: "results.jasper"
       layerdata: *table
 
       doc_creator: !string {}
