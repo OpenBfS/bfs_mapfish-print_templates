@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imis_A4" pageWidth="278" pageHeight="536" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="278" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
 	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -24,10 +24,11 @@
 			<property name="local_mesure_unitheight" value="mm"/>
 			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 			<subreport runToBottom="false" overflowType="NoStretch">
-				<reportElement isPrintRepeatedValues="false" x="0" y="80" width="278" height="276" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
+				<reportElement isPrintRepeatedValues="false" x="0" y="60" width="277" height="350" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8">
 					<property name="local_mesure_unitwidth" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<dataSourceExpression><![CDATA[$P{legendDataSource}]]></dataSourceExpression>
@@ -43,7 +44,9 @@
 				<text><![CDATA[Übung/Test]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="30" width="277" height="50" uuid="9cb29803-818d-49e8-86ec-84f493bbf424"/>
+				<reportElement x="0" y="30" width="277" height="30" uuid="9cb29803-818d-49e8-86ec-84f493bbf424">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<box topPadding="8" leftPadding="5" rightPadding="5"/>
 				<textElement textAlignment="Center" markup="html">
 					<font size="10" isBold="true"/>
@@ -52,7 +55,8 @@
 				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="356" width="277" height="60" uuid="e678395b-c42e-482a-8d48-9e34d4da62b3">
+				<reportElement x="0" y="410" width="277" height="40" uuid="e678395b-c42e-482a-8d48-9e34d4da62b3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" markup="html">
@@ -62,9 +66,9 @@
 				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="416" width="277" height="24" uuid="fb9be0a9-ebc9-4271-8917-877bcfc05491">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				<reportElement x="0" y="450" width="277" height="40" uuid="fb9be0a9-ebc9-4271-8917-877bcfc05491">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" markup="html">
 					<font size="8"/>
@@ -73,14 +77,16 @@
 				<textFieldExpression><![CDATA[$P{comment}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="100" y="460" width="87" height="46" uuid="feb403e0-4ca7-4035-80a3-89fb2c84e823">
+				<reportElement x="180" y="490" width="87" height="46" uuid="feb403e0-4ca7-4035-80a3-89fb2c84e823">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA["./imis_logo.png"]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="0" y="506" width="277" height="30" uuid="3c1a087f-4afd-4ea5-be93-83560f0dfd93">
+				<reportElement x="0" y="500" width="170" height="36" uuid="3c1a087f-4afd-4ea5-be93-83560f0dfd93">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>

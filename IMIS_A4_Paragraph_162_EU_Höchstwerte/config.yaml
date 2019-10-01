@@ -188,6 +188,7 @@ templates:
       comment: *comment
       impressum: *impressum
       
+      # wird nur benötigt, um Tabelle einzeln druckbar zu machen 
       #table_template: !string
       #  default: "results.jasper"
       layerdata: *table

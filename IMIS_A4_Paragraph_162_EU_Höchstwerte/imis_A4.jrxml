@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imis_A4" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="798" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="22" isSummaryNewPage="true" whenResourceMissingType="Error" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
 	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -88,13 +88,6 @@
 			<property name="local_mesure_unitheight" value="mm"/>
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-			<textField pattern="EEEEE dd.MM.yyyy hh:mm zzz">
-				<reportElement x="0" y="0" width="110" height="14" uuid="12586665-3182-441f-8ffb-4b81fe9cd434"/>
-				<textElement>
-					<font size="7"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement stretchType="RelativeToBandHeight" x="608" y="0" width="180" height="14" uuid="f7980112-b3c5-4cf0-bd82-34aa4b5d97bd">
 					<property name="local_mesure_unitheight" value="mm"/>
@@ -113,11 +106,11 @@
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="88" y="0" width="110" height="14" uuid="c62e6a7e-baed-48da-8962-adb57a3a7030"/>
+				<reportElement x="0" y="0" width="280" height="14" uuid="b45947f2-f84b-4dc7-b35b-b290e071bb41"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{doc_creator}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new Date() + " / " + $P{doc_creator}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
