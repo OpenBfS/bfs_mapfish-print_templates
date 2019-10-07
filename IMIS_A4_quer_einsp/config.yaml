@@ -120,6 +120,13 @@ templates:
       doc_creator: !string {}
 
     processors:
+      - !reportBuilder 
+        directory: '.'
+      - !createMap {}
+      - !createNorthArrow {}
+      - !createScalebar {}
+      - !prepareLegend
+        template: legend.jrxml
       - !configureHttpRequests
         httpProcessors:
           - !mapUri
@@ -133,12 +140,8 @@ templates:
               https://www.imis.bfs.de/ogc/imis/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/imis/$1"
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
-              https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
-      - !reportBuilder # compile all reports in current directory
-        directory: '.'
-      - !createMap {}
-      - !createNorthArrow {}
-      - !createScalebar {}
-      - !prepareLegend
-        template: legend.jrxml
+              https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1" 
+      # compile all reports in current directory
+      - !reportBuilder 
+        directory: '.'       
 
