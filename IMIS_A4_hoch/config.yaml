@@ -78,7 +78,7 @@ templates:
 
     processors:
       - !configureHttpRequests
-         httpProcessors:
+        httpProcessors:
           - !mapUri
             mapping:
               https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"

@@ -50,7 +50,8 @@ templates:
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
-      - !reportBuilder # compile all reports in current directory
+      # compile all reports in current directory
+      - !reportBuilder 
         directory: '.'
       # Prozessors, die die atrributes bedienen
       - !createMap {}
@@ -91,7 +92,7 @@ templates:
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
-      - !reportBuilder # compile all reports in current directory
+      - !reportBuilder
         directory: '.'
       - !prepareLegend
         template: legend.jrxml  
@@ -164,7 +165,7 @@ templates:
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
-      - !reportBuilder # compile all reports in current directory
+      - !reportBuilder 
         directory: '.'  
               
   #===========================================================================
@@ -196,38 +197,38 @@ templates:
       doc_creator: !string {}
 
     processors:
-    # compile all reports in current directory
-    - !reportBuilder 
-      directory: '.'
-    - !createMap {}
-    - !createNorthArrow {}
-    - !createScalebar {}
-    - !prepareLegend
-      template: legend.jrxml
-    - !createDataSource
-      inputMapper: {layerdata: datasource}
-      outputMapper: {jrDataSource: layerdata2}
-      processors:
-      - !reportBuilder
+      # compile all reports in current directory
+      - !reportBuilder 
         directory: '.'
-      - !prepareTable
-        columns: {}
-        dynamic: true
-        jasperTemplate: results_landscape_2.jrxml
-        firstDetailStyle: column_style_1
-        detailStyle: column_style_2
-        lastDetailStyle: column_style_3
-        firstHeaderStyle: header_style_1
-        headerStyle: header_style_2
-        lastHeaderStyle: header_style_3
-        excludeColumns: ["owner, readonly, id"]
-        # adjust the table report width to the landscape format
-        reportWidth: 800
-        inputMapper: {table: table}
-        outputMapper: {tableDataSource: table2}
-      - !reportBuilder
-        directory: '.'  
-    - !configureHttpRequests
+      - !createMap {}
+      - !createNorthArrow {}
+      - !createScalebar {}
+      - !prepareLegend
+        template: legend.jrxml
+      - !createDataSource
+        inputMapper: {layerdata: datasource}
+        outputMapper: {jrDataSource: layerdata2}
+        processors:
+        - !reportBuilder
+          directory: '.'
+        - !prepareTable
+          columns: {}
+          dynamic: true
+          jasperTemplate: results_landscape_2.jrxml
+          firstDetailStyle: column_style_1
+          detailStyle: column_style_2
+          lastDetailStyle: column_style_3
+          firstHeaderStyle: header_style_1
+          headerStyle: header_style_2
+          lastHeaderStyle: header_style_3
+          excludeColumns: ["owner, readonly, id"]
+          # adjust the table report width to the landscape format
+          reportWidth: 800
+          inputMapper: {table: table}
+          outputMapper: {tableDataSource: table2}
+        - !reportBuilder
+          directory: '.'  
+      - !configureHttpRequests
         httpProcessors:
           - !mapUri
             mapping:
@@ -240,4 +241,7 @@ templates:
               https://www.imis.bfs.de/ogc/imis/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/imis/$1"
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
-              https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"          
+              https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1" 
+      # compile all reports in current directory
+      - !reportBuilder 
+        directory: '.'       
