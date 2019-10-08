@@ -120,13 +120,6 @@ templates:
       doc_creator: !string {}
 
     processors:
-      - !reportBuilder 
-        directory: '.'
-      - !createMap {}
-      - !createNorthArrow {}
-      - !createScalebar {}
-      - !prepareLegend
-        template: legend.jrxml
       - !configureHttpRequests
         httpProcessors:
           - !mapUri
@@ -143,5 +136,10 @@ templates:
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1" 
       # compile all reports in current directory
       - !reportBuilder 
-        directory: '.'       
+        directory: '.'  
+      - !createMap {}
+      - !createNorthArrow {}
+      - !createScalebar {}
+      - !prepareLegend
+        template: legend.jrxml     
 
