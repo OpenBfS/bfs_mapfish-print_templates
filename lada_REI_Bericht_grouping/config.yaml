@@ -1,0 +1,125 @@
+throwErrorOnExtraParameters: false
+
+templates:
+  A4 landscape: !template
+    reportTemplate: rei_quartal_mantel.jrxml
+    attributes:
+      doc_creator: !string {}
+      reiData: !datasource
+        attributes:
+          messRegime: !string
+            default: ""
+          netzId: !string
+            default: ""
+          netzbetreiber: !string
+            default: ""
+          anlagebeschr: !string
+            default: ""
+          anlage: !string
+            default: ""
+          medium: !string
+            default: ""
+          qmitteSammelzeitraum: !string
+            default: 0
+          jmitteSammelzeitraum: !string
+            default: 0
+          mitteSammelzeitraum: !string
+            default: 0
+          dBasis: !string
+            default: ""
+          hpNr: !string
+            default: ""
+          npNr: !string
+            default: ""
+          mstLaborId: !string
+            default: ""
+          mstLabor: !string
+            default: ""
+          umw: !string
+            default: ""
+          umwID: !string
+            default: ""
+          # Achtung: gg
+          reiproggrp: !string
+            default: ""
+          # Achtung: gg
+          reiproggrpbeschr: !string
+            default: ""
+          # mmt=Messmethode
+          mmt: !string
+            default: ""
+          mmtID: !string
+            default: ""
+          prnId: !string
+            default: ""
+          prnBezeichnung: !string
+            default: ""
+          prnKurzBezeichnung: !string
+            default: ""
+          mpl: !string
+            default: ""
+          mplCode: !string
+            default: ""
+          probenart: !string
+            default: ""
+          externeProbeId: !string
+            default: ""
+          letzteAenderung: !string
+            default: 0
+          media: !string
+            default: ""
+          mediaDesk: !string
+            default: ""
+          messbeginn: !string
+            default: 0
+          peBegin: !string
+            default: 0
+          peEnd: !string
+            default: 0
+          # Messpunkt
+          ortKurztext: !string
+            default: ""
+          ortLangtext: !string
+            default: ""
+          ortId: !string
+            default: ""
+          eGem: !string
+            default: ""
+          eGemId: !string
+            default: ""
+          berichtstext: !string
+            default: ""
+          messgroesse: !string
+            default: ""
+          bemerkungen: !string
+            default: ""
+          einheit: !string
+            default: ""
+          # Messwert
+          wert: !string
+            default: ""
+          # relative Messunsicherheit
+          fehler: !string
+            default: ""
+          nwg: !string
+            default: ""
+          nwgZuMesswert: !string
+            default: ""
+          messdauer: !string
+            default: 0
+          pKommentar: !string
+            default: ""
+          mKommentar: !string
+            default: ""
+          pzs: !string
+            default: ""
+
+    processors:
+    - !reportBuilder
+      directory: '.'
+    - !createDataSource
+      inputMapper: {reiData: datasource}
+      outputMapper: {jrDataSource: messwerte}
+      processors:
+        - !reportBuilder
+          directory: '.'
