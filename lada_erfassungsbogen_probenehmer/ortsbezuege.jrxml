@@ -198,7 +198,7 @@
 				<textElement verticalAlignment="Top" markup="styled">
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ort.staat}.equals("null") ? null : $F{ort.staat}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ort.staat}.equals("") || $F{ort.staat}.equals("0") || $F{ort.staat}.equals("null") ? new String ("") : $F{ort.staat}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="360" y="0" width="75" height="20" uuid="08c210fb-7f27-4112-942c-c37bcba40011">

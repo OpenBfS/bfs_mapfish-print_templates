@@ -30,11 +30,10 @@
 				<textFieldExpression><![CDATA[new java.util.Date() + " / " + $P{doc_creator}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement stretchType="RelativeToBandHeight" x="602" y="2" width="180" height="10" uuid="0ee85f47-4eb3-4b6b-91b5-39106033a61c">
+				<reportElement stretchType="RelativeToBandHeight" x="602" y="0" width="180" height="10" uuid="4a9e38a5-55b3-4433-9880-c9ea097627ae">
 					<property name="local_mesure_unitheight" value="mm"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="7"/>
@@ -42,11 +41,10 @@
 				<textFieldExpression><![CDATA["Seite " + $V{PAGE_NUMBER} + " von "]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="782" y="2" width="20" height="10" uuid="0cb69a47-b5f8-4056-8114-dc8d19f21d3b">
+				<reportElement x="782" y="0" width="20" height="10" uuid="14aef7a3-c935-4375-bc8d-9a58a940d1a9">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
 					<font size="7"/>

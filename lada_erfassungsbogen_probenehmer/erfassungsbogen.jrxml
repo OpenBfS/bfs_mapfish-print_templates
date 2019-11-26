@@ -35,7 +35,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="121">
+		<band height="125">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<componentElement>
@@ -111,7 +111,7 @@
 				<textFieldExpression><![CDATA[$F{messstelle.messStelle}.equals("null") ? null : $F{messstelle.messStelle}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="113" width="555" height="1" uuid="bbb37163-26da-40ed-ace2-dabcb6115c0b">
+				<reportElement x="0" y="117" width="555" height="1" uuid="bbb37163-26da-40ed-ace2-dabcb6115c0b">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -136,17 +136,7 @@
 				<text><![CDATA[Haupt-Probennummer]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="68" width="140" height="20" uuid="d998a022-eb50-41ca-a78f-7f2ba4ec423d">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Bottom"/>
-				<text><![CDATA[Probenahmeinstitution]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="88" width="140" height="20" uuid="622ca7cb-62be-46af-94bc-52baf9c453d9">
+				<reportElement x="0" y="92" width="140" height="20" uuid="622ca7cb-62be-46af-94bc-52baf9c453d9">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -155,55 +145,64 @@
 				<textElement verticalAlignment="Bottom"/>
 				<text><![CDATA[Name des Probenehmers]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="142" y="88" width="413" height="20" uuid="ea6d7b51-ec0d-4bae-86e4-9771a29e75f1">
+			<line>
+				<reportElement x="142" y="112" width="413" height="1" uuid="1de8550a-eda9-4f53-a4bc-b439b9e237af">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement x="205" y="72" width="350" height="15" uuid="8210be8f-0ae2-4f55-a650-05f87d95fa67">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
-					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
-					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-				</reportElement>
-				<box>
-					<bottomPen lineWidth="1.0"/>
-				</box>
-				<textElement verticalAlignment="Bottom">
-					<paragraph leftIndent="5" spacingBefore="0" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{prnBezeichnung}.equals("null") ? null : $F{prnBezeichnung}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="142" y="72" width="58" height="15" uuid="d96623cf-abc1-4d19-9184-b6cb6d6c3188">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
-					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.001"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Bottom">
-					<paragraph leftIndent="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{prnId}.equals("null") ? null : $F{prnId}]]></textFieldExpression>
-			</textField>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement x="0" y="68" width="555" height="20" uuid="96a9b74a-a82a-45fc-95f8-beaa482d6505"/>
+				<staticText>
+					<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="140" height="20" uuid="d998a022-eb50-41ca-a78f-7f2ba4ec423d">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Bottom"/>
+					<text><![CDATA[Probenahmeinstitution]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="205" y="4" width="350" height="15" uuid="8210be8f-0ae2-4f55-a650-05f87d95fa67">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<paragraph leftIndent="5" spacingBefore="0" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{prnBezeichnung}.equals("null") ? null : $F{prnBezeichnung}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="142" y="4" width="58" height="15" uuid="d96623cf-abc1-4d19-9184-b6cb6d6c3188">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.001"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<paragraph leftIndent="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{prnId}.equals("null") ? null : $F{prnId}]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</pageHeader>
 	<detail>
@@ -289,7 +288,7 @@
 				<text><![CDATA[E = Einzelprobe S = Sammelprobe]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="105" y="0" width="175" height="20" uuid="2d0f1101-8b1d-4426-aa74-cb05521795f2">
+				<reportElement x="105" y="0" width="201" height="20" uuid="2d0f1101-8b1d-4426-aa74-cb05521795f2">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
