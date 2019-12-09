@@ -72,7 +72,10 @@
 				<text><![CDATA[Stufe]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="250" y="0" width="70" height="20" uuid="acc1aff8-8d6e-4ed2-8f6a-02631314ed70"/>
+				<reportElement x="250" y="0" width="150" height="20" uuid="acc1aff8-8d6e-4ed2-8f6a-02631314ed70">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
 				<box>
 					<bottomPen lineWidth="1.0"/>
 				</box>
@@ -83,7 +86,10 @@
 				<text><![CDATA[Erzeuger]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="320" y="0" width="234" height="20" uuid="f78116cd-ee07-4fbb-9bdc-47a52da30dc5"/>
+				<reportElement x="400" y="0" width="154" height="20" uuid="f78116cd-ee07-4fbb-9bdc-47a52da30dc5">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<bottomPen lineWidth="1.0"/>
 				</box>
@@ -139,11 +145,12 @@
 					<textFieldExpression><![CDATA[$F{statusStufe}.equals("null") ? null : $F{statusStufe}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement stretchType="ElementGroupHeight" x="250" y="0" width="70" height="20" uuid="ea83b82d-e7df-4cae-be52-e8f2f13f4e8e">
+					<reportElement stretchType="ElementGroupHeight" x="250" y="0" width="150" height="20" uuid="ea83b82d-e7df-4cae-be52-e8f2f13f4e8e">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Top">
 						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
@@ -151,11 +158,13 @@
 					<textFieldExpression><![CDATA[$F{mst}.equals("null") ? null : $F{mst}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement stretchType="ElementGroupHeight" x="320" y="0" width="234" height="20" uuid="6e34617a-3e96-4559-9770-02f659dfc263">
+					<reportElement stretchType="ElementGroupHeight" x="400" y="0" width="154" height="20" uuid="6e34617a-3e96-4559-9770-02f659dfc263">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 						<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Top">
 						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>

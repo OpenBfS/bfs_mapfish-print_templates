@@ -159,118 +159,121 @@
 	<detail>
 		<band height="20" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="0" width="30" height="20" uuid="a8dadb9e-d79d-4163-893e-3090e0ac1c83"/>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Top" markup="styled">
-					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ortszuordnungTyp}.equals("null") ? null : $F{ortszuordnungTyp}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="30" y="0" width="75" height="20" uuid="ea698f3f-9cfa-46e7-b478-acef1b31b185">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Top" markup="styled">
-					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ort.gemId}.equals("null") ? null : $F{ort.gemId}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="105" y="0" width="165" height="20" uuid="1ddc6670-6ff0-446f-8b6b-f01939a6ddb5">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Top" markup="styled">
-					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[($F{ort.gem}.equals("null") ? null : $F{ort.gem}) + " / " + ($F{ort.langtext}.equals("null") ? null : $F{ort.langtext})]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="270" y="0" width="90" height="20" uuid="1bc28cf4-0cdd-430b-a253-abc44efcf87e">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Top" markup="styled">
-					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ort.staat}.equals("null") ? null : $F{ort.staat}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="360" y="0" width="75" height="20" uuid="08c210fb-7f27-4112-942c-c37bcba40011">
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Top" markup="styled">
-					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ort.koordXExtern}.equals("null") ? null : $F{ort.koordXExtern}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="435" y="0" width="75" height="20" uuid="f53f0fb3-ff0e-4891-8e0c-d5f07ae2bef4">
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Top" markup="styled">
-					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ort.koordYExtern}.equals("null") ? null : $F{ort.koordYExtern}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="510" y="0" width="45" height="20" uuid="310295cc-3e33-4ffe-8780-9916589fec73">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement>
-					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ort.kdaId}.equals("null") ? null : $F{ort.kdaId}]]></textFieldExpression>
-			</textField>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="20" uuid="763bef29-4f74-4a2b-a8e9-ab02ec52c920"/>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="30" height="20" uuid="a8dadb9e-d79d-4163-893e-3090e0ac1c83"/>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="styled">
+						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ortszuordnungTyp}.equals("null") ? null : $F{ortszuordnungTyp}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="30" y="0" width="75" height="20" uuid="ea698f3f-9cfa-46e7-b478-acef1b31b185">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="styled">
+						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ort.gemId}.equals("null") ? null : $F{ort.gemId}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="105" y="0" width="165" height="20" uuid="1ddc6670-6ff0-446f-8b6b-f01939a6ddb5">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="styled">
+						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{ort.gem}.equals("null") ? null : $F{ort.gem}) + " / " + ($F{ort.langtext}.equals("null") ? null : $F{ort.langtext})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="270" y="0" width="90" height="20" uuid="1bc28cf4-0cdd-430b-a253-abc44efcf87e">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="styled">
+						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ort.staat}.equals("null") ? null : $F{ort.staat}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="360" y="0" width="75" height="20" uuid="08c210fb-7f27-4112-942c-c37bcba40011">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="styled">
+						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ort.koordXExtern}.equals("null") ? null : $F{ort.koordXExtern}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="435" y="0" width="75" height="20" uuid="f53f0fb3-ff0e-4891-8e0c-d5f07ae2bef4">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="styled">
+						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ort.koordYExtern}.equals("null") ? null : $F{ort.koordYExtern}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="ElementGroupHeight" x="510" y="0" width="45" height="20" uuid="310295cc-3e33-4ffe-8780-9916589fec73">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ort.kdaId}.equals("null") ? null : $F{ort.kdaId}]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</detail>
 	<noData>
