@@ -10,6 +10,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="timezone"/>
 	<field name="datum" class="java.lang.String"/>
 	<field name="mst" class="java.lang.String"/>
 	<field name="statusWert" class="java.lang.String"/>
@@ -117,7 +118,7 @@
 					<textElement verticalAlignment="Top">
 						<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{datum}.equals("") || $F{datum}.equals("null") ? null : new Date(Long.valueOf($F{datum}))]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{datum}.equals("") || $F{datum}.equals("null") ? null : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{datum})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement stretchType="ElementGroupHeight" x="80" y="0" width="100" height="20" uuid="c99ea7eb-4281-4dc4-81ed-6d604c8938f9">

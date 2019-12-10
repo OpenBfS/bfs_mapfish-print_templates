@@ -5,6 +5,7 @@ templates:
     reportTemplate: rei_quartal_mantel.jrxml
     attributes:
       doc_creator: !string {}
+      timezone: !string {}
       reiData: !datasource
         attributes:
           messRegime: !string

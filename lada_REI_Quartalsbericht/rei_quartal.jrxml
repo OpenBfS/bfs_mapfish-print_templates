@@ -14,6 +14,7 @@
 	<parameter name="tableSubReport" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="tableDataSource" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
 	<parameter name="table2" class="net.sf.jasperreports.engine.JRTableDataSource"/>
+	<parameter name="timezone" class="java.lang.String"/>
 	<field name="anlagebeschr" class="java.lang.String"/>
 	<field name="reiproggrp" class="java.lang.String"/>
 	<field name="mmt" class="java.lang.String"/>
@@ -240,7 +241,7 @@
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
-					<textFieldExpression><![CDATA[$F{peBegin}.equals("") || $F{peBegin}.equals("0") ? new String ("") : new Date(Long.valueOf($F{peBegin}))]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{peBegin}.equals("") || $F{peBegin}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{peBegin})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="190" y="100" width="40" height="15" uuid="2cc79c1e-f6f2-4525-9f6d-84311251a72f">
@@ -256,7 +257,7 @@
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
-					<textFieldExpression><![CDATA[$F{peEnd}.equals("") || $F{peEnd}.equals("0") ? new String ("") : new Date(Long.valueOf($F{peEnd}))]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{peEnd}.equals("") || $F{peEnd}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{peEnd})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="120" y="120" width="250" height="15" uuid="db28c534-8871-43af-8fcc-9399d032ca49">
@@ -720,7 +721,7 @@
 						<font size="8"/>
 						<paragraph leftIndent="5" rightIndent="0" spacingBefore="0" spacingAfter="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{peBegin}.equals("") || $F{peBegin}.equals("0") ? new String ("") : new Date(Long.valueOf($F{peBegin}))]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{peBegin}.equals("") || $F{peBegin}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{peBegin})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 				</textField>
 				<textField pattern="dd.MM.yyyy" isBlankWhenNull="false">
 					<reportElement stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="295" y="0" width="55" height="20" isPrintInFirstWholeBand="true" printWhenGroupChanges="zeitraumGroup" uuid="016ff069-9802-4c36-8181-3c80fed5ba0b">
@@ -739,7 +740,7 @@
 						<font size="8"/>
 						<paragraph leftIndent="5" spacingBefore="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{peEnd}.equals("") || $F{peEnd}.equals("0") ? new String ("") : new Date(Long.valueOf($F{peEnd}))]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{peEnd}.equals("") || $F{peEnd}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{peEnd})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="0" y="0" width="140" height="20" isPrintInFirstWholeBand="true" uuid="4745b5f3-acee-45a7-a7e3-cd1508e82bbd">

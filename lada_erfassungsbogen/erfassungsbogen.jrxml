@@ -3,6 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="erfassungsbogen" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48e3dc13-4280-4df2-bbea-ad5fac75145b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="barcode" hTextAlign="Right" hImageAlign="Right" vTextAlign="Middle" vImageAlign="Middle"/>
+	<parameter name="timezone" class="java.lang.String"/>
 	<field name="hauptprobenNr" class="java.lang.String"/>
 	<field name="id" class="java.lang.String"/>
 	<field name="messRegime" class="java.lang.String"/>
@@ -228,7 +229,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{solldatumBeginn}.equals("") || $F{solldatumBeginn}.equals("0") ? new String ("") : new Date(Long.valueOf($F{solldatumBeginn}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{solldatumBeginn}.equals("") || $F{solldatumBeginn}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{solldatumBeginn})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="98" width="140" height="20" uuid="2da197cb-491a-4324-9ba7-e6836305dda1">
@@ -252,7 +253,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{solldatumEnde}.equals("") || $F{solldatumEnde}.equals("0") ? new String ("") : new Date(Long.valueOf($F{solldatumEnde}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{solldatumEnde}.equals("") || $F{solldatumEnde}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{solldatumEnde})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="245" y="98" width="20" height="20" uuid="4978e7ce-64fa-47d1-88fc-66d98de648c8">
@@ -418,7 +419,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{probeentnahmeBeginn}.equals("") || $F{probeentnahmeBeginn}.equals("0") ? new String ("") : new Date(Long.valueOf($F{probeentnahmeBeginn}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{probeentnahmeBeginn}.equals("") || $F{probeentnahmeBeginn}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{probeentnahmeBeginn})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="118" width="140" height="20" uuid="46fae886-1046-4820-930f-8986da675242">
@@ -442,7 +443,7 @@
 				<textElement verticalAlignment="Bottom">
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("0")) ? new String ("") : new Date(Long.valueOf($F{probeentnahmeEnde}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{probeentnahmeEnde}.equals("") || $F{probeentnahmeEnde}.equals("0")) ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{probeentnahmeEnde})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="245" y="118" width="20" height="20" uuid="2551cdd5-1151-448d-9444-1f73904f7ce4">
@@ -473,6 +474,9 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
+				<subreportParameter name="timezone">
+                    <subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+                </subreportParameter>
 				<dataSourceExpression><![CDATA[$F{messstelle2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messstelle.jasper"]]></subreportExpression>
 			</subreport>
@@ -480,6 +484,9 @@
 				<reportElement x="0" y="180" width="555" height="150" uuid="4ab2822f-6d51-485e-aee8-a1079cbe762f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
+				<subreportParameter name="timezone">
+                    <subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+                </subreportParameter>
 				<dataSourceExpression><![CDATA[$F{deskriptoren2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["deskriptoren.jasper"]]></subreportExpression>
 			</subreport>
@@ -546,6 +553,9 @@
 				<reportElement key="" positionType="Float" x="0" y="0" width="555" height="89" uuid="bef045f8-62f4-4ca0-bc9d-014b6b61a1ab">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
+				<subreportParameter name="timezone">
+                    <subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+                </subreportParameter>
 				<dataSourceExpression><![CDATA[$F{kommentare2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenkommentare.jasper"]]></subreportExpression>
 			</subreport>
@@ -553,6 +563,9 @@
 				<reportElement positionType="Float" x="0" y="89" width="555" height="87" uuid="77a490ea-4a9d-4733-9251-127c6f0fa986">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
+				<subreportParameter name="timezone">
+                    <subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+                </subreportParameter>
 				<dataSourceExpression><![CDATA[$F{ortszuordnung2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["ortsbezuege.jasper"]]></subreportExpression>
 			</subreport>
@@ -561,6 +574,9 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
+				<subreportParameter name="timezone">
+                    <subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+                </subreportParameter>
 				<dataSourceExpression><![CDATA[$F{zusatzwerte2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["probenzusatzwerte.jasper"]]></subreportExpression>
 			</subreport>
@@ -569,6 +585,9 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
+				<subreportParameter name="timezone">
+                    <subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+                </subreportParameter>
 				<dataSourceExpression><![CDATA[$F{messungen2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["messungen.jasper"]]></subreportExpression>
 			</subreport>
