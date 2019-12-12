@@ -1,6 +1,6 @@
 
 # enthält 3 Templates + Template für die Summary
-templates: 
+templates:
   #===========================================================================
   # template for map only
   imis_A4_map: !template
@@ -48,16 +48,16 @@ templates:
               https://www.imis.bfs.de/ogc/bfs/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/bfs/$1"
               https://www.imis.bfs.de/ogc/imis/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/imis/$1"
               https://www.imis.bfs.de/ogc/ows/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/ows/$1"
-              https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
+              https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp02-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
       # compile all reports in current directory
-      - !reportBuilder 
+      - !reportBuilder
         directory: '.'
       # Prozessors, die die atrributes bedienen
       - !createMap {}
       - !createNorthArrow {}
-      - !createScalebar {}  
+      - !createScalebar {}
 
   #===========================================================================
   # template for legend only
@@ -77,7 +77,7 @@ templates:
         default: "<div>&lt;... Kommentar: ...&gt; </div>"
       impressum: &impressum !string
         default: "<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>"
-        
+
     processors:
       - !configureHttpRequests
         httpProcessors:
@@ -97,18 +97,18 @@ templates:
       - !reportBuilder
         directory: '.'
       - !prepareLegend
-        template: legend.jrxml  
+        template: legend.jrxml
 
   #===========================================================================
   # template for table only
   imis_A4_table: !template
     reportTemplate: results.jrxml
     attributes:
-      layerdata: &table !datasource 
+      layerdata: &table !datasource
         attributes:
           title: !string {}
           table: !table {}
-        default: 
+        default:
          [{
             "title": "EU-Höchstwerte für Nahrungsmittel aus der Verordnung (Euratom) 2016/52 des Rates vom 15.01.2016",
             "table": {
@@ -151,7 +151,7 @@ templates:
                 ]
             }
         }]
-            
+
     processors:
       - !configureHttpRequests
         httpProcessors:
@@ -168,9 +168,9 @@ templates:
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
               https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
-      - !reportBuilder 
-        directory: '.'  
-              
+      - !reportBuilder
+        directory: '.'
+
   #===========================================================================
   # template for document including map and legend
   imis_A4: !template
@@ -191,8 +191,8 @@ templates:
       description: *description
       comment: *comment
       impressum: *impressum
-      
-      # wird nur benötigt, um Tabelle einzeln druckbar zu machen 
+
+      # wird nur benötigt, um Tabelle einzeln druckbar zu machen
       #table_template: !string
       #  default: "results.jasper"
       layerdata: *table
@@ -214,9 +214,9 @@ templates:
               https://www.imis.bfs.de/ogc/ows/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/ows/$1"
               https://www.imis.bfs.de/ogc/rodos/wms(.*) : "http://jroapp-muc.rodos.bfs.de:8080/geoserver/jrodos_res/ows$1"
               https://www.imis.bfs.de/ogc/osm/wms(.*) : "http://osm-muc.bfs.de/osm/wms_osm$1"
-              https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1" 
+              https://www.imis.bfs.de/ogc/tiles/(.*) : "http://osm-muc.bfs.de/mapcache/$1"
       # compile all reports in current directory
-      - !reportBuilder 
+      - !reportBuilder
         directory: '.'
       - !createMap {}
       - !createNorthArrow {}
@@ -245,4 +245,4 @@ templates:
           inputMapper: {table: table}
           outputMapper: {tableDataSource: table2}
         - !reportBuilder
-          directory: '.'       
+          directory: '.'
