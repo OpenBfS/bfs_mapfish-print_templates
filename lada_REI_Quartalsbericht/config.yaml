@@ -6,6 +6,22 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
+      filterParams: !datasource
+        attributes:
+          name: !string
+            default: ""
+          displayName: !string
+            default: ""
+          filterDisplay: !string
+            default: ""
+          filter: !string
+            default: ""
+          filterRegex: !boolean
+            default: false
+          filterNegate: !boolean
+            default: false
+          filterIsNull: !boolean
+            default: false
       reiData: !datasource
         attributes:
           messRegime: !string
@@ -124,3 +140,10 @@ templates:
       processors:
         - !reportBuilder
           directory: '.'
+    - !createDataSource
+      inputMapper: {filterParams: datasource}
+      outputMapper: {jrDataSource: filterparams}
+      processors:
+        - !reportBuilder
+          directory: '.'
+
