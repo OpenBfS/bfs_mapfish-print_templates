@@ -71,7 +71,7 @@
 					<reportElement x="20" y="50" width="360" height="160" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4" positionType="Float" stretchType="RelativeToTallestObject"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="30" y="55" width="100" height="30" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
+					<reportElement x="30" y="54" width="100" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<textElement>
@@ -168,7 +168,7 @@
 					<text><![CDATA[11. Probe-Id (aufst.)]]></text>
 				</staticText>
 				<subreport>
-					<reportElement x="30" y="70" width="250" height="125" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+					<reportElement x="30" y="76" width="360" height="30" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
 					<subreportParameter name="timezone">
 						<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
 					</subreportParameter>
