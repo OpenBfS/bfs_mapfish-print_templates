@@ -168,7 +168,8 @@
 					<text><![CDATA[11. Probe-Id (aufst.)]]></text>
 				</staticText>
 				<subreport>
-					<reportElement x="30" y="86" width="360" height="15" stretchType="RelativeToTallestObject" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+					<reportElement x="30" y="86" width="360" height="15"
+					 stretchType="RelativeToTallestObject" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
 					<subreportParameter name="timezone">
 						<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
 					</subreportParameter>
