@@ -24,6 +24,8 @@ templates:
             default: false
       reiData: !datasource
         attributes:
+          Titel:  !string
+            default: ""
           messRegime: !string
             default: ""
           netzId: !string

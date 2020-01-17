@@ -16,6 +16,7 @@
 	<parameter name="table2" class="net.sf.jasperreports.engine.JRTableDataSource"/>
 	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="timezone" class="java.lang.String"/>
+	<field name="Titel" class="java.lang.String"/>
 	<field name="anlagebeschr" class="java.lang.String"/>
 	<field name="reiproggrp" class="java.lang.String"/>
 	<field name="mmt" class="java.lang.String"/>
@@ -53,7 +54,15 @@
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA["REI-Immissionsbericht des "+ $F{qmitteSammelzeitraum}+". Quartals "+ $F{jmitteSammelzeitraum} + " für die Kerntechnische Anlage " + $F{anlagebeschr}]]></textFieldExpression>
+					<textFieldExpression>
+						<![CDATA[
+							($F{Titel}.equals("")) ?
+							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
+							". Quartals " + $F{jmitteSammelzeitraum} +
+							" für die Kerntechnische Anlage " + $F{anlagebeschr} :
+							$F{Titel}
+						]]>
+					</textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
