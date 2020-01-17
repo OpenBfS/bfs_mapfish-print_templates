@@ -14,6 +14,7 @@
 	<parameter name="tableSubReport" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="tableDataSource" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
 	<parameter name="table2" class="net.sf.jasperreports.engine.JRTableDataSource"/>
+	<parameter name="reportparams" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="timezone" class="java.lang.String"/>
 	<field name="Titel" class="java.lang.String"/>

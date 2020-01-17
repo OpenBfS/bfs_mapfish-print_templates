@@ -6,6 +6,10 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
+      reportParams: !datasource
+        attributes:
+          Titel:  !string
+            default: ""
       filterParams: !datasource
         attributes:
           name: !string
@@ -24,8 +28,6 @@ templates:
             default: false
       reiData: !datasource
         attributes:
-          Titel:  !string
-            default: ""
           messRegime: !string
             default: ""
           netzId: !string
@@ -145,6 +147,11 @@ templates:
     - !createDataSource
       inputMapper: {filterParams: datasource}
       outputMapper: {jrDataSource: filterparams}
+      processors:
+        - !reportBuilder
+          directory: '.'
+    - !createDataSource
+      inputMapper: {reportParams: datasource}
       processors:
         - !reportBuilder
           directory: '.'
