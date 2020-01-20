@@ -5,8 +5,10 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="messwerte" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
+
 	<parameter name="doc_creator" class="java.lang.String"/>
 	<parameter name="timezone" class="java.lang.String"/>
+	<parameter name="titel" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -17,6 +19,9 @@
 				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="842" height="80" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
 				<subreportParameter name="timezone">
 					<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="titel">
+					<subreportParameterExpression><![CDATA[$P{titel}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="filterparams">
 					<subreportParameterExpression><![CDATA[$P{filterparams}]]></subreportParameterExpression>

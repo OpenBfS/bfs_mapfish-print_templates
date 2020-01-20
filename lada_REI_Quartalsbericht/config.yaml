@@ -6,10 +6,7 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
-      reportParams: !datasource
-        attributes:
-          Titel:  !string
-            default: ""
+      titel:  !string {}
       filterParams: !datasource
         attributes:
           name: !string
@@ -150,9 +147,3 @@ templates:
       processors:
         - !reportBuilder
           directory: '.'
-    - !createDataSource
-      inputMapper: {reportParams: datasource}
-      processors:
-        - !reportBuilder
-          directory: '.'
-
