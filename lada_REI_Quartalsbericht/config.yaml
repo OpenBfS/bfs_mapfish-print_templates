@@ -52,6 +52,8 @@ templates:
             default: ""
           mstLaborId: !string
             default: ""
+          messstellenadr: !string
+            default: ""
           mstLabor: !string
             default: ""
           umw: !string

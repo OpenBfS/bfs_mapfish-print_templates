@@ -25,6 +25,7 @@
 	<field name="mstLaborId" class="java.lang.String"/>
 	<field name="mstLabor" class="java.lang.String"/>
 	<field name="reiproggrpbeschr" class="java.lang.String"/>
+	<field name="messstellenadr" class="java.lang.String"/>
 	<field name="jmitteSammelzeitraum" class="java.lang.String"/>
 	<field name="peBegin" class="java.lang.String"/>
 	<field name="peEnd" class="java.lang.String"/>
@@ -225,11 +226,11 @@
 					<text><![CDATA[Messlabor:]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="185" y="24" width="595" height="15" uuid="c08fb232-3028-43c9-b11d-d407f27db629">
+					<reportElement x="185" y="24" width="700" height="15" uuid="c08fb232-3028-43c9-b11d-d407f27db629">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
-					<textFieldExpression><![CDATA[$F{mstLaborId} + ": " + $F{mstLabor}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{mstLaborId} + ": " + $F{messstellenadr}]]></textFieldExpression>
 				</textField>
 				<rectangle>
 					<reportElement x="20" y="41" width="782" height="40" uuid="6c3201f4-b6e9-4393-91bc-b9963705270d">
