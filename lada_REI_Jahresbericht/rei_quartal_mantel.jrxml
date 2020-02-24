@@ -2,8 +2,13 @@
 <!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rei_quartal_mantel" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="0942d26f-9b15-4b08-945a-dc371a864c36">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="messwerte" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
+
 	<parameter name="doc_creator" class="java.lang.String"/>
+	<parameter name="timezone" class="java.lang.String"/>
+	<parameter name="titel" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -12,6 +17,15 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<subreport>
 				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="842" height="80" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+				<subreportParameter name="timezone">
+					<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="titel">
+					<subreportParameterExpression><![CDATA[$P{titel}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="filterparams">
+					<subreportParameterExpression><![CDATA[$P{filterparams}]]></subreportParameterExpression>
+				</subreportParameter>
 				<dataSourceExpression><![CDATA[$P{messwerte}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["rei_quartal.jasper"]]></subreportExpression>
 			</subreport>
@@ -27,7 +41,7 @@
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date() + " / " + $P{doc_creator}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm zzz").withZone(java.time.ZoneId.of($P{timezone})).format(java.time.ZonedDateTime.now()) + " / " + $P{doc_creator}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement stretchType="RelativeToBandHeight" x="602" y="0" width="180" height="10" uuid="4a9e38a5-55b3-4433-9880-c9ea097627ae">

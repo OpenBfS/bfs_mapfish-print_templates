@@ -6,6 +6,24 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
+      titel:  !string
+        default: ""
+      filterParams: !datasource
+        attributes:
+          name: !string
+            default: ""
+          displayName: !string
+            default: ""
+          filterDisplay: !string
+            default: ""
+          filter: !string
+            default: ""
+          filterRegex: !boolean
+            default: false
+          filterNegate: !boolean
+            default: false
+          filterIsNull: !boolean
+            default: false
       reiData: !datasource
         attributes:
           messRegime: !string
@@ -33,6 +51,8 @@ templates:
           npNr: !string
             default: ""
           mstLaborId: !string
+            default: ""
+          messstellenadr: !string
             default: ""
           mstLabor: !string
             default: ""
@@ -121,6 +141,12 @@ templates:
     - !createDataSource
       inputMapper: {reiData: datasource}
       outputMapper: {jrDataSource: messwerte}
+      processors:
+        - !reportBuilder
+          directory: '.'
+    - !createDataSource
+      inputMapper: {filterParams: datasource}
+      outputMapper: {jrDataSource: filterparams}
       processors:
         - !reportBuilder
           directory: '.'

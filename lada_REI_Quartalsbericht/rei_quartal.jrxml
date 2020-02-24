@@ -14,7 +14,9 @@
 	<parameter name="tableSubReport" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="tableDataSource" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
 	<parameter name="table2" class="net.sf.jasperreports.engine.JRTableDataSource"/>
+	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="timezone" class="java.lang.String"/>
+	<parameter name="titel" class="java.lang.String"/>
 	<field name="anlagebeschr" class="java.lang.String"/>
 	<field name="reiproggrp" class="java.lang.String"/>
 	<field name="mmt" class="java.lang.String"/>
@@ -23,6 +25,7 @@
 	<field name="mstLaborId" class="java.lang.String"/>
 	<field name="mstLabor" class="java.lang.String"/>
 	<field name="reiproggrpbeschr" class="java.lang.String"/>
+	<field name="messstellenadr" class="java.lang.String"/>
 	<field name="jmitteSammelzeitraum" class="java.lang.String"/>
 	<field name="peBegin" class="java.lang.String"/>
 	<field name="peEnd" class="java.lang.String"/>
@@ -52,16 +55,15 @@
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA["REI-Immissionsbericht des "+ $F{qmitteSammelzeitraum}+". Quartals "+ $F{jmitteSammelzeitraum} + " für die Kerntechnische Anlage " + $F{anlagebeschr}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement x="120" y="140" width="250" height="15" uuid="b696390a-680c-43e7-8d8a-0a07eaf9bbcd">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{anlagebeschr}]]></textFieldExpression>
+					<textFieldExpression>
+						<![CDATA[
+							($P{titel}.equals("")) ?
+							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
+							". Quartals " + $F{jmitteSammelzeitraum} +
+							" für die Kerntechnische Anlage " + $F{anlagebeschr} :
+							$P{titel}
+						]]>
+					</textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
@@ -73,63 +75,13 @@
 					<text><![CDATA[Selektion]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="20" y="50" width="360" height="160" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4"/>
-				</rectangle>
-				<staticText>
-					<reportElement x="30" y="180" width="80" height="15" uuid="dcdda108-768b-44d6-8b00-f8a255c00641">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Left"/>
-					<text><![CDATA[Messmethode:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="30" y="120" width="80" height="15" uuid="4c3769bc-9a05-4374-b540-02c88abdb9f9">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Left"/>
-					<text><![CDATA[REI-Prg.-Pkt.:]]></text>
-				</staticText>
-				<rectangle>
 					<reportElement x="390" y="50" width="412" height="190" uuid="c8ae9e75-5fc4-4bb6-90ec-b58e0a2c9325"/>
 				</rectangle>
+				<rectangle>
+					<reportElement x="20" y="50" width="360" height="160" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4" stretchType="RelativeToTallestObject"/>
+				</rectangle>
 				<staticText>
-					<reportElement x="30" y="100" width="80" height="15" uuid="e02d43c7-7f85-4598-b7ea-94ecfb851d5f">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Left"/>
-					<text><![CDATA[Messzeitraum:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="30" y="160" width="80" height="15" uuid="d6b8508e-9407-4808-a70b-69d9dba52219">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Left"/>
-					<text><![CDATA[Messpunkt:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="30" y="140" width="80" height="15" uuid="f88b53b5-6fcd-4f82-828b-24d2f6d6be92">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement textAlignment="Left"/>
-					<text><![CDATA[Kernt. Anlage:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="30" y="65" width="100" height="30" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
+					<reportElement x="30" y="54" width="100" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
 					<textElement>
@@ -137,15 +89,6 @@
 					</textElement>
 					<text><![CDATA[Bedingungen:]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="120" y="140" width="250" height="15" uuid="68f3ac87-f79a-446a-b029-71ac444d1bbe">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{anlagebeschr}]]></textFieldExpression>
-				</textField>
 				<staticText>
 					<reportElement x="400" y="54" width="170" height="15" uuid="e42020ae-fadb-448b-9032-d2b229d7087f">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -234,58 +177,15 @@
 					</reportElement>
 					<text><![CDATA[11. Probe-Id (aufst.)]]></text>
 				</staticText>
-				<textField evaluationTime="Column" pattern="dd.MM.yyyy" isBlankWhenNull="true">
-					<reportElement x="120" y="100" width="70" height="15" uuid="85c9193f-7b01-4963-b0dd-d88f11a005e1">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{peBegin}.equals("") || $F{peBegin}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{peBegin})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement x="190" y="100" width="40" height="15" uuid="2cc79c1e-f6f2-4525-9f6d-84311251a72f">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[bis]]></text>
-				</staticText>
-				<textField evaluationTime="Report" pattern="dd.MM.yyyy" isBlankWhenNull="true">
-					<reportElement x="230" y="100" width="100" height="15" uuid="28e60cf8-bda2-45dc-95d6-8938da2574df">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{peEnd}.equals("") || $F{peEnd}.equals("0") ? new String ("") : java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy").format(java.time.ZonedDateTime.ofInstant(java.time.Instant.ofEpochMilli(Long.valueOf($F{peEnd})), java.time.ZoneId.of($P{timezone})))]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="120" y="120" width="250" height="15" uuid="db28c534-8871-43af-8fcc-9399d032ca49">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{reiproggrp}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="120" y="180" width="250" height="15" uuid="1c5f3fdb-ee15-4d5b-ab67-17ff3df6bc98">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{mmt}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="120" y="160" width="250" height="15" uuid="d2934d70-0a0d-40bc-82ca-6d513075e10b">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{berichtstext}]]></textFieldExpression>
-				</textField>
+				<subreport>
+					<reportElement x="30" y="86" width="360" height="15"
+					 stretchType="RelativeToTallestObject" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+					<subreportParameter name="timezone">
+						<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{filterparams}]]></dataSourceExpression>
+					<subreportExpression><![CDATA["rei_quartal_filter.jasper"]]></subreportExpression>
+				</subreport>
 			</band>
 		</groupHeader>
 	</group>
@@ -326,11 +226,11 @@
 					<text><![CDATA[Messlabor:]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="185" y="24" width="595" height="15" uuid="c08fb232-3028-43c9-b11d-d407f27db629">
+					<reportElement x="185" y="24" width="700" height="15" uuid="c08fb232-3028-43c9-b11d-d407f27db629">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
-					<textFieldExpression><![CDATA[$F{mstLaborId} + ": " + $F{mstLabor}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{mstLaborId} + ": " + $F{messstellenadr}]]></textFieldExpression>
 				</textField>
 				<rectangle>
 					<reportElement x="20" y="41" width="782" height="40" uuid="6c3201f4-b6e9-4393-91bc-b9963705270d">
@@ -356,7 +256,7 @@
 					<textFieldExpression><![CDATA[$F{reiproggrp}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="185" y="48" width="585" height="15" uuid="af5dbc8e-8c80-458a-a4ff-6d05dfc39d6e">
+					<reportElement x="185" y="48" width="630" height="15" uuid="af5dbc8e-8c80-458a-a4ff-6d05dfc39d6e">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -786,9 +686,9 @@
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement verticalAlignment="Middle">
+					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font size="8"/>
-						<paragraph lineSpacing="Single" leftIndent="5"/>
+						<paragraph lineSpacing="Single" leftIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{bemerkungen}+" "+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}]]></textFieldExpression>
 				</textField>
@@ -843,7 +743,7 @@
 						<font size="8"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{wert}.equals("null") || $F{wert}.equals("") ? new String ("") : Double.parseDouble($F{wert})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{wert}.equals("null") || $F{wert}.equals("") ? new String ("") :  new java.text.DecimalFormat("0.0E00", new java.text.DecimalFormatSymbols(Locale.GERMAN)).format(Double.parseDouble($F{wert}))]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement stretchType="ElementGroupHeight" x="560" y="0" width="50" height="20" uuid="e8e5cb06-9e5a-4fd5-bac4-ab3ec9026f62">
@@ -860,7 +760,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{einheit}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField pattern="#.#">
 					<reportElement stretchType="ElementGroupHeight" x="610" y="0" width="50" height="20" uuid="8dc32466-dfbe-44d9-a3f6-eca73e03ee1a">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -872,7 +772,7 @@
 						<font size="8"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{fehler}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{fehler}.equals("null") || $F{fehler}.equals("") ? new String ("") : new java.text.DecimalFormat("0.0", new java.text.DecimalFormatSymbols(Locale.GERMAN)).format(Double.parseDouble($F{fehler}))]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement stretchType="ElementGroupHeight" x="410" y="0" width="30" height="20" uuid="a90cb252-b325-403f-a515-7994ce17675a">
@@ -901,7 +801,7 @@
 						<font size="8"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{nwgZuMesswert}.equals("null") || $F{nwgZuMesswert}.equals("") ? new String ("") : Double.parseDouble($F{nwgZuMesswert})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{nwgZuMesswert}.equals("null") || $F{nwgZuMesswert}.equals("") ? new String ("") : new java.text.DecimalFormat("0.0E00", new java.text.DecimalFormatSymbols(Locale.GERMAN)).format(Double.parseDouble($F{nwgZuMesswert}))]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
