@@ -41,6 +41,14 @@
 	<field name="pKommentar" class="java.lang.String"/>
 	<field name="pzs" class="java.lang.String"/>
 	<field name="mKommentar" class="java.lang.String"/>
+	<variable name = "header" class = "java.lang.String">
+		<variableExpression>
+			<![CDATA[($P{titel}.equals("")) ?
+				"REI-Immissionsbericht - Jahresbericht " + $F{jmitteSammelzeitraum} +
+				" für die Kerntechnische Anlage " + $F{anlagebeschr} :
+				$P{titel}]]>
+		</variableExpression>
+	</variable>
 	<group name="ProbenGroup" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{anlagebeschr}]]></groupExpression>
 		<groupHeader>
@@ -523,12 +531,13 @@
 	<pageHeader>
 		<band height="20">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
+			<textField evaluationTime="Page">
 				<reportElement x="20" y="0" width="780" height="20" uuid="af1556b4-5442-489f-b015-3ca2f7d6a014">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{dBasis} + " / Jahresbericht " + $F{jmitteSammelzeitraum} + " / " + $F{anlagebeschr}]]></textFieldExpression>
+				<textElement><font size="8"/></textElement>
+				<textFieldExpression><![CDATA[($V{PAGE_NUMBER} > 1) ? ($V{header}) : ""]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
