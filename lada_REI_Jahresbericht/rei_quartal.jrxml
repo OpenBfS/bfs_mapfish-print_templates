@@ -196,7 +196,7 @@
 			</band>
 		</groupHeader>
 	</group>
-	<group name="tableHeaderGroup">
+	<group name="tableHeaderGroup" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{reiproggrp}+$F{mmt}+$F{mstLaborId}]]></groupExpression>
 		<groupHeader>
 			<band height="85">
