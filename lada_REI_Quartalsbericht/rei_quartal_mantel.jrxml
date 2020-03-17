@@ -8,7 +8,7 @@
 
 	<parameter name="doc_creator" class="java.lang.String"/>
 	<parameter name="timezone" class="java.lang.String"/>
-	<parameter name="titel" class="java.lang.String"/>
+	<parameter name="Titel" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -20,8 +20,8 @@
 				<subreportParameter name="timezone">
 					<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="titel">
-					<subreportParameterExpression><![CDATA[$P{titel}]]></subreportParameterExpression>
+				<subreportParameter name="Titel">
+					<subreportParameterExpression><![CDATA[$P{Titel}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="filterparams">
 					<subreportParameterExpression><![CDATA[$P{filterparams}]]></subreportParameterExpression>

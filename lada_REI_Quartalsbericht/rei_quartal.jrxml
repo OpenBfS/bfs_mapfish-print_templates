@@ -16,7 +16,7 @@
 	<parameter name="table2" class="net.sf.jasperreports.engine.JRTableDataSource"/>
 	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="timezone" class="java.lang.String"/>
-	<parameter name="titel" class="java.lang.String"/>
+	<parameter name="Titel" class="java.lang.String"/>
 	<field name="anlagebeschr" class="java.lang.String"/>
 	<field name="reiproggrp" class="java.lang.String"/>
 	<field name="mmt" class="java.lang.String"/>
@@ -43,11 +43,11 @@
 	<field name="mKommentar" class="java.lang.String"/>
 	<variable name = "header" class = "java.lang.String">
 		<variableExpression>
-			<![CDATA[($P{titel}.equals("")) ?
+			<![CDATA[($P{Titel}.equals("")) ?
 				"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
 				". Quartals " + $F{jmitteSammelzeitraum} +
 				" für die Kerntechnische Anlage " + $F{anlagebeschr} :
-				$P{titel}]]>
+				$P{Titel}]]>
 		</variableExpression>
 	</variable>
 	<group name="ProbenGroup" isStartNewPage="true">
@@ -66,11 +66,11 @@
 					</textElement>
 					<textFieldExpression>
 						<![CDATA[
-							($P{titel}.equals("")) ?
+							($P{Titel}.equals("")) ?
 							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
 							". Quartals " + $F{jmitteSammelzeitraum} +
 							" für die Kerntechnische Anlage " + $F{anlagebeschr} :
-							$P{titel}
+							$P{Titel}
 						]]>
 					</textFieldExpression>
 				</textField>

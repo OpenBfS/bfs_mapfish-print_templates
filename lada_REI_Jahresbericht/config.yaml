@@ -6,7 +6,7 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
-      titel:  !string
+      Titel:  !string
         default: ""
       filterParams: !datasource
         attributes:
