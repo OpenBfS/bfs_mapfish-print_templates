@@ -17,15 +17,16 @@
 	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="timezone" class="java.lang.String"/>
 	<parameter name="Titel" class="java.lang.String"/>
+	<parameter name="Anmerkung" class="java.lang.String"/>
 	<field name="anlagebeschr" class="java.lang.String"/>
 	<field name="reiproggrp" class="java.lang.String"/>
 	<field name="mmt" class="java.lang.String"/>
 	<field name="dBasis" class="java.lang.String"/>
 	<field name="qmitteSammelzeitraum" class="java.lang.String"/>
 	<field name="mstLaborId" class="java.lang.String"/>
-	<field name="mstLabor" class="java.lang.String"/>
+	<field name="laborMstId" class="java.lang.String"/>
+	<field name="messlaboradr" class="java.lang.String"/>
 	<field name="reiproggrpbeschr" class="java.lang.String"/>
-	<field name="messstellenadr" class="java.lang.String"/>
 	<field name="jmitteSammelzeitraum" class="java.lang.String"/>
 	<field name="peBegin" class="java.lang.String"/>
 	<field name="peEnd" class="java.lang.String"/>
@@ -41,14 +42,12 @@
 	<field name="pKommentar" class="java.lang.String"/>
 	<field name="pzs" class="java.lang.String"/>
 	<field name="mKommentar" class="java.lang.String"/>
-	<variable name = "header" class = "java.lang.String">
-		<variableExpression>
-			<![CDATA[($P{Titel}.equals("")) ?
+	<variable name="header" class="java.lang.String">
+		<variableExpression><![CDATA[($P{Titel}.equals("")) ?
 				"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
 				". Quartals " + $F{jmitteSammelzeitraum} +
-				" für die Kerntechnische Anlage " + $F{anlagebeschr} :
-				$P{Titel}]]>
-		</variableExpression>
+				" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{Anmerkung}:
+				$P{Titel}+ " " + $P{Anmerkung}]]></variableExpression>
 	</variable>
 	<group name="ProbenGroup" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{anlagebeschr}]]></groupExpression>
@@ -64,15 +63,12 @@
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
-					<textFieldExpression>
-						<![CDATA[
-							($P{Titel}.equals("")) ?
+					<textFieldExpression><![CDATA[
+					($P{Titel}.equals("")) ?
 							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
 							". Quartals " + $F{jmitteSammelzeitraum} +
-							" für die Kerntechnische Anlage " + $F{anlagebeschr} :
-							$P{Titel}
-						]]>
-					</textFieldExpression>
+							" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{Anmerkung}:
+							$P{Titel} + " " + $P{Anmerkung}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
@@ -188,7 +184,7 @@
 				</staticText>
 				<subreport>
 					<reportElement x="30" y="86" width="360" height="15"
-					 stretchType="RelativeToTallestObject" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+								   stretchType="RelativeToTallestObject" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
 					<subreportParameter name="timezone">
 						<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
 					</subreportParameter>
@@ -199,7 +195,7 @@
 		</groupHeader>
 	</group>
 	<group name="tableHeaderGroup" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{reiproggrp}+$F{mmt}+$F{mstLaborId}]]></groupExpression>
+		<groupExpression><![CDATA[$F{reiproggrp}+$F{mmt}+$F{laborMstId}]]></groupExpression>
 		<groupHeader>
 			<band height="85">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -207,7 +203,7 @@
 					<reportElement x="0" y="0" width="822" height="1" uuid="f6913fa7-40d4-4875-b59c-0d2db6eed7c6"/>
 				</break>
 				<rectangle>
-					<reportElement x="20" y="1" width="782" height="40" uuid="e2526c82-499d-4d61-889a-8a1af48608f1">
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="20" y="1" width="782" height="40" uuid="e2526c82-499d-4d61-889a-8a1af48608f1">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -219,7 +215,7 @@
 					</reportElement>
 					<text><![CDATA[Überwachte Anlage /Tätigkeit:]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true">
 					<reportElement x="185" y="8" width="595" height="15" uuid="4b58aa4e-bc6a-4379-8f11-072c913c19d7">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -228,27 +224,28 @@
 					<textFieldExpression><![CDATA[$F{anlagebeschr}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="24" y="24" width="156" height="15" uuid="3fc26eaf-8673-4076-b226-92858c6a06f6">
+					<reportElement stretchType="ElementGroupHeight" x="24" y="24" width="156" height="15" isPrintWhenDetailOverflows="true" uuid="3fc26eaf-8673-4076-b226-92858c6a06f6">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<text><![CDATA[Messlabor:]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="185" y="24" width="700" height="15" uuid="c08fb232-3028-43c9-b11d-d407f27db629">
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="RelativeToTallestObject" x="185" y="24" width="615" height="15" uuid="c08fb232-3028-43c9-b11d-d407f27db629">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
-					<textFieldExpression><![CDATA[$F{mstLaborId} + ": " + $F{messstellenadr}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{laborMstId} + ": " + $F{messlaboradr}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement x="20" y="41" width="782" height="40" uuid="6c3201f4-b6e9-4393-91bc-b9963705270d">
+					<reportElement positionType="Float" x="20" y="41" width="782" height="40" uuid="6c3201f4-b6e9-4393-91bc-b9963705270d">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement x="24" y="48" width="66" height="15" uuid="7b05cceb-c6f2-4fab-8989-ae60dfe44667">
+					<reportElement positionType="Float" x="24" y="48" width="66" height="15" uuid="7b05cceb-c6f2-4fab-8989-ae60dfe44667">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -257,7 +254,7 @@
 					<text><![CDATA[REI Prg.-Pkt.:]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="100" y="48" width="80" height="15" uuid="5c4fa3be-32d8-4d1e-8159-3b8ca062e2d9">
+					<reportElement positionType="Float" x="100" y="48" width="80" height="15" uuid="5c4fa3be-32d8-4d1e-8159-3b8ca062e2d9">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -265,15 +262,16 @@
 					<textFieldExpression><![CDATA[$F{reiproggrp}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="185" y="48" width="630" height="15" uuid="af5dbc8e-8c80-458a-a4ff-6d05dfc39d6e">
+					<reportElement positionType="Float" x="185" y="48" width="615" height="15" uuid="af5dbc8e-8c80-458a-a4ff-6d05dfc39d6e">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{reiproggrpbeschr}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="24" y="64" width="156" height="15" uuid="f951e318-2207-47ae-90a3-da9ae2ddc5f2">
+					<reportElement positionType="Float" x="24" y="64" width="156" height="15" uuid="f951e318-2207-47ae-90a3-da9ae2ddc5f2">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -282,7 +280,7 @@
 					<text><![CDATA[Messmethode / Messgröße:]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="185" y="64" width="585" height="15" uuid="f54eadf6-1781-4f5f-9d64-aca943a4b495">
+					<reportElement positionType="Float" x="185" y="64" width="585" height="15" uuid="f54eadf6-1781-4f5f-9d64-aca943a4b495">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{mmt}]]></textFieldExpression>
@@ -538,7 +536,9 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<textElement><font size="8"/></textElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[($V{PAGE_NUMBER} > 1) ? ($V{header}) : ""]]></textFieldExpression>
 			</textField>
 		</band>

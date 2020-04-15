@@ -8,6 +8,8 @@ templates:
       timezone: !string {}
       Titel:  !string
         default: ""
+      Anmerkung: !string
+        default: ""
       filterParams: !datasource
         attributes:
           name: !string
@@ -55,6 +57,10 @@ templates:
           messstellenadr: !string
             default: ""
           mstLabor: !string
+            default: ""
+          laborMstId: !string
+            default: ""
+          messlaboradr: !string
             default: ""
           umw: !string
             default: ""
