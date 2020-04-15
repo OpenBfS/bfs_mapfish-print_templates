@@ -114,9 +114,13 @@ templates:
                 default: ""
               messwertNwg: !string
                 default: "TODO"
+              kleinerAls: !string
+                default: ""
               meh: !string
-                default: "TODO"
+                default: ""
               pzsId: !string
+                default: ""
+              pzwGroesse: !string
                 default: ""
           kommentare: !datasource
             attributes:
