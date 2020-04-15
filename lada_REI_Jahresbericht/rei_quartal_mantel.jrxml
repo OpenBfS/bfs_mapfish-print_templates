@@ -9,6 +9,7 @@
 	<parameter name="doc_creator" class="java.lang.String"/>
 	<parameter name="timezone" class="java.lang.String"/>
 	<parameter name="Titel" class="java.lang.String"/>
+	<parameter name="Anmerkung" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -22,6 +23,9 @@
 				</subreportParameter>
 				<subreportParameter name="Titel">
 					<subreportParameterExpression><![CDATA[$P{Titel}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Anmerkung">
+					<subreportParameterExpression><![CDATA[($P{Anmerkung}.equals("")) ? "" : $P{Anmerkung}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="filterparams">
 					<subreportParameterExpression><![CDATA[$P{filterparams}]]></subreportParameterExpression>
