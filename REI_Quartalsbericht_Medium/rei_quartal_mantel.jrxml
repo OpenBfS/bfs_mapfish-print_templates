@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rei_quartal_mantel" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="0942d26f-9b15-4b08-945a-dc371a864c36">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="messwerte" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
+
+	<parameter name="doc_creator" class="java.lang.String"/>
+	<parameter name="timezone" class="java.lang.String"/>
+	<parameter name="Titel" class="java.lang.String"/>
+	<parameter name="Anmerkung" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="80">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="842" height="80" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+				<subreportParameter name="timezone">
+					<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Titel">
+					<subreportParameterExpression><![CDATA[$P{Titel}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Anmerkung">
+					<subreportParameterExpression><![CDATA[($P{Anmerkung}.equals("")) ? "" : $P{Anmerkung}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="filterparams">
+					<subreportParameterExpression><![CDATA[$P{filterparams}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{messwerte}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["rei_quartal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField pattern="EEEEE dd.MM.yyyy hh.mm zzz">
+				<reportElement x="20" y="0" width="240" height="10" uuid="c4b05ec3-edb4-4256-a38d-9781328805f6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm zzz").withZone(java.time.ZoneId.of($P{timezone})).format(java.time.ZonedDateTime.now()) + " / " + $P{doc_creator}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="602" y="0" width="180" height="10" uuid="4a9e38a5-55b3-4433-9880-c9ea097627ae">
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Seite " + $V{PAGE_NUMBER} + " von "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="782" y="0" width="20" height="10" uuid="14aef7a3-c935-4375-bc8d-9a58a940d1a9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rei_quartal_mantel" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="0942d26f-9b15-4b08-945a-dc371a864c36">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="doc_creator" class="java.lang.String"/>
+	<parameter name="timezone" class="java.lang.String"/>
+	<field name="displayName" class="java.lang.String"/>
+	<field name="filterDisplay" class="java.lang.String"/>
+	<field name="name" class="java.lang.String" />
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15">
+			<printWhenExpression>
+				<![CDATA[
+					$F{name} != null
+					&& !$F{displayName}.equals("")
+					&& !$F{filterDisplay}.equals("")
+					&& (
+						$F{name}.equals("anlage")
+						|| $F{name}.equals("mitteSammelzeitraum")
+					)
+				]]>
+			</printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="-20" y="-35" width="340" height="1" uuid="4d47c43d-807e-4f61-93ea-544791279114"
+							isRemoveLineWhenBlank="true" positionType="Float">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{displayName} + ": " + $F{filterDisplay}]]>
+				</textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
