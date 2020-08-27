@@ -33,7 +33,6 @@
 	<field name="berichtstext" class="java.lang.String"/>
 	<field name="eGem" class="java.lang.String"/>
 	<field name="messgroesse" class="java.lang.String"/>
-	<field name="bemerkungen" class="java.lang.String"/>
 	<field name="medium" class="java.lang.String"/>
 	<field name="wert" class="java.lang.String"/>
 	<field name="einheit" class="java.lang.String"/>
@@ -712,8 +711,8 @@
 						<font size="8"/>
 						<paragraph lineSpacing="Single" leftIndent="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{arrReiProgGrp}.contains($F{reiproggrp}) ? $F{medium}+"\n"+$F{bemerkungen}+" "+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}:
-							$F{bemerkungen}+" "+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}+" "]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{arrReiProgGrp}.contains($F{reiproggrp}) ? $F{medium}+"\n"+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}:
+							$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}+" "]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="140" y="0" width="90" height="20" isPrintInFirstWholeBand="true" printWhenGroupChanges="messpunktGroup" uuid="921c943b-9f07-4f85-ac5e-5f6cd0b60129">
