@@ -10,6 +10,12 @@
 	<parameter name="timezone" class="java.lang.String"/>
 	<parameter name="Titel" class="java.lang.String"/>
 	<parameter name="Anmerkung" class="java.lang.String"/>
+	<parameter name="clientVersion" class="java.lang.String"/>
+	<variable name = "templateVersion" class = "java.lang.String">
+		<variableExpression>
+			<![CDATA["2.1.24-SNAPSHOT"]]>
+		</variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -39,13 +45,13 @@
 		<band height="20">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField pattern="EEEEE dd.MM.yyyy hh.mm zzz">
-				<reportElement x="20" y="0" width="240" height="10" uuid="c4b05ec3-edb4-4256-a38d-9781328805f6">
+				<reportElement x="20" y="0" width="400" height="10" uuid="c4b05ec3-edb4-4256-a38d-9781328805f6">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm zzz").withZone(java.time.ZoneId.of($P{timezone})).format(java.time.ZonedDateTime.now()) + " / " + $P{doc_creator}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm zzz").withZone(java.time.ZoneId.of($P{timezone})).format(java.time.ZonedDateTime.now()) + " / " + $P{doc_creator} + " / " + "Templateversion" + " " + $V{templateVersion} + " / " + " " +$P{clientVersion}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement stretchType="RelativeToBandHeight" x="602" y="0" width="180" height="10" uuid="4a9e38a5-55b3-4433-9880-c9ea097627ae">

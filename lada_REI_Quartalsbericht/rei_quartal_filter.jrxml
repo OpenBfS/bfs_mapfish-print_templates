@@ -3,6 +3,7 @@
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="doc_creator" class="java.lang.String"/>
+	<parameter name="clientVersion" class="java.lang.String"/>
 	<parameter name="timezone" class="java.lang.String"/>
 	<field name="displayName" class="java.lang.String"/>
 	<field name="filterDisplay" class="java.lang.String"/>

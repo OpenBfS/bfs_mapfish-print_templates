@@ -10,6 +10,7 @@ templates:
         default: ""
       Anmerkung: !string
         default: ""
+      clientVersion : !string {}
       filterParams: !datasource
         attributes:
           name: !string
