@@ -10,6 +10,7 @@ templates:
         default: ""
       Anmerkung:  !string
         default: ""
+      clientVersion : !string {}
       filterParams: !datasource
         attributes:
           name: !string
@@ -117,8 +118,6 @@ templates:
           berichtstext: !string
             default: ""
           messgroesse: !string
-            default: ""
-          bemerkungen: !string
             default: ""
           einheit: !string
             default: ""

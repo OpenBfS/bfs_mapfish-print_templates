@@ -709,8 +709,8 @@
 						<font size="8"/>
 						<paragraph lineSpacing="Single" leftIndent="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{arrReiProgGrp}.contains($F{reiproggrp}) ? $F{medium}+"\n"+$F{bemerkungen}+" "+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}:
-							$F{bemerkungen}+" "+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}+" "]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{arrReiProgGrp}.contains($F{reiproggrp}) ? $F{medium}+"\n"+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}:
+							$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}+" "]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="140" y="0" width="90" height="20" isPrintInFirstWholeBand="true" printWhenGroupChanges="messpunktGroup" uuid="921c943b-9f07-4f85-ac5e-5f6cd0b60129">
