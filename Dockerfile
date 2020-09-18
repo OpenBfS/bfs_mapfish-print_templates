@@ -4,7 +4,7 @@ MAINTAINER Marco Lechner<mlechner@bfs.de>
 #-------------Application Specific Stuff ----------------------------------------------------
 
 RUN mkdir -p /usr/local/tomcat/webapps/bfs-printservice
-RUN wget http://repo1.maven.org/maven2/org/mapfish/print/print-servlet/3.12.1/print-servlet-3.12.1.war
+RUN wget https://repo1.maven.org/maven2/org/mapfish/print/print-servlet/3.12.1/print-servlet-3.12.1.war
 RUN cp print-servlet-*.war /usr/local/tomcat/webapps/bfs-printservice && rm print-servlet-*.war
 WORKDIR /usr/local/tomcat/webapps/bfs-printservice
 RUN unzip print-servlet-3.12.1.war && rm print-servlet-3.12.1.war
