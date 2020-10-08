@@ -15,6 +15,7 @@
 	<parameter name="tableSubReport" class="java.lang.String"/>
 	<parameter name="title" class="java.lang.String"/>
 	<parameter name="displayName" class="java.lang.String"/>
+	<parameter name="timezone" class="java.lang.String"/>
 	<title>
 		<band height="54">
 			<textField>
@@ -44,7 +45,7 @@
 			<textField pattern="dd.MM.yyyy - HH:mm">
 				<reportElement x="640" y="19" width="161" height="31" uuid="ab61dadb-1e34-477f-ab42-8856b5495018"/>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm zzz").withZone(java.time.ZoneId.of($P{timezone})).format(java.time.ZonedDateTime.now())]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>

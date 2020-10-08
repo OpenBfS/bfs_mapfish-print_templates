@@ -6,6 +6,7 @@ templates:
       displayName: !string {}
       title: !string {}
       table: !table {}
+      timezone: !string {}
     processors:
     - !reportBuilder
       directory: '.'
