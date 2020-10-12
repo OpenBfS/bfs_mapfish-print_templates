@@ -6,7 +6,8 @@ templates:
       displayName: !string {}
       title: !string {}
       table: !table {}
-      timezone: !string {}
+      timezone: !string
+        default: "UTC"
     processors:
     - !reportBuilder
       directory: '.'
