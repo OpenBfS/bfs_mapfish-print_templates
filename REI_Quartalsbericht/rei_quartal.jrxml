@@ -544,7 +544,7 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="20">
+		<band height="20" splitType="Prevent">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<frame>
 				<reportElement stretchType="RelativeToTallestObject" x="20" y="0" width="782" height="20" uuid="effbdb1f-e451-4cd3-ad03-68b60aadf7c2"/>
