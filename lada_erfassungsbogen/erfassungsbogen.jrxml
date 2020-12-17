@@ -147,7 +147,7 @@
 				<text><![CDATA[Name des Probenehmers]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="141" y="97" width="414" height="15" uuid="72b937df-fffc-4825-bcd4-41c4f247e87e">
+				<reportElement x="131" y="97" width="424" height="15" uuid="72b937df-fffc-4825-bcd4-41c4f247e87e">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -176,7 +176,7 @@
 					<text><![CDATA[Probenahmeinstitution]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement stretchType="ElementGroupHeight" x="205" y="4" width="350" height="15" uuid="8210be8f-0ae2-4f55-a650-05f87d95fa67">
+					<reportElement stretchType="ElementGroupHeight" x="215" y="4" width="340" height="15" uuid="8210be8f-0ae2-4f55-a650-05f87d95fa67">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
@@ -191,7 +191,7 @@
 					<textFieldExpression><![CDATA[$F{prnBezeichnung}.equals("null") ? null : $F{prnBezeichnung}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement stretchType="ElementGroupHeight" x="142" y="4" width="58" height="15" uuid="d96623cf-abc1-4d19-9184-b6cb6d6c3188">
+					<reportElement stretchType="ElementGroupHeight" x="132" y="4" width="78" height="15" uuid="d96623cf-abc1-4d19-9184-b6cb6d6c3188">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
