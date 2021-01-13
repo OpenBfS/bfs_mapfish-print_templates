@@ -690,7 +690,7 @@
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
-					<box>
+					<box leftPadding="1" rightPadding="1" topPadding="1">
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -700,7 +700,10 @@
 						<font size="8"/>
 						<paragraph lineSpacing="Single" leftIndent="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{bemerkungen}+" "+$F{pKommentar}+" "+$F{mKommentar}+" "+$F{pzs}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[ !$F{pKommentar}.equals("") && !$F{mKommentar}.equals("") ? $F{pKommentar}+"; "+$F{mKommentar}+" "+$F{pzs} : (
+						!$F{pKommentar}.equals("") && $F{mKommentar}.equals("") ? $F{pKommentar}+" "+$F{pzs} : (
+						$F{pKommentar}.equals("") && !$F{mKommentar}.equals("") ? $F{mKommentar}+" "+$F{pzs} : ($F{pzs})))]]>
+					</textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement stretchType="ElementGroupHeight" isPrintRepeatedValues="false" x="140" y="0" width="90" height="20" isPrintInFirstWholeBand="true" printWhenGroupChanges="messpunktGroup" uuid="921c943b-9f07-4f85-ac5e-5f6cd0b60129">
