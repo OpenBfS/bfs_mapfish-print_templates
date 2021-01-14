@@ -6,9 +6,11 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
-      Titel:  !string
+      reititel:  !string
         default: ""
-      Anmerkung: !string
+      titelzusatz: !string
+        default: ""
+      bedingungszusatz: !string
         default: ""
       clientVersion : !string {}
       filterParams: !datasource

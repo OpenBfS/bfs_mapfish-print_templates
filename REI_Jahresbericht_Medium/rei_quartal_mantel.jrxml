@@ -8,8 +8,9 @@
 
 	<parameter name="doc_creator" class="java.lang.String"/>
 	<parameter name="timezone" class="java.lang.String"/>
-	<parameter name="Titel" class="java.lang.String"/>
-	<parameter name="Anmerkung" class="java.lang.String"/>
+	<parameter name="reititel" class="java.lang.String"/>
+	<parameter name="titelzusatz" class="java.lang.String"/>
+	<parameter name="bedingungszusatz" class="java.lang.String"/>
 	<parameter name="clientVersion" class="java.lang.String"/>
 	    <variable name = "templateVersion" class = "java.lang.String">
 	       <variableExpression>
@@ -27,11 +28,14 @@
 				<subreportParameter name="timezone">
 					<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Titel">
-					<subreportParameterExpression><![CDATA[$P{Titel}]]></subreportParameterExpression>
+				<subreportParameter name="reititel">
+					<subreportParameterExpression><![CDATA[$P{reititel}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Anmerkung">
-					<subreportParameterExpression><![CDATA[($P{Anmerkung}.equals("")) ? "" : $P{Anmerkung}]]></subreportParameterExpression>
+				<subreportParameter name="titelzusatz">
+					<subreportParameterExpression><![CDATA[($P{titelzusatz}.equals("")) ? "" : $P{titelzusatz}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bedingungszusatz">
+					<subreportParameterExpression><![CDATA[$P{bedingungszusatz}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="filterparams">
 					<subreportParameterExpression><![CDATA[$P{filterparams}]]></subreportParameterExpression>

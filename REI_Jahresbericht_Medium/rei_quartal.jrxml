@@ -16,8 +16,9 @@
 	<parameter name="table2" class="net.sf.jasperreports.engine.JRTableDataSource"/>
 	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="timezone" class="java.lang.String"/>
-	<parameter name="Titel" class="java.lang.String"/>
-	<parameter name="Anmerkung" class="java.lang.String"/>
+	<parameter name="reititel" class="java.lang.String"/>
+	<parameter name="titelzusatz" class="java.lang.String"/>
+	<parameter name="bedingungszusatz" class="java.lang.String"/>
 	<field name="anlagebeschr" class="java.lang.String"/>
 	<field name="reiproggrp" class="java.lang.String"/>
 	<field name="mmt" class="java.lang.String"/>
@@ -55,15 +56,15 @@
 		<initialValueExpression><![CDATA[new java.util.ArrayList()]]></initialValueExpression>
 	</variable>
 	<variable name="header" class="java.lang.String">
-		<variableExpression><![CDATA[($P{Titel}.equals("")) ?
+		<variableExpression><![CDATA[($P{reititel}.equals("")) ?
 				"REI-Immissionsbericht - Jahresbericht " + $F{jmitteSammelzeitraum} +
-				" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{Anmerkung}:
-				$P{Titel} + " " + $P{Anmerkung}]]></variableExpression>
+				" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{titelzusatz}:
+				$P{reititel} + " " + $P{titelzusatz}]]></variableExpression>
 	</variable>
 	<group name="ProbenGroup" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{anlagebeschr}]]></groupExpression>
 		<groupHeader>
-			<band height="254" splitType="Stretch">
+			<band height="350" splitType="Stretch">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField>
 					<reportElement x="20" y="10" width="780" height="30" uuid="0f0204a7-4338-4b8e-bcc4-a2618a6695dc">
@@ -74,10 +75,10 @@
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($P{Titel}.equals("")) ?
+					<textFieldExpression><![CDATA[($P{reititel}.equals("")) ?
 							"REI-Immissionsbericht - Jahresbericht " + $F{jmitteSammelzeitraum} +
-							" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{Anmerkung} :
-							$P{Titel} + " " + $P{Anmerkung}]]></textFieldExpression>
+							" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{titelzusatz} :
+							$P{reititel} + " " + $P{titelzusatz}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
@@ -92,7 +93,7 @@
 					<reportElement x="390" y="50" width="412" height="190" uuid="c8ae9e75-5fc4-4bb6-90ec-b58e0a2c9325"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="20" y="50" width="360" height="160" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4" stretchType="RelativeToTallestObject"/>
+					<reportElement x="20" y="50" width="360" height="300" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4" stretchType="RelativeToTallestObject"/>
 				</rectangle>
 				<staticText>
 					<reportElement x="30" y="54" width="100" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
@@ -200,6 +201,14 @@
 					<dataSourceExpression><![CDATA[$P{filterparams}]]></dataSourceExpression>
 					<subreportExpression><![CDATA["rei_quartal_filter.jasper"]]></subreportExpression>
 				</subreport>
+				<textField isStretchWithOverflow="true">
+					<reportElement  x="30" y="180" width="340" height="15" stretchType="RelativeToTallestObject" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd544">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$P{bedingungszusatz}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupHeader>
 	</group>
