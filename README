@@ -1,0 +1,7 @@
+To run docker container as print service for LADA (see section "Docker" in
+README.markdown in LADA server repository):
+
+ $ docker build -t koala/gis_print_templates .
+ $ docker run --name lada-printer --net=lada_network \
+          -v $PWD:/usr/local/tomcat/webapps/bfs-printservice/print-apps \
+          -d koala/gis_print_templates:latest
