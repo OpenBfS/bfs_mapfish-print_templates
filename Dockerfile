@@ -3,16 +3,24 @@ FROM tomcat:8.0-jre8
 MAINTAINER Marco Lechner<mlechner@bfs.de>
 #-------------Application Specific Stuff ----------------------------------------------------
 
-RUN mkdir -p /usr/local/tomcat/webapps/bfs-printservice
-RUN wget https://repo1.maven.org/maven2/org/mapfish/print/print-servlet/3.12.1/print-servlet-3.12.1.war
-RUN cp print-servlet-*.war /usr/local/tomcat/webapps/bfs-printservice && rm print-servlet-*.war
-WORKDIR /usr/local/tomcat/webapps/bfs-printservice
-RUN unzip print-servlet-3.12.1.war && rm print-servlet-3.12.1.war
-RUN rm -Rf /usr/local/tomcat/webapps/bfs-printservice/print-apps && mkdir /usr/local/tomcat/webapps/bfs-printservice/print-apps
-ADD . /usr/local/tomcat/webapps/bfs-printservice/print-apps
-RUN wget https://downloads.sourceforge.net/project/barcode4j/barcode4j/Barcode4J%202.1/barcode4j-2.1.0-bin.zip -O barcode4j.jar
-RUN cp barcode4j.jar /usr/local/tomcat/lib
+ENV MFP_VERSION 3.12.1
+ENV WEBAPP $CATALINA_HOME/webapps/bfs-printservice
+
+RUN mkdir -p $WEBAPP
+WORKDIR $WEBAPP
+
+RUN wget -q https://repo1.maven.org/maven2/org/mapfish/print/print-servlet/$MFP_VERSION/print-servlet-$MFP_VERSION.war \
+    -O print-servlet-$MFP_VERSION.war
+
+RUN wget -q https://downloads.sourceforge.net/project/barcode4j/barcode4j/Barcode4J%202.1/barcode4j-2.1.0-bin.zip
+RUN unzip -qj barcode4j-2.1.0-bin.zip barcode4j-2.1.0/build/barcode4j.jar \
+        -d $CATALINA_HOME/lib/ && \
+    rm barcode4j-2.1.0-bin.zip
+
+ADD . $WEBAPP/print-apps
 RUN rm -rf .git* Dockerfile LICENSE barcode4j.jar .travis.yml
+RUN unzip -qn print-servlet-$MFP_VERSION.war && \
+    rm print-servlet-$MFP_VERSION.war
 
 ENV JAVA_OPTS="-Dfile.encoding=UTF-8 -Duser.timezone=UTC -Xmx512M -XX:MaxPermSize=256M"
 
