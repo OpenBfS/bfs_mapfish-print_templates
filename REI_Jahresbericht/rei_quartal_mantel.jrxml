@@ -14,7 +14,7 @@
 	<parameter name="clientVersion" class="java.lang.String"/>
 	<variable name = "templateVersion" class = "java.lang.String">
 		<variableExpression>
-			<![CDATA["2.1.24-SNAPSHOT"]]>
+			<![CDATA["2.1.26"]]>
 		</variableExpression>
 	</variable>
 	<background>
