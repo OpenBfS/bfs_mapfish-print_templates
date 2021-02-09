@@ -39,7 +39,7 @@
 				</textElement>
 				<text><![CDATA[1 = Gauß-Krüger
 2 = geografisch-gradiell
-3 = UTM-MGRS]]></text>
+4 = geografisch-dezimal]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="470" y="0" width="84" height="30" uuid="0def6a54-b6b7-4dcc-ad85-b4cbd1790a74"/>
@@ -47,8 +47,8 @@
 					<font size="5"/>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5" tabStopWidth="40"/>
 				</textElement>
-				<text><![CDATA[4 = geografisch-dezimal
-5 = UTM]]></text>
+				<text><![CDATA[5 = UTM
+8 = UTM (Hayford)]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
