@@ -58,7 +58,7 @@
 	<variable name="header" class="java.lang.String">
 		<variableExpression><![CDATA[($P{reititel}.equals("")) ?
 				"REI-Immissionsbericht - Jahresbericht " + $F{jmitteSammelzeitraum} +
-				" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{titelzusatz}:
+				" " + $F{anlagebeschr} + " " + $P{titelzusatz}:
 				$P{reititel} + " " + $P{titelzusatz}]]></variableExpression>
 	</variable>
 	<group name="ProbenGroup" isStartNewPage="true">
@@ -77,7 +77,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[($P{reititel}.equals("")) ?
 							"REI-Immissionsbericht - Jahresbericht " + $F{jmitteSammelzeitraum} +
-							" für die Kerntechnische Anlage " + $F{anlagebeschr} + " " + $P{titelzusatz} :
+							" " + $F{anlagebeschr} + " " + $P{titelzusatz} :
 							$P{reititel} + " " + $P{titelzusatz}]]></textFieldExpression>
 				</textField>
 				<staticText>
