@@ -45,7 +45,7 @@
 	<field name="mKommentar" class="java.lang.String"/>
 	<variable name="header" class="java.lang.String">
 		<variableExpression><![CDATA[($P{reititel}.equals("")) ?
-				"REI-Immissionsbericht - Jahresbericht " + $F{jmitteSammelzeitraum} +
+				"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
 				" " + $F{anlagebeschr} + " " + $P{titelzusatz}:
 				$P{reititel} + " " + $P{titelzusatz}]]></variableExpression>
 	</variable>
@@ -64,7 +64,7 @@
 						<font size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($P{reititel}.equals("")) ?
-							"REI-Immissionsbericht - Jahresbericht " + $F{jmitteSammelzeitraum} +
+							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
 							" " + $F{anlagebeschr} + " " + $P{titelzusatz} :
 							$P{reititel} + " " + $P{titelzusatz}]]></textFieldExpression>
 				</textField>
