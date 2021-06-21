@@ -1,4 +1,4 @@
-
+throwErrorOnExtraParameters: false
 # enthält 3 Templates + Template für die Summary
 templates:
   #===========================================================================

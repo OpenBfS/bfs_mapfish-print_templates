@@ -1,4 +1,4 @@
-
+throwErrorOnExtraParameters: false
 # enthält 3 Templates
 templates:
   #===========================================================================
