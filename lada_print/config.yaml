@@ -12,6 +12,7 @@ templates:
     - !reportBuilder
       directory: '.'
     - !prepareTable
+      maxColumns: 12
       columns: {}
       dynamic: true
       jasperTemplate: table.jrxml
@@ -24,5 +25,5 @@ templates:
       excludeColumns: ["owner, readonly, id"]
       inputMapper: {table: table}
       #vor Änderung: outputMapper: {table: table}
-      #table2 da mit table nicht doppelt für Input und Output verwendet werden darf (ab V3.9 können Attribute nicht überschrieben werden), ebenfalls ab V3.9 tableDataSource 
-      outputMapper: {tableDataSource: table2}   
+      #table2 da mit table nicht doppelt für Input und Output verwendet werden darf (ab V3.9 können Attribute nicht überschrieben werden), ebenfalls ab V3.9 tableDataSource
+      outputMapper: {tableDataSource: table2}
