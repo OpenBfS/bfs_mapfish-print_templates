@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rei_quartal_mantel" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="0942d26f-9b15-4b08-945a-dc371a864c36">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="messwerte" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<parameter name="filterparams" class="net.sf.jasperreports.engine.JRDataSource"/>
-
 	<parameter name="doc_creator" class="java.lang.String"/>
 	<parameter name="timezone" class="java.lang.String"/>
 	<parameter name="reititel" class="java.lang.String"/>
 	<parameter name="titelzusatz" class="java.lang.String"/>
 	<parameter name="bedingungszusatz" class="java.lang.String"/>
 	<parameter name="clientVersion" class="java.lang.String"/>
-	<variable name = "templateVersion" class = "java.lang.String">
-	    <variableExpression>
-	         <![CDATA["2.1.26"]]>
-	    </variableExpression>
+	<parameter name="genehmigungsInhaber" class="java.lang.Boolean"/>
+	<parameter name="unabhMessstelle" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="templateVersion" class="java.lang.String">
+		<variableExpression><![CDATA["2.1.26"]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
@@ -39,6 +41,12 @@
 				</subreportParameter>
 				<subreportParameter name="filterparams">
 					<subreportParameterExpression><![CDATA[$P{filterparams}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="genehmigungsInhaber">
+					<subreportParameterExpression><![CDATA[$P{genehmigungsInhaber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="unabhMessstelle">
+					<subreportParameterExpression><![CDATA[$P{unabhMessstelle}]]></subreportParameterExpression>
 				</subreportParameter>
 				<dataSourceExpression><![CDATA[$P{messwerte}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["rei_quartal.jasper"]]></subreportExpression>

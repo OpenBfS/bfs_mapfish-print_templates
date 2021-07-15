@@ -6,6 +6,10 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
+      genehmigungsInhaber: !boolean
+        default: False
+      unabhMessstelle: !boolean
+        default: False
       reititel:  !string
         default: ""
       titelzusatz: !string
@@ -57,13 +61,13 @@ templates:
             default: ""
           mstLaborId: !string
             default: ""
+          messstellenadr: !string
+            default: ""
           mstLabor: !string
             default: ""
           laborMstId: !string
             default: ""
           messlaboradr: !string
-            default: ""
-          messstellenadr: !string
             default: ""
           umw: !string
             default: ""

@@ -6,6 +6,10 @@ templates:
     attributes:
       doc_creator: !string {}
       timezone: !string {}
+      genehmigungsInhaber: !boolean
+        default: False
+      unabhMessstelle: !boolean
+        default: False
       reititel:  !string
         default: ""
       titelzusatz: !string
