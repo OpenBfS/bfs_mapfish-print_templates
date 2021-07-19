@@ -48,8 +48,6 @@
 	<field name="pKommentar" class="java.lang.String"/>
 	<field name="pzs" class="java.lang.String"/>
 	<field name="mKommentar" class="java.lang.String"/>
-	<field name="genehmigungsInhaber" class="java.lang.Boolean"/>
-	<field name="Field_1" class="java.lang.String"/>
 	<variable name="header" class="java.lang.String">
 		<variableExpression><![CDATA[($P{reititel}.equals("")) ?
 				"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
@@ -259,7 +257,7 @@
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
-					<textFieldExpression><![CDATA[$F{genehmigungsInhaber}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{anlagebeschr}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement stretchType="ElementGroupHeight" x="24" y="24" width="156" height="15" isPrintWhenDetailOverflows="true" uuid="3fc26eaf-8673-4076-b226-92858c6a06f6">
