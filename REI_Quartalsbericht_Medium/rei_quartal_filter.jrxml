@@ -33,6 +33,9 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 
 				</reportElement>
+                <textElement>
+					<font size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{displayName} + ": " + $F{filterDisplay}]]>
 				</textFieldExpression>
 			</textField>

@@ -109,110 +109,26 @@
 					<text><![CDATA[Selektion]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="390" y="50" width="412" height="190" uuid="c8ae9e75-5fc4-4bb6-90ec-b58e0a2c9325"/>
-				</rectangle>
-				<rectangle>
-					<reportElement stretchType="RelativeToTallestObject" x="20" y="50" width="360" height="300" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4"/>
-				</rectangle>
-				<staticText>
-					<reportElement x="30" y="54" width="100" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<reportElement stretchType="RelativeToTallestObject" x="20" y="50" width="782" height="160" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
-					<textElement>
-						<font isBold="true" isUnderline="true"/>
-					</textElement>
-					<text><![CDATA[Bedingungen:]]></text>
-				</staticText>
+				</rectangle>
 				<staticText>
-					<reportElement x="400" y="54" width="170" height="15" uuid="e42020ae-fadb-448b-9032-d2b229d7087f">
+					<reportElement x="40" y="70" width="100" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<textElement>
-						<font isBold="true" isUnderline="true"/>
+						<font size="12" isBold="true" isUnderline="true"/>
 					</textElement>
-					<text><![CDATA[Sortiert nach:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="71" width="350" height="12" uuid="6b9a347c-73a3-4b5c-8b82-bad1c0ce6d15">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[1. KtA (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="101" width="350" height="12" uuid="33000e53-4dbc-47a2-95b5-510ed76eecb1">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[3. Labor (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="86" width="350" height="12" uuid="41a25822-413a-4f9a-848a-0dff9cd7675c">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[2. Labor (Id) (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="132" width="350" height="12" uuid="24e6f346-4a9a-43e3-9774-7fdd89198ffc">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[5. REI-Progr-Pkt (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="148" width="350" height="12" uuid="58357a33-3c5a-422c-9c5a-ce95b6b29cab">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[6. Messmethode (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="163" width="350" height="12" uuid="11b3f283-7e4d-413c-97e8-28507f97c8bb">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[7. Messpunkt (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="178" width="350" height="12" uuid="b63f700c-606a-4fa1-96b2-ea3fb34bdfe5">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[8. Gemeinde (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="193" width="350" height="12" uuid="a0f33640-cb5f-4466-9302-c4ed5aaf0a49">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[9. Probenahmebeginn (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="410" y="117" width="350" height="12" uuid="351d30d0-db55-46e8-8a09-3f7957ff25be">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<text><![CDATA[4. REI-Progr-Pkt-Id (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="404" y="208" width="350" height="12" uuid="71e70458-af5a-423b-b2cc-e0cef6a8e3be">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					</reportElement>
-					<text><![CDATA[10. Probenahmeende (aufst.)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="404" y="223" width="350" height="12" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd583">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					</reportElement>
-					<text><![CDATA[11. Probe-Id (aufst.)]]></text>
+					<text><![CDATA[Bedingungen:]]></text>
 				</staticText>
 				<subreport>
-					<reportElement stretchType="RelativeToTallestObject" x="30" y="86" width="360" height="15" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc"/>
+					<reportElement stretchType="RelativeToTallestObject" x="40" y="110" width="360" height="15" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
 					<subreportParameter name="timezone">
 						<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
 					</subreportParameter>
@@ -220,11 +136,15 @@
 					<subreportExpression><![CDATA["rei_quartal_filter.jasper"]]></subreportExpression>
 				</subreport>
 				<textField textAdjust="StretchHeight">
-					<reportElement stretchType="RelativeToTallestObject" x="30" y="180" width="340" height="15" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd544">
+					<reportElement stretchType="RelativeToTallestObject" x="40" y="150" width="360" height="15" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd544">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
+					<textElement>
+						<font size="12"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$P{bedingungszusatz}]]></textFieldExpression>
 				</textField>
 			</band>
