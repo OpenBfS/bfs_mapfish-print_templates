@@ -50,7 +50,7 @@
 	<field name="mKommentar" class="java.lang.String"/>
 	<variable name="header" class="java.lang.String">
 		<variableExpression><![CDATA[($P{reititel}.equals("")) ?
-				"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
+				"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum} +
 				". Quartals " + $F{jmitteSammelzeitraum} +
 				" " + $F{anlagebeschr} + " " + $P{titelzusatz}:
 				$P{reititel}+ " " + $P{titelzusatz}]]></variableExpression>
@@ -70,33 +70,33 @@
 						<font size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} ==  true) ?
-							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
+							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum} +
 							". Quartals " + $F{jmitteSammelzeitraum} +
-							" " + $F{anlagebeschr} + " " + $P{titelzusatz} + " (Genehmigungsinhaber, unabhängige Meßstelle)"
+							" " + $F{anlagebeschr} + " (Genehmigungsinhaber, unabhängige Messstelle) " +  " " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} ==  false) ?
-							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
+							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum} +
 							". Quartals " + $F{jmitteSammelzeitraum} +
-							" " + $F{anlagebeschr} + " " + $P{titelzusatz} + " (Genehmigungsinhaber)"
+							" " + $F{anlagebeschr} + " (Genehmigungsinhaber) " + " " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} ==  true) ?
-							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
+							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum} +
 							". Quartals " + $F{jmitteSammelzeitraum} +
-							" " + $F{anlagebeschr} + " " + $P{titelzusatz} + " (unabhängige Meßstelle)"
+							" " + $F{anlagebeschr} + " (unabhängige Messstelle) " + " " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} ==  false) ?
-							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum}+
+							"REI-Immissionsbericht des " + $F{qmitteSammelzeitraum} +
 							". Quartals " + $F{jmitteSammelzeitraum} +
 							" " + $F{anlagebeschr} + " " + $P{titelzusatz}
 							:
 (!$P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} ==  true) ?
-							$P{reititel} + " " + $P{titelzusatz} + " (Genehmigungsinhaber, unabhängige Meßstelle)"
+							$P{reititel} + " (Genehmigungsinhaber, unabhängige Messstelle) " + " " + $P{titelzusatz}
 							:
 (!$P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} ==  false) ?
-							$P{reititel} + " " + $P{titelzusatz} + " (Genehmigungsinhaber)"
+							$P{reititel} + " (Genehmigungsinhaber) " + " " + $P{titelzusatz}
 							:
 (!$P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} ==  true) ?
-							$P{reititel} + " " + $P{titelzusatz} + " (unabhängige Meßstelle)"
+							$P{reititel} + " (unabhängige Messstelle) " + " " + $P{titelzusatz}
 							:						
 							$P{reititel} + " " + $P{titelzusatz}]]></textFieldExpression>
 				</textField>
@@ -116,7 +116,7 @@
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement x="40" y="70" width="100" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
+					<reportElement x="40" y="70" width="740" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -126,7 +126,7 @@
 					<text><![CDATA[Bedingungen:]]></text>
 				</staticText>
 				<subreport>
-					<reportElement stretchType="RelativeToTallestObject" x="40" y="110" width="360" height="15" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc">
+					<reportElement stretchType="RelativeToTallestObject" x="40" y="110" width="740" height="15" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
@@ -137,7 +137,7 @@
 					<subreportExpression><![CDATA["rei_quartal_filter.jasper"]]></subreportExpression>
 				</subreport>
 				<textField textAdjust="StretchHeight">
-					<reportElement stretchType="RelativeToTallestObject" x="40" y="150" width="360" height="15" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd544">
+					<reportElement stretchType="ElementGroupBottom" x="40" y="150" width="740" height="15" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd544">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
