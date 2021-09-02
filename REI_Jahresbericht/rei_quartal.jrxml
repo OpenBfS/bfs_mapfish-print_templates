@@ -48,40 +48,23 @@
 	<field name="pKommentar" class="java.lang.String"/>
 	<field name="pzs" class="java.lang.String"/>
 	<field name="mKommentar" class="java.lang.String"/>
+	<field name="genehmigungsinhaber" class="java.lang.String"/>
+	<field name="unabhMessstelle" class="java.lang.String"/>
 	<variable name="header" class="java.lang.String">
-		<variableExpression><![CDATA[($P{reititel}.equals("")) ?
-				"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
-				" " + $F{anlagebeschr} + " " + $P{titelzusatz}:
-				$P{reititel} + " " + $P{titelzusatz}]]></variableExpression>
-	</variable>
-	<group name="ProbenGroup" isStartNewPage="true">
-		<groupExpression><![CDATA[$F{anlagebeschr}]]></groupExpression>
-		<groupHeader>
-			<band height="350" splitType="Stretch">
-				<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				<textField>
-					<reportElement x="20" y="10" width="780" height="30" uuid="0f0204a7-4338-4b8e-bcc4-a2618a6695dc">
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<textElement>
-						<font size="12" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == true) ?
+		<variableExpression><![CDATA[($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == true) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
 							" " + $F{anlagebeschr} + " " + $P{reititel} +
-							" (Genehmigungsinhaber, unabhängige Messstelle) " + " " + $P{titelzusatz}
+							" (Genehmigungsinhaber, unabhängige Messstelle)" + " " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == false) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
 							" " + $F{anlagebeschr} + " " + $P{reititel} +
-							" (Genehmigungsinhaber) " + " " + $P{titelzusatz}
+							" (Genehmigungsinhaber)" + " " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == true) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
 							" " + $F{anlagebeschr} + " " + $P{reititel} +
-							" (unabhängige Messstelle) " + " " + $P{titelzusatz}
+							" (unabhängige Messstelle)" + " " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == false) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
@@ -89,16 +72,21 @@
 							" " + $P{titelzusatz}
 							:
 (!$P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == true) ?
-							$P{reititel} + " (Genehmigungsinhaber, unabhängige Messstelle) " + " " + $P{titelzusatz}
+							$P{reititel} + " (Genehmigungsinhaber, unabhängige Messstelle)" + " " + $P{titelzusatz}
 							:
 (!$P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == false) ?
-							$P{reititel} + " (Genehmigungsinhaber) " + " " + $P{titelzusatz}
+							$P{reititel} + " (Genehmigungsinhaber)" + " " + $P{titelzusatz}
 							:
 (!$P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == true) ?
-							$P{reititel} + " (unabhängige Messstelle) " + " " + $P{titelzusatz}
+							$P{reititel} + " (unabhängige Messstelle)" + " " + $P{titelzusatz}
 							:						
-							$P{reititel} + " " + $P{titelzusatz}]]></textFieldExpression>
-				</textField>
+							$P{reititel} + " " + $P{titelzusatz}]]></variableExpression>
+	</variable>
+	<group name="ProbenGroup" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{anlagebeschr}]]></groupExpression>
+		<groupHeader>
+			<band height="350" splitType="Stretch">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<staticText>
 					<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -484,13 +472,58 @@
 	<background>
 		<band splitType="Stretch"/>
 	</background>
+	<title>
+		<band height="50">
+			<textField>
+				<reportElement x="20" y="0" width="782" height="30" uuid="0f0204a7-4338-4b8e-bcc4-a2618a6695dc">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == true) ?
+							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
+							" " + $F{anlagebeschr} + " " + $P{reititel} +
+							" (Genehmigungsinhaber, unabhängige Messstelle)" + " " + $P{titelzusatz}
+							:
+($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == false) ?
+							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
+							" " + $F{anlagebeschr} + " " + $P{reititel} +
+							" (Genehmigungsinhaber)" + " " + $P{titelzusatz}
+							:
+($P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == true) ?
+							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
+							" " + $F{anlagebeschr} + " " + $P{reititel} +
+							" (unabhängige Messstelle)" + " " + $P{titelzusatz}
+							:
+($P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == false) ?
+							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
+							" " + $F{anlagebeschr} + " " + $P{reititel} +
+							" " + $P{titelzusatz}
+							:
+(!$P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == true) ?
+							$P{reititel} + " (Genehmigungsinhaber, unabhängige Messstelle)" + " " + $P{titelzusatz}
+							:
+(!$P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == false) ?
+							$P{reititel} + " (Genehmigungsinhaber)" + " " + $P{titelzusatz}
+							:
+(!$P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == true) ?
+							$P{reititel} + " (unabhängige Messstelle)" + " " + $P{titelzusatz}
+							:						
+							$P{reititel} + " " + $P{titelzusatz}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
 	<pageHeader>
 		<band height="20">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField evaluationTime="Page">
-				<reportElement x="20" y="0" width="780" height="20" uuid="af1556b4-5442-489f-b015-3ca2f7d6a014">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<textField textAdjust="StretchHeight" evaluationTime="Page">
+				<reportElement x="20" y="0" width="782" height="20" uuid="af1556b4-5442-489f-b015-3ca2f7d6a014">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement>
 					<font size="8"/>
