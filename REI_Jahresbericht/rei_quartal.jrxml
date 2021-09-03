@@ -48,8 +48,6 @@
 	<field name="pKommentar" class="java.lang.String"/>
 	<field name="pzs" class="java.lang.String"/>
 	<field name="mKommentar" class="java.lang.String"/>
-	<field name="genehmigungsinhaber" class="java.lang.String"/>
-	<field name="unabhMessstelle" class="java.lang.String"/>
 	<variable name="header" class="java.lang.String">
 		<variableExpression><![CDATA[($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == true) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
