@@ -12,7 +12,7 @@ templates:
     - !reportBuilder
       directory: '.'
     - !prepareTable
-      maxColumns: 12
+      maxColumns: 20
       columns: {}
       dynamic: true
       jasperTemplate: table.jrxml
