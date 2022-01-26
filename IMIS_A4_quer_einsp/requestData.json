@@ -60,7 +60,7 @@
 			"legend_template":"imis_A4_legend.jasper","title":"<div><b>KOALA Druckdienst</b></div>",
 			"description":"<div><b>Datenquelle: IMIS</b><br>&lt;...BITTE EINTRAGEN...&gt;</div>",
 			"comment":"<div>&lt;..Kommentar: ...&gt; </div>",
-			"impressum":"<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMU)</b><br></div>",
+			"impressum":"<div><b>&copy;Bundesamt f&uuml;r Strahlenschutz<br>(im Auftrag des BMUV)</b><br></div>",
 			"doc_creator":"Fake Authuser",
 			"legend":
 			{
