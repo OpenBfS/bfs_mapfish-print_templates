@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ortsbezuege" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="d444e137-f21c-4a89-94c2-0c4ba4578c53">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<field name="ortszuordnungTyp" class="java.lang.String"/>
@@ -47,7 +47,8 @@
 					<font size="5"/>
 					<paragraph leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5" tabStopWidth="40"/>
 				</textElement>
-				<text><![CDATA[5 = UTM
+				<text><![CDATA[5 = UTM (WGS84)
+6 = UTM (ETRS89)
 8 = UTM (Hayford)]]></text>
 			</staticText>
 		</band>
@@ -81,7 +82,7 @@
 					<font isBold="true"/>
 					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<text><![CDATA[Gem-ID]]></text>
+				<text><![CDATA[Verwalt-ID]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="105" y="0" width="165" height="30" uuid="52053408-655a-469d-9437-852521365383">
@@ -96,7 +97,7 @@
 					<font isBold="true"/>
 					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<text><![CDATA[Gemeinde / Ortzusatzbeschreibung]]></text>
+				<text><![CDATA[Verwaltungseinheit / Ortzusatzbeschreibung]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="270" y="0" width="90" height="30" uuid="3adb80a9-85bb-41b4-aa7c-5bbad1fbc180">
@@ -189,7 +190,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ort.gemId}.equals("null") ? null : $F{ort.gemId}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement stretchType="ElementGroupHeight" x="105" y="0" width="165" height="20" uuid="1ddc6670-6ff0-446f-8b6b-f01939a6ddb5">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
