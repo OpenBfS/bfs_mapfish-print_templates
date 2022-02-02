@@ -36,6 +36,7 @@ templates:
         httpProcessors:
           - !mapUri
             mapping:
+              https://test-docker-ber.lab.bfs.de/ogc-imis/(.*) : "http://geoserver-imis:8080/geoserver-imis/$1"
               https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
               #https://www.imis.bfs.de/ogc/tiles/wms?(.*) : "http://test-osm01-muc.lab.bfs.de/osm/wms_osm?$1"
               https://www.imis.bfs.de/ogc/inspire/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/inspire/$1"
@@ -76,6 +77,7 @@ templates:
         httpProcessors:
           - !mapUri
             mapping:
+              https://test-docker-ber.lab.bfs.de/ogc-imis/(.*) : "http://geoserver-imis:8080/geoserver-imis/$1"
               https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
               #https://www.imis.bfs.de/ogc/tiles/wms?(.*) : "http://test-osm01-muc.lab.bfs.de/osm/wms_osm?$1"
               https://www.imis.bfs.de/ogc/inspire/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/inspire/$1"
@@ -119,6 +121,7 @@ templates:
         httpProcessors:
           - !mapUri
             mapping:
+              https://test-docker-ber.lab.bfs.de/ogc-imis/(.*) : "http://geoserver-imis:8080/geoserver-imis/$1"
               https://entw-imis.lab.bfs.de/(.*) : "http://test-docker-fr.lab.bfs.de/$1"
               #https://www.imis.bfs.de/ogc/tiles/wms?(.*) : "http://test-osm01-muc.lab.bfs.de/osm/wms_osm?$1"
               https://www.imis.bfs.de/ogc/inspire/(.*) : "http://ogc-muc.bfs.de:8080/geoserver/inspire/$1"
