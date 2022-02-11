@@ -95,61 +95,6 @@
 							:						
 							$P{reititel} + " " + $P{titelzusatz}]]></variableExpression>
 	</variable>
-	<group name="ProbenGroup" isStartNewPage="true">
-		<groupExpression><![CDATA[$F{anlagebeschr}]]></groupExpression>
-		<groupHeader>
-			<band height="350" splitType="Stretch">
-				<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				<staticText>
-					<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					</reportElement>
-					<textElement>
-						<font isBold="true" isUnderline="true"/>
-					</textElement>
-					<text><![CDATA[Selektion]]></text>
-				</staticText>
-				<rectangle>
-					<reportElement stretchType="RelativeToTallestObject" x="20" y="50" width="782" height="160" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4">
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-				</rectangle>
-				<staticText>
-					<reportElement x="40" y="70" width="740" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
-					<textElement>
-						<font size="12" isBold="true" isUnderline="true"/>
-					</textElement>
-					<text><![CDATA[Bedingungen:]]></text>
-				</staticText>
-				<subreport>
-					<reportElement stretchType="RelativeToTallestObject" x="40" y="110" width="740" height="15" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc">
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
-					<subreportParameter name="timezone">
-						<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
-					</subreportParameter>
-					<dataSourceExpression><![CDATA[$P{filterparams}]]></dataSourceExpression>
-					<subreportExpression><![CDATA["rei_quartal_filter.jasper"]]></subreportExpression>
-				</subreport>
-				<textField textAdjust="StretchHeight">
-					<reportElement stretchType="ElementGroupBottom" x="40" y="150" width="740" height="15" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd544">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<property name="com.jaspersoft.studio.unit.x" value="px"/>
-						<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					</reportElement>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{bedingungszusatz}]]></textFieldExpression>
-				</textField>
-			</band>
-		</groupHeader>
-	</group>
 	<group name="tableHeaderGroup" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{reiproggrp}+$F{mmt}+$F{laborMstId}]]></groupExpression>
 		<groupHeader>
@@ -485,7 +430,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="50">
+		<band height="200">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
 				<reportElement x="20" y="0" width="782" height="30" uuid="0f0204a7-4338-4b8e-bcc4-a2618a6695dc">
@@ -500,14 +445,14 @@
 				<textFieldExpression><![CDATA[($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == true) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
 							" " + $F{anlagebeschr} + " " + $P{reititel} +
-							" (Genehmigungsinhaber, unabhängige Messstelle)" + 
+							" (Genehmigungsinhaber, unabhängige Messstelle)" +
 							" " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == true && $P{unabhMessstelle} == false) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
 							" " + $F{anlagebeschr} + " " + $P{reititel} +
 							" (Genehmigungsinhaber)" +
-							" " + $P{titelzusatz} 
+							" " + $P{titelzusatz}
 							:
 ($P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == true) ?
 							"REI-Immissionsbericht des Jahres " + $F{jmitteSammelzeitraum} +
@@ -528,9 +473,62 @@
 							:
 (!$P{reititel}.equals("") && $P{genehmigungsInhaber} == false && $P{unabhMessstelle} == true) ?
 							$P{reititel} + " (unabhängige Messstelle)" + " " + $P{titelzusatz}
-							:						
+							:
 							$P{reititel} + " " + $P{titelzusatz}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="30" y="64" width="163" height="21" uuid="01430ffa-4a70-4a7a-b963-9b3272c95991">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Selektion]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement stretchType="RelativeToTallestObject" x="20" y="40" width="782" height="140" uuid="cd85d06b-e8c3-4604-9236-73cba4a055b4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="40" y="70" width="740" height="40" uuid="219ec65e-9ade-4f11-929d-bcf53432ac3f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Bedingungen:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="40" y="110" width="740" height="15" uuid="8fac8f4c-9c26-44d9-aff5-212b1b2b65dc">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<subreportParameter name="timezone">
+					<subreportParameterExpression><![CDATA[$P{timezone}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{filterparams}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["rei_quartal_filter.jasper"]]></subreportExpression>
+			</subreport>
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="ElementGroupBottom" x="40" y="150" width="740" height="15" uuid="8bea5ba1-cffe-4edb-9d48-219bba0fd544">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bedingungszusatz}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="190" width="98" height="1" uuid="37ffed5a-a264-4939-bea1-2548c20a0808">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</break>
 		</band>
 	</title>
 	<pageHeader>
