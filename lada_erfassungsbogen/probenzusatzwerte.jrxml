@@ -60,7 +60,7 @@
 					<font isBold="true"/>
 					<paragraph lineSpacing="Proportional" leftIndent="5" rightIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<text><![CDATA[PZB-Beschreibung]></text>
+				<text><![CDATA[PZB-Beschreibung]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="480" y="0" width="75" height="20" uuid="d68b8082-d127-4473-ac9f-60b888378702">
