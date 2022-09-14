@@ -12,7 +12,8 @@ WORKDIR $WEBAPP
 RUN wget -q https://github.com/mapfish/mapfish-print/releases/download/$MFP_VERSION/print-servlet-$MFP_VERSION.war \
     -O print-servlet-$MFP_VERSION.war
 
-RUN "wget -q https://downloads.sourceforge.net/project/barcode4j/barcode4j/Barcode4J%202.1/barcode4j-2.1.0-bin.zip"
+RUN wget -q --no-check-certificate  https://downloads.sourceforge.net/project/barcode4j/barcode4j/Barcode4J%202.1/barcode4j-2.1.0-bin.zip \
+    -O barcode4j-2.1.0-bin.zip
 RUN unzip -qj barcode4j-2.1.0-bin.zip barcode4j-2.1.0/build/barcode4j.jar \
         -d $CATALINA_HOME/lib/ && \
     rm barcode4j-2.1.0-bin.zip
