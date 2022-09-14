@@ -3,13 +3,13 @@ FROM tomcat:8.0-jre8
 MAINTAINER Marco Lechner<mlechner@bfs.de>
 #-------------Application Specific Stuff ----------------------------------------------------
 
-ENV MFP_VERSION 3.12.1
+ENV MFP_VERSION 3.29.4
 ENV WEBAPP $CATALINA_HOME/webapps/bfs-printservice
 
 RUN mkdir -p $WEBAPP
 WORKDIR $WEBAPP
 
-RUN wget -q https://repo1.maven.org/maven2/org/mapfish/print/print-servlet/$MFP_VERSION/print-servlet-$MFP_VERSION.war \
+RUN wget -q https://github.com/mapfish/mapfish-print/releases/download/$MFP_VERSION/print-servlet-$MFP_VERSION.war \
     -O print-servlet-$MFP_VERSION.war
 
 RUN wget -q https://downloads.sourceforge.net/project/barcode4j/barcode4j/Barcode4J%202.1/barcode4j-2.1.0-bin.zip
